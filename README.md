@@ -158,6 +158,11 @@ python predict.py "C:\path\to\tomato-leaf.jpg"
 
 Replace the example path with the location of your own image.
 
+If stored in this repository in manual_test:
+```powershell
+python predict.py manual_test\name_of_test.jpg
+```
+
 To verify the stored experiment results:
 
 ```powershell
