@@ -1,7 +1,7 @@
 # 🍅 PlantVillage Tomato Disease Detection Using CNN
 
 <p align="center">
-  <img src="images/spin.gif" alt="Project GIF" width="500">
+  <img src="images/spinn.gif" alt="Project GIF" width="500">
 </p>
 
 <p align="center">
