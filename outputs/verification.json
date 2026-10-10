@@ -1,0 +1,13 @@
+{
+  "verified": true,
+  "predictions": 3632,
+  "disjoint_partitions": 6,
+  "duplicate_hashes_disjoint": true,
+  "metrics_recalculated_from_counts": {
+    "accuracy": 0.9845814977973568,
+    "macro_precision": 0.980862409265859,
+    "macro_recall": 0.9837892396629494,
+    "macro_f1": 0.982307808843015,
+    "weighted_f1": 0.9846059500841975
+  }
+}
