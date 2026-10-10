@@ -1,3 +1,22 @@
+<img src="images/anime-bocchi.gif" alt="Project Demo" width="500">
+
+#Installation (Github Basics)
+In the python terminal, enter
+git clone https://github.com/tzhe0700/cnn-plant-disease-detection.git
+cd cnn-plant-disease-detection
+code .
+
+Dependencies:
+pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+pip install numpy pillow scikit-learn matplotlib ipykernel nbformat nbclient
+
+For getting latest code:
+git pull origin main
+
+For making changes:
+git add .
+git commit -m "Updated project"
+git push origin main
 # PlantVillage tomato CNN
 
 This project adapts the supplied Tutorial 5 CNN workflow to classifying tomato leaf photographs into ten PlantVillage classes: healthy, eight disease categories, and spider-mite damage.
