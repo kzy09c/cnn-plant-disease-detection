@@ -1,0 +1,97 @@
+{
+  "dataset": "Original PlantVillage tomato RGB images",
+  "classes": [
+    "Tomato___Bacterial_spot",
+    "Tomato___Early_blight",
+    "Tomato___Late_blight",
+    "Tomato___Leaf_Mold",
+    "Tomato___Septoria_leaf_spot",
+    "Tomato___Spider_mites Two-spotted_spider_mite",
+    "Tomato___Target_Spot",
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "Tomato___Tomato_mosaic_virus",
+    "Tomato___healthy"
+  ],
+  "images": 18160,
+  "development_images": 14528,
+  "test_images": 3632,
+  "unique_groups": 9589,
+  "mapped_images": 11411,
+  "unique_byte_hashes": 18146,
+  "unique_pixel_hashes": 18146,
+  "class_counts": {
+    "Tomato___Bacterial_spot": {
+      "total": 2127,
+      "development": 1700,
+      "test": 427
+    },
+    "Tomato___Early_blight": {
+      "total": 1000,
+      "development": 800,
+      "test": 200
+    },
+    "Tomato___Late_blight": {
+      "total": 1909,
+      "development": 1527,
+      "test": 382
+    },
+    "Tomato___Leaf_Mold": {
+      "total": 952,
+      "development": 764,
+      "test": 188
+    },
+    "Tomato___Septoria_leaf_spot": {
+      "total": 1771,
+      "development": 1417,
+      "test": 354
+    },
+    "Tomato___Spider_mites Two-spotted_spider_mite": {
+      "total": 1676,
+      "development": 1340,
+      "test": 336
+    },
+    "Tomato___Target_Spot": {
+      "total": 1404,
+      "development": 1123,
+      "test": 281
+    },
+    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+      "total": 5357,
+      "development": 4285,
+      "test": 1072
+    },
+    "Tomato___Tomato_mosaic_virus": {
+      "total": 373,
+      "development": 299,
+      "test": 74
+    },
+    "Tomato___healthy": {
+      "total": 1591,
+      "development": 1273,
+      "test": 318
+    }
+  },
+  "configurations": {
+    "compact": [
+      16,
+      32,
+      64
+    ],
+    "deeper": [
+      32,
+      64,
+      128,
+      192
+    ]
+  },
+  "arguments": {
+    "epochs": 20,
+    "batch_size": 128,
+    "image_size": 96,
+    "seed": 42
+  },
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "torch_version": "2.11.0+cu128",
+  "protocol": "Grouped 80/20 holdout; two configurations with grouped five-fold CV on development only; select by mean final-epoch macro F1; retrain from scratch on all development images for same epoch budget; one test evaluation",
+  "numerical_reproducibility": "Seeds fixed. CUDA/cuDNN benchmark may cause small differences across reruns."
+}
