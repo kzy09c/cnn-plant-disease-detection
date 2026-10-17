@@ -71,7 +71,7 @@ An NVIDIA GPU with a compatible CUDA driver is required for GPU training. CPU ex
 Open a terminal in VS Code and enter:
 
 ```bash
-git clone https://github.com/tzhe0700/cnn-plant-disease-detection.git
+git clone https://github.com/kzy09c/cnn-plant-disease-detection.git
 cd cnn-plant-disease-detection
 code .
 ```
