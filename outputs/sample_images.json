@@ -1,0 +1,18 @@
+[
+  {
+    "file": "manual_test/plantvillage_binary_sample_healthy.jpg",
+    "source_path": "data/raw/color/Tomato___healthy/9268e1da-3fc4-49b1-8fcb-3f0d8957114a___GH_HL Leaf 277.1.JPG",
+    "source_class": "Tomato___healthy",
+    "true_class": "Healthy",
+    "saved_test_prediction": "Healthy",
+    "selection": "First of three examples per class selected with seed 42; not selected for correctness"
+  },
+  {
+    "file": "manual_test/plantvillage_binary_sample_unhealthy.jpg",
+    "source_path": "data/raw/color/Tomato___Bacterial_spot/b042ebf8-61a8-4b00-a544-0704f299e96f___GCREC_Bact.Sp 5954.JPG",
+    "source_class": "Tomato___Bacterial_spot",
+    "true_class": "Unhealthy",
+    "saved_test_prediction": "Unhealthy",
+    "selection": "First of three examples per class selected with seed 42; not selected for correctness"
+  }
+]

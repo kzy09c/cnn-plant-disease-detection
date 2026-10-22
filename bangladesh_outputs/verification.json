@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "dataset": "bangladesh",
+  "binary_checkpoint_loaded_on_cpu": true,
+  "checkpoint_sha256": "974b1ffb06834bd8a959cdc92dba9eeaa13a9374188edb644dd1c8869c14ad21",
+  "test_csv_confusion_metrics_independently_verified": true,
+  "all_class_precision_recall_f1_verified": true,
+  "split_and_cv_groups_pixels_files_disjoint": true,
+  "cv_summaries_and_history_lengths_checked": true,
+  "test_inference_performed": false
+}

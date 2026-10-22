@@ -1,0 +1,2 @@
+initialization,mean_accuracy,mean_balanced_accuracy,mean_macro_f1,sd_macro_f1
+scratch,0.9923599935085934,0.9926139332386035,0.976948072361959,0.00832295729315343
