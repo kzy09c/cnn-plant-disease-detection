@@ -6,6 +6,8 @@ Two trained binary models classify tomato leaf images as **Healthy** or **Unheal
 
 The original PlantVillage workflow is now binary. The separate Bangladesh experiment uses natural-background field photos and balanced training batches. The trained checkpoints are included in this repository.
 
+**First time using the project?** Follow the [installation guide](#installation-guide-windows--vs-code) below.
+
 ## Actual results
 
 | Dataset / test cohort | Images | Accuracy | Balanced accuracy | Macro F1 | Healthy recall | Unhealthy recall |
@@ -24,22 +26,93 @@ These are different image populations, not a controlled ranking of field perform
 
 ![Dataset counts](figures/dataset_counts.png)
 
-## Setup in the VS Code terminal (Windows)
+## Installation guide (Windows + VS Code)
 
-Use Python 3.12, the version recorded for these experiments. Install the VS Code Python and Jupyter extensions.
+### 1. Install the prerequisites
+
+- [Python 3.12, 64-bit Windows installer](https://www.python.org/downloads/release/python-31210/). Include the Python launcher during installation so that `py -3.12` works.
+- [Git](https://git-scm.com/downloads).
+- [Visual Studio Code](https://code.visualstudio.com/), with the **Python** and **Jupyter** extensions installed from its Extensions panel.
+
+The experiments used Python 3.12. You can install it alongside another Python version. Restart VS Code after installing Python or Git.
+
+### 2. Download and open the project
+
+In VS Code, choose **Terminal > New Terminal** and use a **PowerShell** terminal. Run these commands in the terminal, not inside the Python `>>>` prompt or a notebook cell:
 
 ```powershell
 git clone https://github.com/kzy09c/cnn-plant-disease-detection.git
 cd cnn-plant-disease-detection
+code .
+```
+
+If you already downloaded the project, choose **File > Open Folder** and select the folder containing `train.py` and `requirements.txt`. Open a terminal in that folder; skip cloning it again.
+
+### 3. Create and activate your virtual environment
+
+Each computer creates its own `.venv` folder. It is ignored by Git and should not be uploaded to the repository.
+
+```powershell
+py -3.12 --version
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
+```
+
+The terminal prompt should now start with `(.venv)`. Activate the environment again whenever you open a new terminal for this project.
+
+### 4. Install the dependencies
+
+With `(.venv)` active, run:
+
+```powershell
 python -m pip install --upgrade pip
 python -m pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cpu
 python -m pip install -r requirements.txt -r notebook-requirements.txt
+```
+
+These install PyTorch, Torchvision, NumPy, Pillow, scikit-learn, Matplotlib, SciPy, and the Jupyter packages needed by the notebooks. The CPU installation supports prediction, reviewing the notebooks, verifying results, and generating figures. You do not need to download either dataset or train a model to use the included checkpoints.
+
+If PowerShell blocks activation, run these equivalent commands directly instead:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cpu
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt -r notebook-requirements.txt
+.\.venv\Scripts\python.exe -m ipykernel install --user --name plant-tomato-cnn --display-name "Tomato CNN (Python 3.12)"
+```
+
+For subsequent terminal commands, use `.\.venv\Scripts\python.exe` in place of `python` if activation is blocked.
+
+### 5. Select the Python interpreter and notebook kernel
+
+For Python scripts, press **Ctrl+Shift+P**, choose **Python: Select Interpreter**, and select this project's `.venv\Scripts\python.exe`.
+
+With the environment active, register its notebook kernel:
+
+```powershell
 python -m ipykernel install --user --name plant-tomato-cnn --display-name "Tomato CNN (Python 3.12)"
 ```
 
-If PowerShell blocks activation, use `.\.venv\Scripts\python.exe` in place of `python`. Each computer creates its own virtual environment; it is not part of the repo. CPU supports prediction, notebooks, verification, and regenerating figures. Fresh training needs a compatible CUDA-enabled PyTorch installation and NVIDIA GPU; the recorded training environment is in `environment-lock.txt`.
+Open either `Tomato_CNN.ipynb` or `Bangladesh_CNN.ipynb`. Click **Select Kernel** in the top-right corner, then choose **Tomato CNN (Python 3.12)** under the available Jupyter kernels. You can also select the project's `.venv` under **Python Environments**. Run the cells to explore the saved experiment.
+
+If a notebook says `ModuleNotFoundError: No module named 'torch'`, select the same `.venv` kernel you installed the packages into and restart the notebook kernel before rerunning the cells.
+
+### 6. Check the installation
+
+From the project folder, run:
+
+```powershell
+python -c "import sys, torch; print('Python:', sys.executable); print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available())"
+python verify_results.py
+python predict.py manual_test/plantvillage_binary_sample_healthy.jpg
+python predict.py manual_test/bangladesh_sample_unhealthy.jpg --dataset bangladesh
+```
+
+`CUDA available: False` is expected for the CPU installation. Verification should pass for both saved experiments; prediction prints a Healthy/Unhealthy result and both class scores.
+
+### Optional: GPU installation for fresh training
+
+Fresh training requires an NVIDIA GPU and a compatible CUDA-enabled PyTorch installation. Use the [official PyTorch installation guide](https://pytorch.org/get-started/locally/) to choose a CUDA build matching your system and the project's pinned PyTorch/Torchvision versions, instead of the CPU installation command above. The recorded training environment is in [environment-lock.txt](environment-lock.txt). Then follow [Fresh training](#fresh-training) below, using a new output directory.
 
 ## Predict an image
 
