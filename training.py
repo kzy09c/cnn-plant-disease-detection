@@ -11,6 +11,7 @@ from datasets import load_dataset
 from io_utils import ROOT, read_csv, save, sha256
 from model import CHANNELS, CLASSES, TomatoCNN, prepare_batch, seed_everything
 from metrics import evaluate, bootstrap, predict
+from transfer_config import RECIPES, initialize_transfer
 
 
 def balanced_batches(pools, batch_size, rng):
@@ -24,7 +25,9 @@ def fit(mode, pretrained, images, targets, labels, training, validation, args, o
     seed_everything(seed)
     rng = np.random.default_rng(seed)
     model = TomatoCNN().cuda().to(memory_format=torch.channels_last)
-    if mode == "plantvillage_features":
+    if mode in RECIPES:
+        optimizer = initialize_transfer(model, pretrained, mode)
+    elif mode == "plantvillage_features":
         shared = {k:v for k,v in pretrained["state_dict"].items() if not k.startswith("classifier.5.")}
         missing = model.load_state_dict(shared, strict=False)
         assert set(missing.missing_keys) == {"classifier.5.weight", "classifier.5.bias"} and not missing.unexpected_keys

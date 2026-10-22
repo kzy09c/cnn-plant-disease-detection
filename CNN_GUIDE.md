@@ -9,7 +9,7 @@ The model receives a colour photograph and predicts two scores: Healthy and Unhe
 1. EXIF orientation is applied, then the image is converted to RGB and resized to 128×128. Pixel values are scaled to [-1,1]. Training and prediction use the same normalization.
 2. Four convolution blocks use 32, 64, 128, and 192 channels. Each block contains two learned 3×3 convolutions, batch normalization, ReLU, and 2×2 max pooling. Pooling changes the spatial sizes from 128 to 64, 32, 16, and finally 8 pixels per side.
 3. Adaptive average pooling reduces the last feature map to 192×2×2. Flattening produces 768 values. A dense layer maps these to 128 values; ReLU and dropout 0.35 follow.
-4. A final dense layer produces two logits. Softmax converts them to two scores summing to one. The larger score wins (argmax). Neither model uses a threshold adjusted against its test results.
+4. A final dense layer produces two logits. Softmax converts them to two scores summing to one. The larger score wins (argmax). None of the models uses a threshold adjusted against its test results.
 
 There are **939,874 trainable parameters**. The first-layer filter figures show actual learned 3×3 RGB weights, individually rescaled so they can be seen. They do not explain why a particular photograph received a prediction.
 
@@ -22,6 +22,14 @@ PlantVillage has many more unhealthy than healthy images. Its recorded binary re
 Bangladesh uses exactly **32 Healthy + 32 Unhealthy draws per batch**, cycling each training pool with reshuffling and augmentation. All available eligible training images are covered each epoch; repetitions are not independent new leaves. Cross entropy is unweighted because sampling already balances exposure. Five grouped folds compare scratch training with adapting PlantVillage features and a new binary head. Scratch had higher validation balanced accuracy and was selected. The final model uses all eligible development images for 20 epochs.
 
 Each validation fit uses 10 epochs. A fold's validation images are not used to update that model. The final test is reserved until after recipe selection. The shipped training histories and prediction CSVs are actual recorded evidence, not illustrative scores.
+
+### Additional experiment: PlantVillage first, then Bangladesh
+
+The new `train_finetune.py` starts from the complete trained PlantVillage binary model. It keeps the learned convolution filters, dense layers, BatchNorm state and Healthy/Unhealthy output head. Every Bangladesh fold starts independently from the same original checkpoint, so validation images cannot leak into the next fold through previously trained weights. All layers are then updated using Bangladesh training images and balanced batches.
+
+Five grouped development folds compare a learning rate of 0.0001 for all layers against 0.00003 for features / 0.0003 for the classifier. These fits use 20 epochs. Validation balanced accuracy selects the recipe; the final model reloads the original PlantVillage weights and trains on all 801 development images for 30 epochs. It then evaluates the reused Bangladesh holdout with fixed argmax. This is full-model fine-tuning, distinct from the earlier experiment that initialized a new output head.
+
+The resulting primary accuracy was **87.77%**, with **86.89% macro F1**, below scratch training's **94.96% / 94.75%**. Starting with learned features therefore did not improve this particular experiment. Controlled-background features and the small field dataset can make adaptation difficult; that is an explanation to investigate, not a measured causal finding. See [FINETUNING_RESULTS.md](FINETUNING_RESULTS.md) for curves, paired comparisons, unequal training budgets and the exploratory nature of repeatedly using the same holdout.
 
 ![Workflow](figures/experiment_workflow.png)
 

@@ -1,5 +1,6 @@
 """Independent checks of saved binary predictions, splits, CV summaries, and weights."""
 import argparse
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -11,7 +12,12 @@ from report_assets import DATASETS, load
 
 
 def verify(dataset, output=None):
-    _,default,filename = DATASETS[dataset]
+    fine_tuned = dataset == "bangladesh-finetuned"
+    if fine_tuned:
+        dataset = "bangladesh"
+        default,filename = ROOT/"bangladesh_finetuned_outputs","tomato_cnn_finetuned.pt"
+    else:
+        _,default,filename = DATASETS[dataset]
     out = Path(output) if output is not None else default
     result = load(out/"test_metrics.json")
     manifest = read_csv(out/"split_manifest.csv")
@@ -83,14 +89,55 @@ def verify(dataset, output=None):
               "test_csv_confusion_metrics_independently_verified":True,"all_class_precision_recall_f1_verified":True,
               "split_and_cv_groups_pixels_files_disjoint":True,"cv_summaries_and_history_lengths_checked":True,
               "test_inference_performed":False}
+    if fine_tuned:
+        verify_transfer(out,manifest,checkpoint,result)
+        verified.update(dataset="bangladesh-finetuned",full_pretrained_checkpoint_provenance_checked=True,
+                        every_training_draw_checked_against_development_folds=True,all_batches_class_balanced=True)
     save(out/"verification.json",verified)
     return verified
 
 
+def verify_transfer(out,manifest,checkpoint,result):
+    from transfer_config import RECIPES
+    record=load(out/"experiment.json")
+    source=ROOT/"outputs/tomato_cnn.pt"
+    assert sha256(source)==record["pretrained_sha256"]==checkpoint["pretrained_sha256"]
+    assert sha256(out/"split_manifest.csv")==record["manifest_sha256"]
+    assert record["recipes"]==RECIPES
+    assert checkpoint["binary_head_retained"] and checkpoint["dataset"]=="plantvillage_then_bangladesh"
+    original=read_csv(ROOT/"bangladesh_outputs/split_manifest.csv")
+    for current,previous in zip(manifest,original,strict=True):
+        for key in ("path","group","split","binary_class","cv_validation_fold","exclusion","sha256","pixel_sha256"):
+            assert current.get(key,"")==previous.get(key,"")
+    pv=torch.load(source,map_location="cpu",weights_only=True)
+    for key in ("features.0.weight","classifier.2.weight","classifier.5.weight"):
+        assert not torch.equal(pv["state_dict"][key],checkpoint["state_dict"][key]),key
+    selected=load(out/"selection.json")
+    assert selected["selected_initialization"]==result["selected_initialization"] and not selected["test_predictions_available"]
+    assert selected["selected_utc"]<load(out/"completion.json")["completed_utc"]
+    for mode in (*RECIPES,"final"):
+        fits=[(mode,None)] if mode=="final" else [(f"{mode}_fold{f}",f) for f in range(1,6)]
+        for name,fold in fits:
+            allowed={i for i,r in enumerate(manifest) if r["split"]=="development" and (fold is None or int(r["cv_validation_fold"])!=fold)}
+            seen={};batches=Counter()
+            for draw in read_csv(out/f"{name}_draws.csv"):
+                i,epoch,batch=int(draw["index"]),int(draw["epoch"]),int(draw["batch"])
+                assert i in allowed and draw["binary_class"]==manifest[i]["binary_class"]
+                batches[(epoch,batch,draw["binary_class"])]+=1
+                seen.setdefault(epoch,set()).add(i)
+            history=load(out/f"{name}_history.json")
+            assert set(seen)==set(range(1,len(history)+1))
+            assert all(ids==allowed for ids in seen.values())
+            assert all(n==record["arguments"]["batch_size"]//2 for n in batches.values())
+            assert all((e,b,CLASSES[1-CLASSES.index(c)]) in batches for e,b,c in batches)
+            assert sum(h["optimizer_steps"] for h in history)>0
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--dataset",choices=["all",*DATASETS],default="all")
+    parser.add_argument("--dataset",choices=["all",*DATASETS,"bangladesh-finetuned"],default="all")
     parser.add_argument("--output",type=Path)
     args=parser.parse_args()
     if args.output and args.dataset=="all":parser.error("Choose a single --dataset with --output")
-    for key in (DATASETS if args.dataset=="all" else [args.dataset]):print(verify(key,args.output))
+    available=[*DATASETS]+(["bangladesh-finetuned"] if (ROOT/"bangladesh_finetuned_outputs/test_metrics.json").exists() else [])
+    for key in (available if args.dataset=="all" else [args.dataset]):print(verify(key,args.output))

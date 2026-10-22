@@ -6,6 +6,8 @@ import torch
 from model import TomatoCNN, CLASSES
 from training import balanced_batches
 from verification import verify
+from io_utils import ROOT
+from transfer_config import RECIPES, initialize_transfer
 
 
 class BinaryModelTests(unittest.TestCase):
@@ -31,6 +33,19 @@ class BinaryModelTests(unittest.TestCase):
     def test_saved_binary_results_and_checkpoint_contracts(self):
         for dataset in ("plantvillage","bangladesh"):
             with self.subTest(dataset=dataset):self.assertTrue(verify(dataset)["passed"])
+
+    def test_full_transfer_retains_binary_head_and_covers_all_trainable_parameters(self):
+        checkpoint=torch.load(ROOT/"outputs/tomato_cnn.pt",map_location="cpu",weights_only=True)
+        for recipe in RECIPES:
+            with self.subTest(recipe=recipe):
+                model=TomatoCNN()
+                optimizer=initialize_transfer(model,checkpoint,recipe)
+                self.assertTrue(all(torch.equal(value,checkpoint["state_dict"][name]) for name,value in model.state_dict().items()))
+                self.assertTrue(all(p.requires_grad for p in model.parameters()))
+                optimized=[id(p) for group in optimizer.param_groups for p in group["params"]]
+                self.assertEqual(len(optimized),len(set(optimized)))
+                self.assertEqual(set(optimized),{id(p) for p in model.parameters()})
+                self.assertEqual([g["lr"] for g in optimizer.param_groups],list(RECIPES[recipe].values()))
 
 
 if __name__ == "__main__":
