@@ -13,10 +13,11 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("image", type=Path)
     selection = parser.add_mutually_exclusive_group()
-    selection.add_argument("--dataset", choices=["plantvillage", "bangladesh"], default="plantvillage")
+    selection.add_argument("--dataset", choices=["plantvillage", "bangladesh", "bangladesh-finetuned"], default="plantvillage")
     selection.add_argument("--model", type=Path, help="Optional custom binary checkpoint")
     args = parser.parse_args()
-    default = "outputs/tomato_cnn.pt" if args.dataset == "plantvillage" else "bangladesh_outputs/tomato_cnn_bangladesh.pt"
+    default = {"plantvillage":"outputs/tomato_cnn.pt", "bangladesh":"bangladesh_outputs/tomato_cnn_bangladesh.pt",
+               "bangladesh-finetuned":"bangladesh_finetuned_outputs/tomato_cnn_finetuned.pt"}[args.dataset]
     model_path = args.model or ROOT / default
     checkpoint = torch.load(model_path, map_location="cpu", weights_only=True)
     if checkpoint["classes"] != CLASSES:

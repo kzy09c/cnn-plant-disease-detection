@@ -1,0 +1,5 @@
+model,cohort,images,accuracy,balanced_accuracy,macro_f1,specificity_healthy,recall_sensitivity_unhealthy
+Bangladesh scratch,primary,139,0.9496402877697842,0.9406779661016949,0.9475103846361331,0.8813559322033898,1.0
+Bangladesh scratch,full_holdout_uncertain_labels,160,0.8375,0.8375,0.8330926015085861,0.675,1.0
+PV then Bangladesh fine-tuned,primary,139,0.8776978417266187,0.858156779661017,0.8689042995839111,0.7288135593220338,0.9875
+PV then Bangladesh fine-tuned,full_holdout_uncertain_labels,160,0.79375,0.79375,0.7857055887008402,0.6,0.9875
