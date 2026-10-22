@@ -1,0 +1,51 @@
+{
+  "n": 461,
+  "accuracy": 0.8850325379609545,
+  "balanced_accuracy": 0.8537446594621765,
+  "macro_f1": 0.848660534547369,
+  "healthy_recall": 0.7913043478260869,
+  "unhealthy_recall": 0.9161849710982659,
+  "confusion_matrix": [
+    [
+      91,
+      24
+    ],
+    [
+      29,
+      317
+    ]
+  ],
+  "class_metrics": {
+    "Healthy": {
+      "precision": 0.7583333333333333,
+      "recall": 0.7913043478260869,
+      "f1": 0.774468085106383,
+      "support": 115
+    },
+    "Unhealthy": {
+      "precision": 0.9296187683284457,
+      "recall": 0.9161849710982659,
+      "f1": 0.9228529839883551,
+      "support": 346
+    }
+  },
+  "roc_auc": 0.9426112088464439,
+  "average_precision": 0.9811447568970195,
+  "group_bootstrap_95_percent": {
+    "accuracy": [
+      0.8568329718004338,
+      0.913232104121475
+    ],
+    "balanced_accuracy": [
+      0.8174312744849775,
+      0.8932757978624184
+    ]
+  },
+  "source": "Pakistan_matched_unseen",
+  "source_url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+  "model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "eligible_manifest_sha256": "61672650a75c5243e91929fb7439a1371ffe6b63d2e70a7f49572cee72576ace",
+  "always_unhealthy_accuracy": 0.7505422993492408,
+  "always_unhealthy_balanced_accuracy": 0.5,
+  "actual_evaluation_seconds": 0.4478095999947982
+}

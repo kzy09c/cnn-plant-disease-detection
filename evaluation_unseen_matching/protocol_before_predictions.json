@@ -1,0 +1,41 @@
+{
+  "source_url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+  "source_name": "Tomato Leaf Disease Classification Dataset in Pakistan",
+  "source_id": "3mbnb82mxd",
+  "release_version": 2,
+  "checkpoint_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "threshold": 0.5,
+  "eligibility": "All 830 raw original images in the six named category folders. Exclude all 7200 augmented members. These source images were not deliberately used in training; audit overlaps before treating any photo as unseen.",
+  "training_category_mapping": {
+    "Early blight": "Tomato___Early_blight",
+    "Healthy": "Tomato___healthy",
+    "Late blight": "Tomato___Late_blight",
+    "Yellow leaf curl virus": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+    "Leaf mold": "Tomato___Leaf_Mold",
+    "Septoria leaf spot": "Tomato___Septoria_leaf_spot"
+  },
+  "expected_category_counts": {
+    "Early blight": 119,
+    "Healthy": 137,
+    "Late blight": 113,
+    "Yellow leaf curl virus": 80,
+    "Leaf mold": 186,
+    "Septoria leaf spot": 195
+  },
+  "binary_task": "Healthy folder -> Healthy; five named disease folders -> Unhealthy. Per-disease counts measure correct binary predictions, not identification of the disease name.",
+  "audit_rule": "Exclude entire families overlapping any earlier seven-source data/parent photos or the Agri-Vision4 check (decoded duplicate or pHash<=4 plus SSIM>=.97). Exclude contradictory identical-pixel references, retain one per decoded photo, group remaining structural matches.",
+  "test_rule": "Existing final checkpoint only. No retraining, threshold/crop selection or label selection from predictions. Freeze eligibility before inference.",
+  "provenance_caveat": "Web description says 7200 field images; archive actually contains 830 raw and 7200 augmented images. Source labels/location claims are not independently diagnosed/verified here.",
+  "download_integrity": "Selective ZIP byte ranges and verified member CRC32; record file SHA256. Full archive SHA256 recorded but not verified because unselected bytes are not downloaded.",
+  "publisher_archive_sha256": "2a2b36a8f972337f6d0e95e436835e55ffee5291fa07277157b40f0441f42f50",
+  "license": "CC BY 4.0 according to release page and archived licence.",
+  "additional_geometric_audit_before_predictions": {
+    "purpose": "Classical, nonlearned duplicate detection only; not CNN features or training.",
+    "opencv": "5.0.0",
+    "features": "SIFT, max 500 features, longest edge 512",
+    "shortlists": "For each candidate: top 20 other new-image pHashes within Hamming 26; then top 12 distinct prior-image pHashes within Hamming 26 for retained family representatives.",
+    "confirmation": "L2 Lowe ratio .7; at least 20 homography RANSAC inliers (3px) and >=.7 inlier ratio; convex hull >=.04 area in both; aligned grayscale correlation >=.90 over >=1000 pixels.",
+    "policy": "Propagate prior overlap across confirmed photo families. Exclude contradictory binary labels in a family. Keep one representative per remaining photo family. Frozen before any CNN predictions.",
+    "limitation": "Shortlisting is incomplete and geometric checks can miss heavily transformed copies or different views. Does not prove garden/session independence."
+  }
+}

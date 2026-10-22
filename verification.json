@@ -192,6 +192,12 @@
       "cohort": "GTLD_examples",
       "n": 7,
       "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_unseen_matching",
+      "cohort": "Pakistan_matched_unseen",
+      "n": 461,
+      "metrics_recomputed": true
     }
   ],
   "delivered_model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",

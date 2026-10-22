@@ -1,0 +1,11 @@
+{
+  "checkpoint": "best_model.pt",
+  "sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "threshold": 0.5,
+  "source_url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+  "manifest_sha256": "61672650a75c5243e91929fb7439a1371ffe6b63d2e70a7f49572cee72576ace",
+  "preprocessing": "EXIF-corrected RGB; bilinear resize 160x160; x/127.5-1; no special crop/background treatment.",
+  "selection": "Existing delivered D checkpoint, selected before obtaining this new source. No training or adjustment.",
+  "reference": "Original-image publisher categories, exact duplicates and contradictory-pixel references audited before prediction.",
+  "scope_review_before_prediction": "Fixed seed source-category previews and accepted geometric duplicate QA inspected before inference. Publisher references retained. Natural-background images include some distant/partial views. This is binary Healthy/Unhealthy evaluation broken down by matched disease category, not a disease-name classifier."
+}

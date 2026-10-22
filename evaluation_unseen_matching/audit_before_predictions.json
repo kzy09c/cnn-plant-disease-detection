@@ -1,0 +1,45 @@
+{
+  "source_url": "https://data.mendeley.com/datasets/3mbnb82mxd/2",
+  "downloaded_originals": 830,
+  "downloaded_classes": {
+    "Unhealthy": 693,
+    "Healthy": 137
+  },
+  "eligible_images": 461,
+  "eligible_classes": {
+    "Unhealthy": 346,
+    "Healthy": 115
+  },
+  "eligible_categories": {
+    "Early blight": 76,
+    "Healthy": 115,
+    "Septoria leaf spot": 61,
+    "Late blight": 30,
+    "Yellow leaf curl virus": 33,
+    "Leaf mold": 146
+  },
+  "eligible_detected_groups": 461,
+  "exclusions": {
+    "photo family overlaps earlier data (hash/structural or geometric)": 357,
+    "duplicate/cropped/resized photo within new source": 12
+  },
+  "reference_records_including_parents": 51059,
+  "reference_manifest_sha256": "dd378a1025a594b8579abeed4b0606218cde0bbeb744f2bb7e2af52bef23c5b4",
+  "new_manifest_sha256": "61672650a75c5243e91929fb7439a1371ffe6b63d2e70a7f49572cee72576ace",
+  "image_cache_sha256": "a906c1dcb3ddef5901b32d4aaea271dad2507e61b2a9bcb7ec417e7a56cc7ad5",
+  "duplicate_policy": "Exclude entire detected families overlapping any prior audited data; exclude contradictory identical-pixel families; retain one per decoded pixel hash; group pHash<=4 + SSIM>=.97 near matches for uncertainty.",
+  "label_policy": "Publisher original-image categories retained. No model inference has occurred during selection/audit.",
+  "limitations": "Publisher labels are not independently diagnosed here. Similarity checks may miss crops, alternate views and garden/session relationships. Group intervals do not capture those missing relationships.",
+  "additional_geometric_audit": {
+    "purpose": "Classical, nonlearned duplicate detection only; not CNN features or training.",
+    "opencv": "5.0.0",
+    "features": "SIFT, max 500 features, longest edge 512",
+    "shortlists": "For each candidate: top 20 other new-image pHashes within Hamming 26; then top 12 distinct prior-image pHashes within Hamming 26 for retained family representatives.",
+    "confirmation": "L2 Lowe ratio .7; at least 20 homography RANSAC inliers (3px) and >=.7 inlier ratio; convex hull >=.04 area in both; aligned grayscale correlation >=.90 over >=1000 pixels.",
+    "policy": "Propagate prior overlap across confirmed photo families. Exclude contradictory binary labels in a family. Keep one representative per remaining photo family. Frozen before any CNN predictions.",
+    "limitation": "Shortlisting is incomplete and geometric checks can miss heavily transformed copies or different views. Does not prove garden/session independence."
+  },
+  "confirmed_local_geometric_pairs": 71,
+  "additional_prior_geometric_families": 28,
+  "prior_geometric_distinct_reference_images": 50544
+}

@@ -1,0 +1,159 @@
+{
+  "id": "3mbnb82mxd",
+  "doi": {
+    "id": "10.17632/3mbnb82mxd.2",
+    "status": "allocated",
+    "prefix": "10.17632"
+  },
+  "name": "Tomato Leaf Disease Classification Dataset in Pakistan",
+  "description": "This dataset comprises 7,200 images of tomato leaves collected from real-time agricultural field conditions in Pakistan. The images were captured using a smartphone camera under natural lighting, without controlled backgrounds, to reflect realistic field environments. The dataset includes six classes: Early Blight, Late Blight, Septoria Leaf Spot, Leaf Mold, Yellow Leaf Curl Virus, and Healthy leaves. All images are stored in JPG format with consistent resolution and were manually labeled based on visible disease symptoms. The dataset is intended to support research and development in machine learning, deep learning, and computer vision, particularly for tomato leaf disease detection and precision agriculture applications under real-world conditions.",
+  "version": 2,
+  "contributors": [
+    {
+      "institution": {
+        "id": "aa1a89e2-b5a3-5de0-9e9d-5d88dede995f",
+        "name": "Sukkur Institute of Business Administration",
+        "ror_id": "https://ror.org/03e5jvk98"
+      },
+      "contribution": "Dataset collection, image acquisition, annotation, and dataset preparation.",
+      "profile_id": "a9955e16-df5a-41bc-8101-76d9e967c011",
+      "first_name": "Mohammad Naeem",
+      "last_name": "Malik",
+      "orcid_id": "0009-0009-6389-5159"
+    },
+    {
+      "institution": {
+        "id": "aa1a89e2-b5a3-5de0-9e9d-5d88dede995f",
+        "name": "Sukkur Institute of Business Administration",
+        "ror_id": "https://ror.org/03e5jvk98"
+      },
+      "contribution": "Assistance in field data collection and image acquisition.",
+      "first_name": "Syed Hashir",
+      "last_name": "Ali",
+      "orcid_id": "0009-0002-3694-8349"
+    },
+    {
+      "institution": {
+        "id": "aa1a89e2-b5a3-5de0-9e9d-5d88dede995f",
+        "name": "Sukkur Institute of Business Administration",
+        "ror_id": "https://ror.org/03e5jvk98"
+      },
+      "contribution": "Image annotation and verification of disease labels.",
+      "first_name": "Hamid",
+      "last_name": "Ali",
+      "orcid_id": "0009-0009-7328-2129"
+    }
+  ],
+  "files": [
+    {
+      "filename": "Tomato_Leaf_Disease_Dataset_Pakistan.zip",
+      "id": "4844fda3-b66b-4b2a-bd83-775c0da974ea",
+      "content_details": {
+        "id": "7b1f38ff-98f7-42c7-a5f1-a00c1e5f81eb",
+        "sha256_hash": "2a2b36a8f972337f6d0e95e436835e55ffee5291fa07277157b40f0441f42f50",
+        "content_type": "application/x-zip-compressed",
+        "size": 726457628,
+        "created_date": "2026-02-18T09:21:04.138Z",
+        "download_url": "https://data.mendeley.com/public-files/datasets/3mbnb82mxd/files/4844fda3-b66b-4b2a-bd83-775c0da974ea/file_downloaded",
+        "view_url": "https://data.mendeley.com/public-files/datasets/3mbnb82mxd/files/4844fda3-b66b-4b2a-bd83-775c0da974ea/file_viewed",
+        "download_expiry_time": "2126-10-22T11:20:07.483057465Z"
+      },
+      "metrics": {
+        "downloads": 0,
+        "previews": 0
+      },
+      "size": 726457628,
+      "status": "COMPLETED"
+    }
+  ],
+  "versions": [
+    {
+      "version": 2,
+      "available": true,
+      "publish_date": "2026-02-18T09:53:22.691Z"
+    },
+    {
+      "version": 1,
+      "available": true,
+      "publish_date": "2026-01-30T14:20:47.7Z"
+    }
+  ],
+  "articles": [],
+  "categories": [
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-170589400",
+      "label": "Computer Science"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189720738",
+      "label": "Artificial Intelligence"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-189720754",
+      "label": "Computer Vision"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-249523402",
+      "label": "Machine Learning"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-442095486",
+      "label": "Deep Learning"
+    },
+    {
+      "id": "data.elsevier.com/vocabulary/OmniScience/Concept-603644649",
+      "label": "Agriculture"
+    }
+  ],
+  "institutions": [
+    {
+      "id": "aa1a89e2-b5a3-5de0-9e9d-5d88dede995f",
+      "name": "Sukkur Institute of Business Administration",
+      "ror_id": "https://ror.org/03e5jvk98"
+    }
+  ],
+  "metrics": {
+    "views": 0,
+    "file_downloads": 0,
+    "file_previews": 0
+  },
+  "available": true,
+  "method": "1. Download and extract the dataset files.\n2. Organize images according to the provided class folders.\n3. Use standard image preprocessing techniques such as resizing and normalization.\n4. Split the dataset into training, validation, and test sets as required.\n5. Train machine learning or deep learning models using the prepared data for tomato leaf disease classification.\n",
+  "size": 726457628,
+  "owner": {
+    "institution": {
+      "id": "aa1a89e2-b5a3-5de0-9e9d-5d88dede995f",
+      "name": "Sukkur Institute of Business Administration",
+      "ror_id": "https://ror.org/03e5jvk98"
+    },
+    "contribution": "Dataset collection, image acquisition, annotation, and dataset preparation.",
+    "profile_id": "a9955e16-df5a-41bc-8101-76d9e967c011",
+    "first_name": "Mohammad Naeem",
+    "last_name": "Malik",
+    "orcid_id": "0009-0009-6389-5159"
+  },
+  "channel": "WEB",
+  "owner_id": "a9955e16-df5a-41bc-8101-76d9e967c011",
+  "publish_date": "2026-02-18T09:53:22.691Z",
+  "data_licence": {
+    "id": "01d9c749-3c4d-4431-9df3-620b2dcfe144",
+    "description": "You can share, copy and modify this dataset so long as you give appropriate credit, provide a link to the CC BY license, and indicate if changes were made, but you may not do so in a way that suggests the rights holder has endorsed you or your use of the dataset. Note that further permission may be required for any content within the dataset that is identified as belonging to a third party.",
+    "url": "http://creativecommons.org/licenses/by/4.0",
+    "category": "Creative",
+    "short_name": "CC BY 4.0",
+    "full_name": "Creative Commons Attribution 4.0 International"
+  },
+  "related_links": [],
+  "funders": [],
+  "customer_id": "7377952c-6404-4428-bbfc-77242cfc301e",
+  "modified_on": "2026-02-18T09:21:04.102Z",
+  "created_on": "2026-01-29T17:52:57.791Z",
+  "confidential": false,
+  "links": {
+    "view": "https://data.mendeley.com/datasets/3mbnb82mxd"
+  },
+  "repository": {
+    "id": "MENDELEY_DATA",
+    "name": "Mendeley Data"
+  }
+}

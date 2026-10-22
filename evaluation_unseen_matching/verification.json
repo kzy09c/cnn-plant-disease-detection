@@ -1,0 +1,23 @@
+{
+  "independent_confusion_count_metrics": true,
+  "checkpoint_unchanged": true,
+  "cohort_frozen_before_predictions": true,
+  "photos": 461,
+  "confusion_matrix": [
+    [
+      91,
+      24
+    ],
+    [
+      29,
+      317
+    ]
+  ],
+  "model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "independent_csv_recomputation": true,
+  "all_eligible_image_hashes_checked": true,
+  "category_counts_recomputed": true,
+  "correct_predictions": 408,
+  "incorrect_predictions": 53,
+  "eligible_manifest_sha256": "61672650a75c5243e91929fb7439a1371ffe6b63d2e70a7f49572cee72576ace"
+}

@@ -4,7 +4,15 @@
   "selected_run": "mixed_attention_wild_v1",
   "model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
   "bundle_sha256": "3eb9654cbbb9a7129efa7f23e0c882ff1918cee554e7d06381640ba8559e1781",
-  "verified_evaluation_cohorts": 32,
+  "verified_evaluation_cohorts": 33,
   "unit_tests_passed": 4,
-  "cpu_cuda_smoke_passed": true
+  "cpu_cuda_smoke_passed": true,
+  "pakistan_external_evaluation": {
+    "report": "evaluation_unseen_matching/REPORT.md",
+    "tested": 461,
+    "correct": 408,
+    "accuracy": 0.8850325379609545,
+    "balanced_accuracy": 0.8537446594621765,
+    "checkpoint_unchanged": true
+  }
 }
