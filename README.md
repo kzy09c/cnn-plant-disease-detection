@@ -1,4 +1,3 @@
-<p align="center"><img src="images/spinn.gif" alt="Project GIF" width="400"></p>
 
 # Tomato leaf disease detection with a custom CNN
 
@@ -7,6 +6,8 @@ A PyTorch CNN that classifies tomato foliage as **Healthy** or **Unhealthy**. It
 The selected model is included as [`best_model.pt`](best_model.pt). It has 955,194 parameters and accepts 160 × 160 RGB images. Unhealthy includes source-labelled disease, insect damage, nutrient deficiency and other visible damage. It does not identify a specific disease.
 
 **First time using the project?** Follow the [installation guide](#installation-guide-windows--vs-code) at the bottom of this README.
+
+<p align="center"><img src="images/spinn.gif" alt="Project GIF" width="400"></p>
 
 ## Run a prediction
 
