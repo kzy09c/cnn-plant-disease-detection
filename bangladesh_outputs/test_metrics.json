@@ -1,0 +1,91 @@
+{
+  "accuracy": 0.9496402877697842,
+  "balanced_accuracy": 0.9406779661016949,
+  "precision_unhealthy": 0.9195402298850575,
+  "recall_sensitivity_unhealthy": 1.0,
+  "specificity_healthy": 0.8813559322033898,
+  "f1_unhealthy": 0.9580838323353293,
+  "macro_precision": 0.9597701149425287,
+  "macro_recall": 0.9406779661016949,
+  "macro_f1": 0.9475103846361331,
+  "weighted_f1": 0.9491078119863715,
+  "roc_auc": 1.0,
+  "average_precision": 1.0,
+  "log_loss": 0.17532014846801758,
+  "confusion_matrix": [
+    [
+      52,
+      7
+    ],
+    [
+      0,
+      80
+    ]
+  ],
+  "confusion_labels": [
+    "Healthy",
+    "Unhealthy"
+  ],
+  "per_class": {
+    "Healthy": {
+      "precision": 1.0,
+      "recall": 0.8813559322033898,
+      "f1-score": 0.9369369369369369,
+      "support": 59.0
+    },
+    "Unhealthy": {
+      "precision": 0.9195402298850575,
+      "recall": 1.0,
+      "f1-score": 0.9580838323353293,
+      "support": 80.0
+    },
+    "accuracy": 0.9496402877697842,
+    "macro avg": {
+      "precision": 0.9597701149425287,
+      "recall": 0.9406779661016949,
+      "f1-score": 0.9475103846361331,
+      "support": 139.0
+    },
+    "weighted avg": {
+      "precision": 0.953692218638882,
+      "recall": 0.9496402877697842,
+      "f1-score": 0.9491078119863715,
+      "support": 139.0
+    }
+  },
+  "dataset": "Bangladesh real-world tomato leaves, Mendeley V1",
+  "selected_initialization": "scratch",
+  "test_images": 139,
+  "healthy_images": 59,
+  "unhealthy_images": 80,
+  "test_groups": 139,
+  "checkpoint_sha256": "974b1ffb06834bd8a959cdc92dba9eeaa13a9374188edb644dd1c8869c14ad21",
+  "parameter_count": 939874,
+  "confidence_intervals": {
+    "method": "2000 percentile bootstrap draws of inferred source/similarity groups",
+    "valid_samples": 2000,
+    "accuracy_95": [
+      0.9064748201438849,
+      0.9856115107913669
+    ],
+    "balanced_accuracy_95": [
+      0.8947368421052632,
+      0.9807783018867925
+    ],
+    "macro_f1_95": [
+      0.9036009602560683,
+      0.9845173409670113
+    ],
+    "recall_unhealthy_95": [
+      1.0,
+      1.0
+    ],
+    "specificity_healthy_95": [
+      0.7894736842105263,
+      0.9615566037735849
+    ]
+  },
+  "always_unhealthy_accuracy": 0.5755395683453237,
+  "cohort": "Predefined eligible label-agreement subset of the publisher val holdout; not all released images; not independently diagnosed",
+  "prior_artifact_files_preserved": 203
+}

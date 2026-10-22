@@ -1,233 +1,94 @@
 {
-  "accuracy": 0.9845814977973568,
-  "balanced_accuracy": 0.9837892396629494,
-  "macro_precision": 0.980862409265859,
-  "macro_recall": 0.9837892396629494,
-  "macro_f1": 0.982307808843015,
-  "weighted_f1": 0.9846059500841975,
-  "macro_roc_auc_ovr": 0.9997604857104999,
-  "log_loss": 0.046386197209358215,
+  "accuracy": 0.9986233480176211,
+  "balanced_accuracy": 0.9992456246228123,
+  "precision_unhealthy": 1.0,
+  "recall_sensitivity_unhealthy": 0.9984912492456246,
+  "specificity_healthy": 1.0,
+  "f1_unhealthy": 0.9992450551109769,
+  "macro_precision": 0.9922600619195047,
+  "macro_recall": 0.9992456246228123,
+  "macro_f1": 0.9957223715492483,
+  "weighted_f1": 0.9986281975269297,
+  "roc_auc": 0.9999183946132854,
+  "average_precision": 0.9999923331285269,
+  "log_loss": 0.008341638371348381,
+  "confusion_matrix": [
+    [
+      318,
+      0
+    ],
+    [
+      5,
+      3309
+    ]
+  ],
+  "confusion_labels": [
+    "Healthy",
+    "Unhealthy"
+  ],
   "per_class": {
-    "Tomato___Bacterial_spot": {
-      "precision": 0.9743589743589743,
-      "recall": 0.9789227166276346,
-      "f1-score": 0.9766355140186916,
-      "support": 427.0
-    },
-    "Tomato___Early_blight": {
-      "precision": 0.9552238805970149,
-      "recall": 0.96,
-      "f1-score": 0.9576059850374065,
-      "support": 200.0
-    },
-    "Tomato___Late_blight": {
-      "precision": 0.9818181818181818,
-      "recall": 0.9895287958115183,
-      "f1-score": 0.9856584093872229,
-      "support": 382.0
-    },
-    "Tomato___Leaf_Mold": {
-      "precision": 0.9893617021276596,
-      "recall": 0.9893617021276596,
-      "f1-score": 0.9893617021276596,
-      "support": 188.0
-    },
-    "Tomato___Septoria_leaf_spot": {
-      "precision": 0.9857954545454546,
-      "recall": 0.980225988700565,
-      "f1-score": 0.9830028328611898,
-      "support": 354.0
-    },
-    "Tomato___Spider_mites Two-spotted_spider_mite": {
-      "precision": 0.9649122807017544,
-      "recall": 0.9821428571428571,
-      "f1-score": 0.9734513274336283,
-      "support": 336.0
-    },
-    "Tomato___Target_Spot": {
-      "precision": 0.9714285714285714,
-      "recall": 0.9679715302491103,
-      "f1-score": 0.9696969696969697,
-      "support": 281.0
-    },
-    "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
-      "precision": 0.9990583804143126,
-      "recall": 0.9897388059701493,
-      "f1-score": 0.9943767572633552,
-      "support": 1072.0
-    },
-    "Tomato___Tomato_mosaic_virus": {
-      "precision": 0.9866666666666667,
+    "Healthy": {
+      "precision": 0.9845201238390093,
       "recall": 1.0,
-      "f1-score": 0.9932885906040269,
-      "support": 74.0
-    },
-    "Tomato___healthy": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1-score": 1.0,
+      "f1-score": 0.9921996879875195,
       "support": 318.0
     },
-    "accuracy": 0.9845814977973568,
+    "Unhealthy": {
+      "precision": 1.0,
+      "recall": 0.9984912492456246,
+      "f1-score": 0.9992450551109769,
+      "support": 3314.0
+    },
+    "accuracy": 0.9986233480176211,
     "macro avg": {
-      "precision": 0.980862409265859,
-      "recall": 0.9837892396629494,
-      "f1-score": 0.982307808843015,
+      "precision": 0.9922600619195047,
+      "recall": 0.9992456246228123,
+      "f1-score": 0.9957223715492483,
       "support": 3632.0
     },
     "weighted avg": {
-      "precision": 0.9846663178851917,
-      "recall": 0.9845814977973568,
-      "f1-score": 0.9846059500841975,
+      "precision": 0.9986446584198252,
+      "recall": 0.9986233480176211,
+      "f1-score": 0.9986281975269297,
       "support": 3632.0
     }
   },
-  "confusion_matrix": [
-    [
-      418,
-      0,
-      3,
-      0,
-      1,
-      1,
-      4,
-      0,
-      0,
-      0
-    ],
-    [
-      2,
-      192,
-      4,
-      0,
-      1,
-      0,
-      0,
-      0,
-      1,
-      0
-    ],
-    [
-      2,
-      2,
-      378,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      186,
-      2,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      6,
-      0,
-      1,
-      347,
-      0,
-      0,
-      0,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      1,
-      0,
-      330,
-      4,
-      1,
-      0,
-      0
-    ],
-    [
-      1,
-      1,
-      0,
-      0,
-      1,
-      6,
-      272,
-      0,
-      0,
-      0
-    ],
-    [
-      6,
-      0,
-      0,
-      0,
-      0,
-      5,
-      0,
-      1061,
-      0,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      74,
-      0
-    ],
-    [
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      0,
-      318
-    ]
+  "dataset": "plantvillage",
+  "selected_initialization": "scratch",
+  "evaluated_classes": [
+    "Healthy",
+    "Unhealthy"
   ],
-  "healthy_vs_unhealthy": {
-    "accuracy": 1.0,
-    "precision": 1.0,
-    "recall_sensitivity": 1.0,
-    "specificity": 1.0,
-    "f1": 1.0,
-    "roc_auc": 1.0,
-    "average_precision": 1.0,
-    "confusion_matrix": [
-      [
-        318,
-        0
-      ],
-      [
-        0,
-        3314
-      ]
-    ],
-    "decision_rule": "Predicted multiclass label is anything other than healthy"
-  },
-  "selected_configuration": "deeper",
   "test_images": 3632,
   "test_groups": 1918,
-  "elapsed_seconds": 604.5322895050049,
-  "completed_training_validation_seconds": 1489.9882957935333,
-  "parameter_count": 940906
+  "parameter_count": 939874,
+  "checkpoint_sha256": "180745a16069f20309bb2945a3c24d3977678e667a86ac6f30d5db8f1e8dedbf",
+  "confidence_intervals": {
+    "method": "2000 percentile bootstrap draws of inferred source/similarity groups",
+    "valid_samples": 2000,
+    "accuracy_95": [
+      0.9972539910162401,
+      0.9997225343689732
+    ],
+    "balanced_accuracy_95": [
+      0.9984939759036144,
+      0.9998477106834464
+    ],
+    "macro_f1_95": [
+      0.9912312489849362,
+      0.999141338863189
+    ],
+    "recall_unhealthy_95": [
+      0.9969879518072289,
+      0.9996954213668928
+    ],
+    "specificity_healthy_95": [
+      1.0,
+      1.0
+    ]
+  },
+  "always_unhealthy_accuracy": 0.9124449339207048,
+  "majority_class_balanced_accuracy": 0.5,
+  "test_status": "Reused benchmark test images previously evaluated with other models; not a new independent cohort",
+  "prior_experiment_files_unchanged": 86
 }
