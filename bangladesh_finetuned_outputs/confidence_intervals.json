@@ -1,0 +1,24 @@
+{
+  "method": "2000 percentile bootstrap draws of inferred source/similarity groups",
+  "valid_samples": 2000,
+  "accuracy_95": [
+    0.8201438848920863,
+    0.9280575539568345
+  ],
+  "balanced_accuracy_95": [
+    0.8009293509070295,
+    0.9143998304006783
+  ],
+  "macro_f1_95": [
+    0.8090659340659341,
+    0.9247156526448818
+  ],
+  "recall_unhealthy_95": [
+    0.9583333333333334,
+    1.0
+  ],
+  "specificity_healthy_95": [
+    0.6181818181818182,
+    0.84
+  ]
+}

@@ -4,6 +4,7 @@ __pycache__/
 tmp/
 outputs/*.npz
 bangladesh_outputs/*.npz
+bangladesh_finetuned_outputs/*.npz
 runs/
 *.zip
 *.pid

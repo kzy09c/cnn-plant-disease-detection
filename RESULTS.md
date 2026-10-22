@@ -111,3 +111,7 @@ Healthy recall is the fraction of healthy leaves recognized as healthy (also cal
 95% intervals use 2,000 bootstrap resamples of the recorded image/similarity groups. These groups have incomplete plant/photo-session metadata. The intervals do not capture all label, source-grouping, or deployment uncertainty; a degenerate interval from no observed class errors does not prove perfect future recall.
 
 Both models use the same 939,874-parameter custom CNN at 128×128 RGB, [-1,1] normalization, and fixed argmax decisions. PlantVillage uses class-weighted CE and a fixed scratch recipe with five CV estimates. Bangladesh compares scratch against PlantVillage feature adaptation using mean final-epoch CV balanced accuracy, then refits the selected scratch recipe. Each CV fit uses 10 epochs; final fits use 20. Bangladesh uses exactly 32/32 class draws per training batch, without additional class weights. Full training configurations and artifact import provenance are in each experiment.json.
+
+## Additional sequential-training experiment
+
+See [FINETUNING_RESULTS.md](FINETUNING_RESULTS.md) for the full PlantVillage binary CNN fine-tuned on Bangladesh, its comparison against scratch, and the reused-holdout/unequal-budget limitations. The original two experiments above retain their recorded evidence.
