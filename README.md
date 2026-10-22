@@ -24,6 +24,8 @@ These are different image populations, not a controlled ranking of field perform
 
 **New sequential-training experiment:** [fine-tuning results and comparison](FINETUNING_RESULTS.md), [comparison CSV](FINETUNING_RESULTS.csv), and [executed notebook](PlantVillage_Bangladesh_Finetuning.ipynb). This model keeps the entire trained PlantVillage binary CNN and updates all layers on Bangladesh. It scored below the Bangladesh scratch model on the same previously inspected holdout, so scratch remains the default Bangladesh model. The comparison is exploratory and uses different training budgets; it is not a new independent test.
 
+**Additional tests of that fine-tuned model:** [PlantVillage and internet results](CROSS_DATASET_RESULTS.md), with [CSV summary](CROSS_DATASET_RESULTS.csv). It scored **66.71% accuracy / 49.88% macro F1** on all 3,632 reserved PlantVillage images, showing substantially reduced retention of its original domain. On a fixed, balanced 16-photo internet convenience sample it got **11/16 correct (68.75% accuracy / 68.63% macro F1)**. That web sample uses source descriptions and manual visual health references; it is illustrative, not validated internet-wide accuracy. Source URLs, pre-prediction labels, overlap checks and individual predictions are included.
+
 ![Shared CNN architecture](figures/cnn_architecture.png)
 
 ![Experiment workflow](figures/experiment_workflow.png)
@@ -160,6 +162,7 @@ The notebooks show actual saved outputs without retraining or another test infer
 python verify_results.py
 python make_report.py
 python report_finetune.py
+python report_cross_evaluation.py
 python execute_notebook.py Tomato_CNN.ipynb
 python execute_notebook.py Bangladesh_CNN.ipynb
 python execute_notebook.py PlantVillage_Bangladesh_Finetuning.ipynb

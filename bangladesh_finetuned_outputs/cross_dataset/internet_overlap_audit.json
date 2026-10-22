@@ -1,0 +1,9 @@
+{
+  "phash_max_distance": 4,
+  "minimum_confirmatory_ssim": 0.97,
+  "plantvillage_reference_images": 18160,
+  "bangladesh_reference_images": 1030,
+  "within_web_confirmed_pairs": [],
+  "overlap_exclusions": [],
+  "limitation": "Resizing/cropping and missing source/plant IDs can evade this conservative check"
+}

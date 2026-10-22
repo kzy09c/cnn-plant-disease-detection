@@ -85,3 +85,7 @@ python train_finetune.py --output runs/bangladesh-finetuned-new
 New computers need both source datasets downloaded and the PlantVillage fingerprint cache for fresh training. Use python download_data.py, python download_bangladesh.py, and python ensure_plantvillage_fingerprints.py first. Prediction, verification and notebook review use the tracked checkpoint/results on CPU.
 
 The checkpoint is bangladesh_finetuned_outputs/tomato_cnn_finetuned.pt. All new evidence is stored separately in bangladesh_finetuned_outputs/. Dataset attribution and label/grouping limitations remain in DATA_SOURCES.md and BANGLADESH_LICENSE.txt. Rebuilding the report never runs inference; rebuilding the notebook source clears its displayed outputs, which can be refreshed with execute_notebook.py.
+
+## Additional testing of this frozen checkpoint
+
+See [CROSS_DATASET_RESULTS.md](../CROSS_DATASET_RESULTS.md) for its later PlantVillage retention check and fixed internet-photo convenience sample. Those results preserve the weights and the original Bangladesh evidence; the small web sample has weak reference labels.

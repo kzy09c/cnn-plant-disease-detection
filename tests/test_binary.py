@@ -8,9 +8,19 @@ from training import balanced_batches
 from verification import verify
 from io_utils import ROOT
 from transfer_config import RECIPES, initialize_transfer
+from PIL import Image
+from metrics import image_hash, distances
 
 
 class BinaryModelTests(unittest.TestCase):
+    def test_overlap_fingerprints_accept_pil_images_and_distinguish_content(self):
+        pattern=np.random.default_rng(42).integers(0,256,(128,128,3),dtype=np.uint8)
+        fingerprint=image_hash(Image.fromarray(pattern))
+        self.assertEqual(fingerprint.shape,(8,))
+        self.assertEqual(int(distances(fingerprint[None],fingerprint[None])[0,0]),0)
+        other=image_hash(Image.fromarray(np.flip(pattern,axis=1).copy()))
+        self.assertGreater(int(distances(fingerprint[None],other[None])[0,0]),4)
+
     def test_model_has_two_outputs_and_recorded_parameter_count(self):
         torch.set_num_threads(2)
         model=TomatoCNN().eval()
