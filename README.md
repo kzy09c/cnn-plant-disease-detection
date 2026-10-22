@@ -23,7 +23,7 @@ For a standalone copy, download [`tomato_cnn_inference.zip`](tomato_cnn_inferenc
 
 ## Measured results
 
-These held-out results use the delivered seven-source model, selected using validation data. Balanced accuracy averages Healthy and Unhealthy recall, which matters because several tests contain very few Healthy images.
+These held-out results use the delivered seven-source model, selected using validation data. Each source below also contributed separate training images. Balanced accuracy averages Healthy and Unhealthy recall, which matters because several tests contain very few Healthy images.
 
 | Dataset | Test images | Accuracy | Balanced accuracy |
 |---|---:|---:|---:|
@@ -39,9 +39,30 @@ PlantWild is a curated internet-scene check with 26 apparently Healthy and 407 s
 
 The original target of 90% balanced accuracy on each of the five initial benchmark sources was met on three: Bangladesh and PlantDoc remained below target. The later PlantWild check also remains below 90%. Older benchmarks were inspected in previous work, so their comparisons are exploratory. The annotated-region check assumes supplied bounding boxes.
 
-See [`RESULTS.md`](RESULTS.md) for all experiments, class recalls, macro F1, confusion matrices and uncertainty. [`MODEL_CARD.md`](MODEL_CARD.md) describes intended use and limitations.
+See [`RESULTS.md`](RESULTS.md) for the original training experiments, class recalls, macro F1, confusion matrices and uncertainty. [`MODEL_CARD.md`](MODEL_CARD.md) describes intended use and limitations.
 
 ![Held-out balanced accuracy](figures/comparison.png)
+
+## Pakistan dataset: external category-matched test
+
+The unchanged model was also tested using the [Tomato Leaf Disease Classification Dataset in Pakistan, release 2](https://data.mendeley.com/datasets/3mbnb82mxd/2). Its six category names also occur in the training data. The model still predicts **Healthy or Unhealthy**; the table breaks down correct binary decisions by the publisher's disease category.
+
+The archive contains 830 raw images and 7,200 augmented images. Only raw images were considered. Before prediction, 357 entries from photo families overlapping earlier data and 12 additional duplicate/cropped/resized copies were excluded. The remaining **461 images** had no detected matches in the recorded hash, structural and geometric checks. The whole release cannot be described as an independent unseen collection; undetected overlap and shared acquisition sessions can remain.
+
+**408/461 correct (88.50% accuracy), 85.37% balanced accuracy, 84.87% macro F1.** The model was not retrained, and its threshold stayed at 0.5.
+
+| Reference category | Correct / tested | Incorrect | Correct rate |
+|---|---:|---:|---:|
+| Healthy | 91 / 115 | 24 | 79.13% |
+| Early blight | 68 / 76 | 8 | 89.47% |
+| Late blight | 26 / 30 | 4 | 86.67% |
+| Leaf mold | 146 / 146 | 0 | 100.00% |
+| Septoria leaf spot | 60 / 61 | 1 | 98.36% |
+| Yellow leaf curl virus | 17 / 33 | 16 | 51.52% |
+
+Leaf mold and Septoria performed strongly in this cohort. Yellow leaf curl was the weakest check: 16 of its 33 images were incorrectly marked Healthy. The overall balanced accuracy remains below the 90% target, and this result does not establish internet-wide accuracy.
+
+Read the [full report](evaluation_unseen_matching/REPORT.md), [individual predictions](evaluation_unseen_matching/predictions.csv), [all 830 audit decisions](evaluation_unseen_matching/audit_manifest.csv) and [dataset source/download guide](dataset_sources/pakistan/README.md). The source photographs are available from the original CC BY 4.0 release; this repository includes metadata, download tools and evaluation evidence. Saved metrics can be checked without downloading the images using `python verify_results.py`.
 
 ## Architecture and training
 
@@ -100,6 +121,8 @@ Arrows indicate order, not a shell command. PlantWild also requires archived sou
 | `evaluate.py`, `verify_results.py`, `report.py` | Fresh evaluation, saved-result verification and local reporting |
 | `runs/` | Completed checkpoints, configurations, histories, draw counts and historical source snapshots |
 | `evaluation_a/` through `evaluation_final/` | Frozen identities, individual predictions and metrics |
+| `evaluation_unseen_matching/` | Pakistan external-test report, predictions, counts and frozen audit evidence |
+| `dataset_sources/pakistan/` | Original dataset link, attribution, licence and frozen release metadata |
 | `RESULTS.md`, `RESULTS.csv`, `figures/` | Measured results and numerical plots |
 | `tomato_cnn_inference.zip` | Standalone inference package |
 
@@ -172,7 +195,7 @@ python -m unittest discover -s tests -v
 python predict.py "C:\path\to\tomato_leaf.jpg"
 ```
 
-Replace the image path with one of your own tomato-leaf photographs. `CUDA available: False` is expected for the CPU installation. Verification checks 32 saved evaluation cohorts and their checkpoint identities. The two checks requiring local dataset manifests are skipped in a fresh clone. Prediction prints a Healthy/Unhealthy result and both model probabilities.
+Replace the image path with one of your own tomato-leaf photographs. `CUDA available: False` is expected for the CPU installation. Verification checks 33 saved evaluation cohorts, including the Pakistan test, and their checkpoint identities. The two checks requiring local dataset manifests are skipped in a fresh clone. Prediction prints a Healthy/Unhealthy result and both model probabilities.
 
 ### Optional: GPU installation for fresh training
 

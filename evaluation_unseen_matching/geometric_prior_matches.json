@@ -1,0 +1,982 @@
+[
+  {
+    "candidate": 2,
+    "reference": {
+      "source": "TomatoDisease_parent",
+      "split": "reference_parent",
+      "path": "\\\\?\\C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\extracted\\Tomato-Disease\\valid\\images\\1576389-early-20blight-20symptoms_jpg.rf.d7148776a0ad6af16f9712cb01f737d4.jpg",
+      "phash": "4af0bcff0a0b684c",
+      "pixel_sha256": "5552c60840ddda1f60f73a0abe0597bdc1c628bea55082ecfdf29deb34b46617"
+    },
+    "inliers": 108,
+    "good_matches": 120,
+    "inlier_ratio": 0.9,
+    "matched_area_fractions": [
+      0.5518735501305888,
+      0.5105583907591758
+    ],
+    "aligned_gray_correlation": 0.9986036834467621,
+    "homography": [
+      [
+        1.3437888688369983,
+        0.00035274007205587915,
+        -0.4179953106253658
+      ],
+      [
+        0.0012279616698915195,
+        1.9668167669783647,
+        -0.514177846152035
+      ],
+      [
+        3.603521258266423e-06,
+        4.640541263899888e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 101,
+    "reference": {
+      "source": "PlantWild",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\plantwild\\images\\tomato early blight\\05958e93291041f4f1c2ccf313632fdd4e4f1ac5.jpg",
+      "phash": "5bdb26e2658702e4",
+      "pixel_sha256": "b30e052f906bd7a1aab4b2480ac4f2d8549f5ccda8ddf615f9df7ef9e8897068"
+    },
+    "inliers": 208,
+    "good_matches": 211,
+    "inlier_ratio": 0.985781990521327,
+    "matched_area_fractions": [
+      0.8547963022895403,
+      0.7828524801716464
+    ],
+    "aligned_gray_correlation": 0.9755053451616735,
+    "homography": [
+      [
+        1.4766993381935056,
+        4.0456995145172965e-05,
+        -0.09381181466197556
+      ],
+      [
+        8.523708869337926e-06,
+        1.476314847721268,
+        0.11077491498565624
+      ],
+      [
+        -8.649288129738848e-07,
+        1.4672496710622806e-06,
+        0.9999999999999999
+      ]
+    ]
+  },
+  {
+    "candidate": 278,
+    "reference": {
+      "source": "PlantWild",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\plantwild\\images\\tomato septoria leaf spot\\5cafc72a173c237013731d98bed5bc1b57de5189.jpg",
+      "phash": "1e62dcb6805f429e",
+      "pixel_sha256": "9632b00ba11c145846c8a035eb7a7581db0bb6a1ce6883d0a6ecf8fcf81c1493"
+    },
+    "inliers": 271,
+    "good_matches": 273,
+    "inlier_ratio": 0.9926739926739927,
+    "matched_area_fractions": [
+      0.5431482753891964,
+      0.6024536216115103
+    ],
+    "aligned_gray_correlation": 0.9913741701696952,
+    "homography": [
+      [
+        1.06904086462925,
+        0.0007896409915925789,
+        -10.289631670227056
+      ],
+      [
+        -0.00038604880760714734,
+        1.07087550902957,
+        -18.546677324714583
+      ],
+      [
+        -5.624632129882629e-07,
+        2.953445715213379e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 297,
+    "reference": {
+      "source": "PlantWild",
+      "split": "excluded",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\plantwild\\images\\tomato septoria leaf spot\\917bc2e21eaf28e666836ba8eeaaa53941cd6f88.jpg",
+      "phash": "552d009450d7fafa",
+      "pixel_sha256": "2b4225fe7795c5771f3d28801c3a09304b29f65f71562fa594988d24bac4ee07"
+    },
+    "inliers": 166,
+    "good_matches": 169,
+    "inlier_ratio": 0.9822485207100592,
+    "matched_area_fractions": [
+      0.6971931812825205,
+      0.8376194987400456
+    ],
+    "aligned_gray_correlation": 0.9843938580327021,
+    "homography": [
+      [
+        2.2956014245794996,
+        -0.0007904575534947787,
+        -3.391963151003113
+      ],
+      [
+        -0.0015024813935116637,
+        1.7697152195415478,
+        -6.557885198103833
+      ],
+      [
+        -5.390929012992099e-06,
+        1.143848443656614e-05,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 333,
+    "reference": {
+      "source": "TomatoDisease_parent",
+      "split": "reference_parent",
+      "path": "\\\\?\\C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\extracted\\Tomato-Disease\\test\\images\\IMG_3175_jpg.rf.5eb9890cb5d4a03ea407b0123ab8fd8b.jpg",
+      "phash": "6e0c86c301f5b9c7",
+      "pixel_sha256": "7d1be3b5e32b22ddb8b4f025e1f2f85875a5072cd9a6d0a3b7e55ceaaae8161c"
+    },
+    "inliers": 365,
+    "good_matches": 367,
+    "inlier_ratio": 0.9945504087193461,
+    "matched_area_fractions": [
+      0.8713260878215433,
+      0.8177284577834972
+    ],
+    "aligned_gray_correlation": 0.9998777790166108,
+    "homography": [
+      [
+        1.0000703986827424,
+        6.6263939929044e-05,
+        -0.005900401977190102
+      ],
+      [
+        -1.2975592874833344e-05,
+        1.0000158112374335,
+        0.0022799393089130973
+      ],
+      [
+        6.525416215204983e-08,
+        3.418809074292304e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 363,
+    "reference": {
+      "source": "TomatoDisease_ROI",
+      "split": "excluded",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\crops\\b7679bace4af8d3edc7dfa27dc382c948874c2ba_7.png",
+      "phash": "44b72e4a60cf31b6",
+      "pixel_sha256": "b100d6715b4eccf8e83f62486b5fcfb201ad0cb5fef0dfa8b96de10083a89bb2"
+    },
+    "inliers": 346,
+    "good_matches": 346,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.8716636122998324,
+      0.8402587600479466
+    ],
+    "aligned_gray_correlation": 0.9988572637766766,
+    "homography": [
+      [
+        0.9440573477321262,
+        0.00022471761714766255,
+        13.661483396411269
+      ],
+      [
+        6.16908789763929e-05,
+        0.9449434919178608,
+        -2.8570232495382464
+      ],
+      [
+        5.146296311483222e-07,
+        1.1750637870253958e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 365,
+    "reference": {
+      "source": "TomatoDisease_parent",
+      "split": "reference_parent",
+      "path": "\\\\?\\C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\extracted\\Tomato-Disease\\train\\images\\Tomato-Septoria-leaf-spot-118-transformed_jpeg.rf.2bb3e26372083a8a58467657118b5020.jpg",
+      "phash": "1a8d51d0a7d27a78",
+      "pixel_sha256": "11e023a4d84a4fa9c8fa79da61ae5b2d369732ebc98a3ba2d2520849b587fcc5"
+    },
+    "inliers": 321,
+    "good_matches": 322,
+    "inlier_ratio": 0.9968944099378882,
+    "matched_area_fractions": [
+      0.8460143194841282,
+      0.759368596588025
+    ],
+    "aligned_gray_correlation": 0.9885860755395022,
+    "homography": [
+      [
+        1.0006970367006527,
+        0.00045012956707550457,
+        11.909645091224672
+      ],
+      [
+        0.00020658621187365288,
+        1.0004252709359347,
+        -0.03868744795156778
+      ],
+      [
+        1.469123326435615e-06,
+        1.3124746671891823e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 378,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "validation",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato Septoria leaf spot\\b15f546f80eefead7393e83e1b1d1ff42a23475e.jpg",
+      "phash": "4b1f35c6aba69007",
+      "pixel_sha256": "2501136663be729ab7e54db61973e9dc20caefdcfcd1f730e4f75d0a575fd300"
+    },
+    "inliers": 383,
+    "good_matches": 383,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.9224261595556253,
+      0.8425941850058664
+    ],
+    "aligned_gray_correlation": 0.9996586130740949,
+    "homography": [
+      [
+        0.9997066129510999,
+        9.729134001928202e-06,
+        0.027852106735058866
+      ],
+      [
+        -6.536868759067811e-05,
+        1.0000183554052582,
+        -0.00701916211335031
+      ],
+      [
+        -3.7966559200256107e-07,
+        -2.8635390108433503e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 382,
+    "reference": {
+      "source": "PlantWild",
+      "split": "test",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\plantwild\\images\\tomato septoria leaf spot\\46733c144435a3e15fa6d88621aad9675b78fe88.jpg",
+      "phash": "05b64a4d8e6279bc",
+      "pixel_sha256": "96ce54b1545a7a039c2eece6e74480f0724a6030a389e387314ab02cfc894551"
+    },
+    "inliers": 207,
+    "good_matches": 208,
+    "inlier_ratio": 0.9951923076923077,
+    "matched_area_fractions": [
+      0.7382933721711344,
+      0.6234866201946244
+    ],
+    "aligned_gray_correlation": 0.9509187925219292,
+    "homography": [
+      [
+        1.2400098432966082,
+        -0.009991461098088303,
+        6.36827416115242
+      ],
+      [
+        0.0068230738491628475,
+        1.2258627475442778,
+        4.857959112203144
+      ],
+      [
+        -1.4395014877711585e-05,
+        -1.870007230322134e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 423,
+    "reference": {
+      "source": "TomatoDisease_parent",
+      "split": "reference_parent",
+      "path": "\\\\?\\C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\extracted\\Tomato-Disease\\train\\images\\septoria3_jpg.rf.5402210a5a63fc746e6f262b330c9a97.jpg",
+      "phash": "1736dfb08a1dc826",
+      "pixel_sha256": "273a3c3649fcc568dae0981ce08e633b383b6e165367e54959afa45cbf5ae015"
+    },
+    "inliers": 367,
+    "good_matches": 370,
+    "inlier_ratio": 0.9918918918918919,
+    "matched_area_fractions": [
+      0.7582178574173225,
+      0.7152740429980841
+    ],
+    "aligned_gray_correlation": 0.9991161523760134,
+    "homography": [
+      [
+        1.0006832869301334,
+        0.00030307178079729864,
+        -0.18568739708306012
+      ],
+      [
+        1.4548718802630531e-05,
+        0.9999223251878663,
+        -0.030319863894538564
+      ],
+      [
+        5.675636340294253e-07,
+        3.85140504461045e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 424,
+    "reference": {
+      "source": "TomatoDisease_parent",
+      "split": "reference_parent",
+      "path": "\\\\?\\C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\extracted\\Tomato-Disease\\train\\images\\septoria5_jpg.rf.046d5b27099b3c8b41169a6532c35ba6.jpg",
+      "phash": "063731c3e21c7f64",
+      "pixel_sha256": "0966a550759fe784f135f269c87e762a05063aac2aba6d60e5ab537cf86bfa7c"
+    },
+    "inliers": 351,
+    "good_matches": 351,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.5756768260953823,
+      0.5454373032943063
+    ],
+    "aligned_gray_correlation": 0.9984194782334866,
+    "homography": [
+      [
+        0.9998997721731345,
+        0.00021006716363011527,
+        -0.019266995731113772
+      ],
+      [
+        3.8517854166694986e-05,
+        0.9994182724071484,
+        -0.0002087210818272034
+      ],
+      [
+        -2.0413664516137844e-07,
+        -2.695998948172688e-08,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 431,
+    "reference": {
+      "source": "PlantWild",
+      "split": "excluded",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\plantwild\\images\\tomato septoria leaf spot\\89fe0dd2c875c61bcd9671f39ca4a64d14668d23.jpg",
+      "phash": "2a88551eafeee828",
+      "pixel_sha256": "e81bc2bf108ca608c195eb497a9571211a01a28716374c18b76745989dea1f6d"
+    },
+    "inliers": 195,
+    "good_matches": 199,
+    "inlier_ratio": 0.9798994974874372,
+    "matched_area_fractions": [
+      0.7318273287375413,
+      0.6348035352687096
+    ],
+    "aligned_gray_correlation": 0.9926160478725785,
+    "homography": [
+      [
+        0.5866562188018036,
+        0.001077825008959366,
+        -0.3142254110364826
+      ],
+      [
+        0.0001756832672894137,
+        0.5876303644842852,
+        -0.40874645318771313
+      ],
+      [
+        3.720201952334568e-08,
+        5.297618156983252e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 432,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato Septoria leaf spot\\3a48154837a1cb2ec7d7e467382a5f4790cde3c3.jpg",
+      "phash": "56a56a46786a791a",
+      "pixel_sha256": "d639ca3d9efa804ee4af35e99f8832a65785f1df710f80eca4f80066cba897c5"
+    },
+    "inliers": 388,
+    "good_matches": 389,
+    "inlier_ratio": 0.9974293059125964,
+    "matched_area_fractions": [
+      0.8278307604510643,
+      0.7764205935022617
+    ],
+    "aligned_gray_correlation": 0.9998030368042796,
+    "homography": [
+      [
+        0.9997463183927591,
+        -0.00013390888594872396,
+        0.044811352748134664
+      ],
+      [
+        6.361462216534238e-05,
+        1.0009870001912964,
+        -0.025630739463917182
+      ],
+      [
+        -3.0712205425628856e-07,
+        -3.514133411254606e-07,
+        0.9999999999999999
+      ]
+    ]
+  },
+  {
+    "candidate": 517,
+    "reference": {
+      "source": "TomatoDisease_ROI",
+      "split": "validation",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\data\\tomato_disease\\crops\\65eebbbe1259a651f5beedd164d0bf390db3adf2_0.png",
+      "phash": "02cb371f09b44dae",
+      "pixel_sha256": "34ab0e85b214d183a3df79b09767ec13890b5b4c7e6a81c02e808c5748e8a9a7"
+    },
+    "inliers": 228,
+    "good_matches": 229,
+    "inlier_ratio": 0.9956331877729258,
+    "matched_area_fractions": [
+      0.8103790293656487,
+      0.809583021461123
+    ],
+    "aligned_gray_correlation": 0.9950716103317968,
+    "homography": [
+      [
+        1.00033129252354,
+        0.0002603081896312929,
+        0.015350302301403473
+      ],
+      [
+        0.00015821633490351644,
+        1.0008303306749815,
+        -0.03477047318655582
+      ],
+      [
+        1.5873756941942248e-06,
+        4.554471355704271e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 525,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf bacterial spot\\bd2a2cc2c3b70d21cb0d5b9ad8b8e324b2345020.jpg",
+      "phash": "38cf1e2d52e42974",
+      "pixel_sha256": "077b5eb2824763cb915a72cc1df44613bde650ded3b6b8289e0a2e6220b042cb"
+    },
+    "inliers": 332,
+    "good_matches": 333,
+    "inlier_ratio": 0.996996996996997,
+    "matched_area_fractions": [
+      0.7802659827204605,
+      0.7802464623552992
+    ],
+    "aligned_gray_correlation": 0.9951002858020183,
+    "homography": [
+      [
+        0.9235757364031875,
+        -0.0644600514360517,
+        16.732745963202483
+      ],
+      [
+        0.06972955666813413,
+        0.997628652912479,
+        -17.653769911828228
+      ],
+      [
+        -7.560794239750197e-08,
+        6.071141913159827e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 572,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\3686fd4396eb17e1648082161e2403915dfbf31f.jpg",
+      "phash": "569da8f3352548a6",
+      "pixel_sha256": "c525a556cce625572541b4dd81ab8e0e95709129264aff883232ecf2f871e2a0"
+    },
+    "inliers": 376,
+    "good_matches": 379,
+    "inlier_ratio": 0.9920844327176781,
+    "matched_area_fractions": [
+      0.9399599271890167,
+      0.9103462883065018
+    ],
+    "aligned_gray_correlation": 0.9988343572606826,
+    "homography": [
+      [
+        0.9671525009093427,
+        1.5728042882531028e-05,
+        -0.0360896064065402
+      ],
+      [
+        5.001733339438281e-05,
+        0.9684031077438584,
+        -0.006624236357557338
+      ],
+      [
+        1.1698893396046394e-07,
+        -1.459212916769341e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 576,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\543b817fff45568389d2ddbe282724dc4fbbd005.jpg",
+      "phash": "49ef34969dc69070",
+      "pixel_sha256": "7ec77810e6c43de992cfd00578c10645d8b7bb6813416ab22513f4514563ed79"
+    },
+    "inliers": 459,
+    "good_matches": 459,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.9115013099990684,
+      0.8402770581150457
+    ],
+    "aligned_gray_correlation": 0.9999188842931153,
+    "homography": [
+      [
+        0.9999992921422132,
+        -8.132256874522478e-06,
+        0.0019117379728916817
+      ],
+      [
+        1.5722457374939318e-06,
+        0.9999740835021252,
+        0.0018106548333964502
+      ],
+      [
+        4.242667771622348e-09,
+        -4.2655882295117645e-08,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 577,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\0d328a2392b07772dc61b2fd3f8507519262ca69.jpg",
+      "phash": "7af6208b0fc849e5",
+      "pixel_sha256": "eda4d4e98ca0a6c9099569f596ce67e5db670cd49cd1f61f7d994a2b0eaaf3eb"
+    },
+    "inliers": 427,
+    "good_matches": 428,
+    "inlier_ratio": 0.9976635514018691,
+    "matched_area_fractions": [
+      0.8764168430661584,
+      0.815969554416777
+    ],
+    "aligned_gray_correlation": 0.9988924090131535,
+    "homography": [
+      [
+        0.9997481529288897,
+        -0.0003398692670765611,
+        0.07558916587799122
+      ],
+      [
+        6.310570596358039e-08,
+        0.998263674510515,
+        0.0163710813315143
+      ],
+      [
+        -5.5581247604771885e-08,
+        -1.0778472039762164e-06,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 578,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\3ce2cd86963ffce19ad6d11f347d417a842d6867.jpg",
+      "phash": "5687a94852dad617",
+      "pixel_sha256": "3477645dc41a6f2d9fc42ff0fc827075b3be6eb45ffcf11b8dfc6fdb883601d7"
+    },
+    "inliers": 447,
+    "good_matches": 447,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.8176791878260004,
+      0.7559572582694134
+    ],
+    "aligned_gray_correlation": 0.9999583945701617,
+    "homography": [
+      [
+        0.9999762255836068,
+        1.7106464299738147e-06,
+        0.0013859350495738303
+      ],
+      [
+        4.163147212397675e-06,
+        0.9999939742563201,
+        -0.0019580925629705476
+      ],
+      [
+        -4.725528807717607e-08,
+        7.3271399724168584e-09,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 611,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "validation",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\7638b369a72b8cc31f1b8bc37898fb3b52358e74.jpg",
+      "phash": "161c2d16c23fe1cb",
+      "pixel_sha256": "d9e3063628853b80e7a6db4f294407be67c128685afad48249914af13c7fd642"
+    },
+    "inliers": 408,
+    "good_matches": 409,
+    "inlier_ratio": 0.9975550122249389,
+    "matched_area_fractions": [
+      0.8525060291604776,
+      0.8230314198731632
+    ],
+    "aligned_gray_correlation": 0.9994921557690303,
+    "homography": [
+      [
+        0.9999648957386417,
+        4.270430963745172e-05,
+        -0.000717428379547739
+      ],
+      [
+        -2.743216717398029e-05,
+        0.9992686060013852,
+        -0.0018479758010185878
+      ],
+      [
+        -1.5746684360187676e-07,
+        1.9413389646263818e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 612,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "validation",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\c3f803966c92023494d52d98bb7260cd3c1ea8ea.jpg",
+      "phash": "76d5a90a8819f1da",
+      "pixel_sha256": "7b09121b50be1288032f172cb649fa1222be4e413680579f7036495762792688"
+    },
+    "inliers": 458,
+    "good_matches": 458,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.7611211983705712,
+      0.7362593572669333
+    ],
+    "aligned_gray_correlation": 0.9997578183001079,
+    "homography": [
+      [
+        0.9999739936395684,
+        1.0174225308844708e-05,
+        -0.0027516630647770562
+      ],
+      [
+        -1.898442371420445e-05,
+        0.9999767973087158,
+        0.005780576480352086
+      ],
+      [
+        -3.0858841335008086e-08,
+        -9.057904470113158e-08,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 613,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\f2f45d0c55b1608eb246d1faa6e987fe2dbe164f.jpg",
+      "phash": "30b53b9bd1e0cf01",
+      "pixel_sha256": "c1780b75df2b9467c7a7baaa3c20410e30073e13e6f0a081b29418355ecc7647"
+    },
+    "inliers": 393,
+    "good_matches": 396,
+    "inlier_ratio": 0.9924242424242424,
+    "matched_area_fractions": [
+      0.880165544091866,
+      0.8447789440085696
+    ],
+    "aligned_gray_correlation": 0.9996420887428119,
+    "homography": [
+      [
+        0.9997843701091673,
+        -3.592474619326774e-05,
+        0.026235730215321065
+      ],
+      [
+        -0.00010895488151520161,
+        0.9988780498403993,
+        0.03861315852714576
+      ],
+      [
+        -2.864059057454783e-07,
+        -3.212818445267254e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 624,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\afa71641971d286096c00b3184f1403c1e1fa88f.jpg",
+      "phash": "09795de486bd3a21",
+      "pixel_sha256": "35de2d78c9adea71438e9c06366e75737df63070c976938f397055a811811737"
+    },
+    "inliers": 394,
+    "good_matches": 396,
+    "inlier_ratio": 0.9949494949494949,
+    "matched_area_fractions": [
+      0.7643474483057536,
+      0.6955332314395769
+    ],
+    "aligned_gray_correlation": 0.9997132058872311,
+    "homography": [
+      [
+        0.9999947197186617,
+        -0.00034094863307101064,
+        0.03695223871143218
+      ],
+      [
+        -0.0001306843602526879,
+        0.9998015203712984,
+        0.04950361534536834
+      ],
+      [
+        2.4724257489027303e-07,
+        -9.686133419045039e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 631,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\401d22f451577e75f165ac088e4fdbc05d88ebc7.jpg",
+      "phash": "18f32d0c68a7f0cd",
+      "pixel_sha256": "1d077cb672e990b8b00b75eca57f416f212649ee041f41d0b72ce187d7001929"
+    },
+    "inliers": 365,
+    "good_matches": 365,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.866215148187829,
+      0.7622967205149356
+    ],
+    "aligned_gray_correlation": 0.9997480673228886,
+    "homography": [
+      [
+        1.000133054846363,
+        7.533864442299406e-05,
+        -0.027045586790583453
+      ],
+      [
+        4.120091283500562e-05,
+        1.0001414433668634,
+        -0.01143700544355004
+      ],
+      [
+        1.962260835212734e-07,
+        2.724704272221742e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 632,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\b8e094b9c02c3885d4414dca7b9ec968b6eeaac5.jpg",
+      "phash": "05f22e835f1482fd",
+      "pixel_sha256": "46908247c29920da627af7ab7c49c3a3c10d77772ab6282c98dd1849908ca4e7"
+    },
+    "inliers": 356,
+    "good_matches": 356,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.8510597399689396,
+      0.7439247183477835
+    ],
+    "aligned_gray_correlation": 0.998738870299027,
+    "homography": [
+      [
+        1.0000739662564169,
+        0.0002968752592265343,
+        -0.03638213966446522
+      ],
+      [
+        9.269479251762439e-05,
+        1.000331254554081,
+        46.94572411667923
+      ],
+      [
+        -2.649183439312907e-08,
+        7.332034838685327e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 633,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\7a3d4c4b18ae6e002fab907f44f268516863d17b.jpg",
+      "phash": "1b6db81663e38d42",
+      "pixel_sha256": "fc8934a865382357ab0cd675138043b32310c50ed6767ac389260bb871417c28"
+    },
+    "inliers": 369,
+    "good_matches": 371,
+    "inlier_ratio": 0.9946091644204852,
+    "matched_area_fractions": [
+      0.7891009725251221,
+      0.7133275950380594
+    ],
+    "aligned_gray_correlation": 0.9981495753572215,
+    "homography": [
+      [
+        1.0000768539192655,
+        9.111091486496214e-06,
+        -0.0006529575721770881
+      ],
+      [
+        4.229916560587327e-05,
+        1.0001052648362152,
+        35.984987687170445
+      ],
+      [
+        4.66045306747953e-08,
+        2.1537073471261408e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 634,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "train",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato leaf yellow virus\\ad0d653aeaf14936c31c304c71ddc6bee412c20a.jpg",
+      "phash": "70e0a127e622fc7c",
+      "pixel_sha256": "827b545ec55c2ea1f985659632a3a5df541144347514333fe723d919002ce95c"
+    },
+    "inliers": 406,
+    "good_matches": 406,
+    "inlier_ratio": 1.0,
+    "matched_area_fractions": [
+      0.8448759926899183,
+      0.7424734091866375
+    ],
+    "aligned_gray_correlation": 0.9997337651033088,
+    "homography": [
+      [
+        0.9998526602897523,
+        -8.97359811231081e-05,
+        0.018502118742073484
+      ],
+      [
+        -3.974952692503723e-05,
+        0.999858639731917,
+        0.010614729173592373
+      ],
+      [
+        -2.4980297155022795e-07,
+        -4.983748715136163e-07,
+        1.0
+      ]
+    ]
+  },
+  {
+    "candidate": 655,
+    "reference": {
+      "source": "PlantDoc",
+      "split": "validation",
+      "path": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\Documents\\ChatGPT\\diep2\\plant_tomato\\data\\plantdoc\\train\\Tomato mold leaf\\7e987e897cd91eb391f909a1d168270a7e2279a7.jpg",
+      "phash": "582631d27dd41a9d",
+      "pixel_sha256": "3616ef25b77ea7d15997289990ba546b7086cf541a0659ade515139ba9ef4381"
+    },
+    "inliers": 374,
+    "good_matches": 378,
+    "inlier_ratio": 0.9894179894179894,
+    "matched_area_fractions": [
+      0.842825194670215,
+      0.8025899532794194
+    ],
+    "aligned_gray_correlation": 0.9998028351728063,
+    "homography": [
+      [
+        1.000037420827039,
+        -4.4901353390684265e-05,
+        0.012502302294012741
+      ],
+      [
+        -2.2815868119018187e-05,
+        0.9990892083316671,
+        0.003726174283649372
+      ],
+      [
+        1.190154577452249e-07,
+        2.0021226596483507e-08,
+        1.0
+      ]
+    ]
+  }
+]

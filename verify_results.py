@@ -17,12 +17,29 @@ if __name__=='__main__':
     checks=[]
     directories=['evaluation_a','evaluation_b','evaluation_c']
     if (ROOT/'evaluation_final/metrics.json').exists():directories.append('evaluation_final')
+    if (ROOT/'evaluation_unseen_matching/metrics.json').exists():directories.append('evaluation_unseen_matching')
     for directory in directories:
         out=ROOT/directory
         predictions=read_csv(out/'predictions.csv')
         results=json.loads((out/'metrics.json').read_text())
         frozen=json.loads((out/'frozen_model.json').read_text())
         assert hashlib.sha256(checkpoint_path(frozen['checkpoint']).read_bytes()).hexdigest()==frozen['sha256']
+        if directory=='evaluation_unseen_matching':
+            assert results['model_sha256']==frozen['sha256']
+            assert hashlib.sha256((out/'audit_manifest.csv').read_bytes()).hexdigest()==frozen['manifest_sha256']==results['eligible_manifest_sha256']
+            audit=read_csv(out/'audit_manifest.csv')
+            eligible={r['source_member']:r for r in audit if not r['exclusion']}
+            assert len(eligible)==len(predictions)==461
+            assert {r['source_member'] for r in predictions}==set(eligible)
+            assert len({r['pixel_sha256'] for r in predictions})==len(predictions)
+            for r in predictions:
+                assert all(r[k]==eligible[r['source_member']][k] for k in ['label','sha256','pixel_sha256','category'])
+            for category in read_csv(out/'category_metrics.csv'):
+                subset=[r for r in predictions if r['category']==category['category']]
+                assert len(subset)==int(category['n'])
+                assert sum(r['correct']=='True' for r in subset)==int(category['correct'])
+                assert abs(float(category['accuracy'])-int(category['correct'])/len(subset))<1e-12
+            results={results['source']:results}
         for source,recorded in results.items():
             if source in ['TomatoVillage_external','TomatoVillage_matched_test']:
                 rows=[r for r in predictions if r['source']=='TomatoVillage' and (source.endswith('_external') or r['path'] in matched)]

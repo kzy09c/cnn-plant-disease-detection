@@ -1,0 +1,2 @@
+# Optional classical duplicate-audit dependency; install alongside requirements.txt.
+opencv-python-headless==5.0.0.93
