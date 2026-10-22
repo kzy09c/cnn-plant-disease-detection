@@ -1,25 +1,24 @@
 {
-  "method": "2000 percentile bootstrap resamples of whole test leaf/duplicate groups",
-  "intervals_95_percent": {
-    "accuracy": [
-      0.9792757566259176,
-      0.9893933295121269
-    ],
-    "macro_precision": [
-      0.9735758780586279,
-      0.9872560940577064
-    ],
-    "macro_recall": [
-      0.9784414458787551,
-      0.9888327686786172
-    ],
-    "macro_f1": [
-      0.9762437433337652,
-      0.9878552240183573
-    ],
-    "weighted_f1": [
-      0.9793718837821926,
-      0.9893850181600169
-    ]
-  }
+  "method": "2000 percentile bootstrap draws of inferred source/similarity groups",
+  "valid_samples": 2000,
+  "accuracy_95": [
+    0.9972539910162401,
+    0.9997225343689732
+  ],
+  "balanced_accuracy_95": [
+    0.9984939759036144,
+    0.9998477106834464
+  ],
+  "macro_f1_95": [
+    0.9912312489849362,
+    0.999141338863189
+  ],
+  "recall_unhealthy_95": [
+    0.9969879518072289,
+    0.9996954213668928
+  ],
+  "specificity_healthy_95": [
+    1.0,
+    1.0
+  ]
 }

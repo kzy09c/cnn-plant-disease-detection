@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "device": "cpu",
+  "image": "manual_test\\bangladesh_sample_healthy.jpg",
+  "result": {
+    "model": "bangladesh_outputs/tomato_cnn_bangladesh.pt",
+    "prediction": "Unhealthy",
+    "softmax_probability": 0.786340057849884,
+    "all_classes": {
+      "Healthy": 0.21366000175476074,
+      "Unhealthy": 0.786340057849884
+    },
+    "scope": "Binary tomato whole-image leaf health classifier trained on the label-agreement subset of Bangladesh field photos; Unhealthy includes damage/stress; independent field reliability not established"
+  }
+}

@@ -1,21 +1,15 @@
 {
-  "development_image": "data/raw/color/Tomato___Bacterial_spot/00416648-be6e-4bd4-bc8d-82f43f8a7240___GCREC_Bact.Sp 3110.JPG",
-  "true_class": "Tomato___Bacterial_spot",
+  "passed": true,
+  "device": "cpu",
+  "image": "manual_test\\plantvillage_binary_sample_healthy.jpg",
   "result": {
-    "prediction": "Tomato___Bacterial_spot",
-    "softmax_probability": 0.9625197649002075,
+    "model": "outputs/tomato_cnn.pt",
+    "prediction": "Healthy",
+    "softmax_probability": 0.9999661445617676,
     "all_classes": {
-      "Tomato___Bacterial_spot": 0.9625197649002075,
-      "Tomato___Early_blight": 0.030721085146069527,
-      "Tomato___Target_Spot": 0.002295583486557007,
-      "Tomato___Tomato_Yellow_Leaf_Curl_Virus": 0.002127808751538396,
-      "Tomato___Late_blight": 0.0018827023450285196,
-      "Tomato___Septoria_leaf_spot": 0.00019715107919182628,
-      "Tomato___Spider_mites Two-spotted_spider_mite": 0.00013234620564617217,
-      "Tomato___Leaf_Mold": 0.00010356833081459627,
-      "Tomato___healthy": 1.981333662115503e-05,
-      "Tomato___Tomato_mosaic_virus": 2.3133449644774373e-07
+      "Healthy": 0.9999661445617676,
+      "Unhealthy": 3.387088145245798e-05
     },
-    "scope": "Single tomato leaf classification; field-photo performance has not been evaluated."
+    "scope": "Binary tomato leaf health classifier trained on plantvillage; unhealthy includes source disease/pest categories; independent field performance not established"
   }
 }
