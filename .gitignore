@@ -2,7 +2,9 @@
 data/
 __pycache__/
 tmp/
-outputs/*.pt
 outputs/*.npz
-tomato_cnn_results.zip
-training.pid
+bangladesh_outputs/*.npz
+runs/
+*.zip
+*.pid
+*.log

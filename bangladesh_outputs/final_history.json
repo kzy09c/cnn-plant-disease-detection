@@ -1,0 +1,162 @@
+[
+  {
+    "epoch": 1,
+    "train_loss": 0.5508156875769298,
+    "train_augmented_accuracy": 0.7020833333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2294540405273438
+  },
+  {
+    "epoch": 2,
+    "train_loss": 0.3672377973794937,
+    "train_augmented_accuracy": 0.8322916666666667,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2267534732818604
+  },
+  {
+    "epoch": 3,
+    "train_loss": 0.3064385245243708,
+    "train_augmented_accuracy": 0.8760416666666667,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2753796577453613
+  },
+  {
+    "epoch": 4,
+    "train_loss": 0.2336118737856547,
+    "train_augmented_accuracy": 0.9104166666666667,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2695708274841309
+  },
+  {
+    "epoch": 5,
+    "train_loss": 0.20100146134694416,
+    "train_augmented_accuracy": 0.9260416666666667,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2672505378723145
+  },
+  {
+    "epoch": 6,
+    "train_loss": 0.1918553054332733,
+    "train_augmented_accuracy": 0.9333333333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2382380962371826
+  },
+  {
+    "epoch": 7,
+    "train_loss": 0.1675094981988271,
+    "train_augmented_accuracy": 0.9333333333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.223525047302246
+  },
+  {
+    "epoch": 8,
+    "train_loss": 0.1622004193564256,
+    "train_augmented_accuracy": 0.9375,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.233128547668457
+  },
+  {
+    "epoch": 9,
+    "train_loss": 0.19022405246893564,
+    "train_augmented_accuracy": 0.928125,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2216813564300537
+  },
+  {
+    "epoch": 10,
+    "train_loss": 0.15108228996396064,
+    "train_augmented_accuracy": 0.9489583333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.234814167022705
+  },
+  {
+    "epoch": 11,
+    "train_loss": 0.1696762703359127,
+    "train_augmented_accuracy": 0.9427083333333334,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2213220596313477
+  },
+  {
+    "epoch": 12,
+    "train_loss": 0.1435895621776581,
+    "train_augmented_accuracy": 0.946875,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2178640365600586
+  },
+  {
+    "epoch": 13,
+    "train_loss": 0.11627112800876299,
+    "train_augmented_accuracy": 0.9583333333333334,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.226614236831665
+  },
+  {
+    "epoch": 14,
+    "train_loss": 0.10971665978431702,
+    "train_augmented_accuracy": 0.9614583333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.235764741897583
+  },
+  {
+    "epoch": 15,
+    "train_loss": 0.09796565261979898,
+    "train_augmented_accuracy": 0.9677083333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.21992826461792
+  },
+  {
+    "epoch": 16,
+    "train_loss": 0.09271426411966482,
+    "train_augmented_accuracy": 0.9729166666666667,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2202754020690918
+  },
+  {
+    "epoch": 17,
+    "train_loss": 0.09805756571392218,
+    "train_augmented_accuracy": 0.9708333333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2457067966461182
+  },
+  {
+    "epoch": 18,
+    "train_loss": 0.0689204704016447,
+    "train_augmented_accuracy": 0.978125,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.224327564239502
+  },
+  {
+    "epoch": 19,
+    "train_loss": 0.07887190108497938,
+    "train_augmented_accuracy": 0.9770833333333333,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.221167802810669
+  },
+  {
+    "epoch": 20,
+    "train_loss": 0.07115292449792227,
+    "train_augmented_accuracy": 0.971875,
+    "healthy_draws": 480,
+    "unhealthy_draws": 480,
+    "seconds": 1.2142448425292969
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "manual_test/bangladesh_sample_healthy.jpg",
+    "path": "data/bangladesh/images/94dc9e70068ac530d5bcb4adcbecdcd6e361142f.jpg",
+    "source_member": "Tomato_Leaves/Images/val/H (62).jpg",
+    "group": "bangladesh_1008",
+    "true_class": "Healthy",
+    "predicted_class": "Unhealthy",
+    "probability_Healthy": "0.21337716281414032",
+    "probability_Unhealthy": "0.7866228222846985",
+    "annotation_status": "Agreed filename/annotation labels",
+    "selection": "First of three random examples per class, seed 42, not selected for correctness"
+  },
+  {
+    "file": "manual_test/bangladesh_sample_unhealthy.jpg",
+    "path": "data/bangladesh/images/dc1d41245a7f8ecc00ed9b67817f1a6fa8b1f8a5.jpg",
+    "source_member": "Tomato_Leaves/Images/val/D (15).jpg",
+    "group": "bangladesh_876",
+    "true_class": "Unhealthy",
+    "predicted_class": "Unhealthy",
+    "probability_Healthy": "3.875090442306828e-06",
+    "probability_Unhealthy": "0.9999960660934448",
+    "annotation_status": "Agreed filename/annotation labels",
+    "selection": "First of three random examples per class, seed 42, not selected for correctness"
+  }
+]

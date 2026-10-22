@@ -1,0 +1,3 @@
+dataset,class,support,precision,recall,f1-score
+plantvillage,Healthy,318,0.9845201238390093,1.0,0.9921996879875195
+plantvillage,Unhealthy,3314,1.0,0.9984912492456246,0.9992450551109769
