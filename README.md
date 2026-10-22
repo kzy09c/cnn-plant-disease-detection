@@ -1,22 +1,20 @@
+<p align="center"><img src="images/spinn.gif" alt="Project GIF" width="400"></p>
+
 # Tomato leaf disease detection with a custom CNN
 
 A PyTorch CNN that classifies tomato foliage as **Healthy** or **Unhealthy**. It was trained from random weights across seven data sources. Later stages continue only this project's own checkpoints; no ResNet, ImageNet weights or other externally pretrained model is used.
 
 The selected model is included as [`best_model.pt`](best_model.pt). It has 955,194 parameters and accepts 160 × 160 RGB images. Unhealthy includes source-labelled disease, insect damage, nutrient deficiency and other visible damage. It does not identify a specific disease.
 
+**First time using the project?** Follow the [installation guide](#installation-guide-windows--vs-code) at the bottom of this README.
+
 ## Run a prediction
 
-Tested with Python 3.12. These commands use PowerShell on Windows:
+After installing the project, run this command from its folder with the virtual environment active:
 
 ```powershell
-git clone https://github.com/kzy09c/cnn-plant-disease-detection.git
-cd cnn-plant-disease-detection
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r inference-requirements.txt
-.\.venv\Scripts\python.exe predict.py "C:\path\to\tomato_leaf.jpg"
+python predict.py "C:\path\to\tomato_leaf.jpg"
 ```
-
-On Linux/macOS, create the environment with `python3.12 -m venv .venv` and use `.venv/bin/python` in place of `.\.venv\Scripts\python.exe`.
 
 The command returns JSON with the predicted class and both model probabilities. It uses CUDA when available and otherwise runs on CPU. Choose another checkpoint with `--model path/to/checkpoint.pt`. Use a clear, close photograph of tomato foliage. Scores are uncalibrated; the classifier does not verify plant species, locate leaves or reliably reject unfamiliar inputs.
 
@@ -105,3 +103,82 @@ Arrows indicate order, not a shell command. PlantWild also requires archived sou
 | `tomato_cnn_inference.zip` | Standalone inference package |
 
 Model SHA-256: `e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108`.
+
+## Installation guide (Windows + VS Code)
+
+### 1. Install the prerequisites
+
+- [Python 3.12 for Windows](https://www.python.org/downloads/windows/), 64-bit, including the Python launcher so `py -3.12` works.
+- [Git](https://git-scm.com/downloads).
+- [Visual Studio Code](https://code.visualstudio.com/) with the **Python** extension installed from its Extensions panel.
+
+The project was tested with Python 3.12. Restart VS Code after installing Python or Git.
+
+### 2. Download and open the project
+
+In VS Code, choose **Terminal > New Terminal** and select a **PowerShell** terminal. Enter these commands in the terminal:
+
+```powershell
+git clone https://github.com/kzy09c/cnn-plant-disease-detection.git
+cd cnn-plant-disease-detection
+code .
+```
+
+If you already downloaded the project, use **File > Open Folder** to open the folder containing `predict.py`, `best_model.pt` and `requirements.txt`. Open a terminal in that folder and skip cloning again.
+
+### 3. Create and activate a virtual environment
+
+```powershell
+py -3.12 --version
+py -3.12 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+The prompt should start with `(.venv)`. Activate it again when opening a new terminal. Each computer creates its own `.venv`; Git ignores that folder.
+
+If PowerShell blocks activation, skip it and use `.\.venv\Scripts\python.exe` instead of `python` in the commands below. For example:
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+.\.venv\Scripts\python.exe -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+```
+
+### 4. Install the dependencies
+
+With `(.venv)` active, run:
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cpu
+python -m pip install -r requirements.txt
+```
+
+This installs PyTorch, NumPy, Pillow, SciPy, scikit-learn and Matplotlib. The CPU installation supports prediction, saved-result verification and the available unit checks. The included trained model works without downloading datasets or retraining. For prediction alone, `inference-requirements.txt` can replace `requirements.txt` in the last command.
+
+### 5. Select the Python interpreter
+
+Press **Ctrl+Shift+P**, choose **Python: Select Interpreter**, and select this project's `.venv\Scripts\python.exe`. If it is missing from the list, choose **Enter interpreter path** and browse to that file. See the [VS Code environment guide](https://code.visualstudio.com/docs/python/environments) for environment selection.
+
+### 6. Check the installation and predict an image
+
+From the project folder, run:
+
+```powershell
+python -c "import sys, torch; print('Python:', sys.executable); print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available())"
+python verify_results.py
+python -m unittest discover -s tests -v
+python predict.py "C:\path\to\tomato_leaf.jpg"
+```
+
+Replace the image path with one of your own tomato-leaf photographs. `CUDA available: False` is expected for the CPU installation. Verification checks 32 saved evaluation cohorts and their checkpoint identities. The two checks requiring local dataset manifests are skipped in a fresh clone. Prediction prints a Healthy/Unhealthy result and both model probabilities.
+
+### Optional: GPU installation for fresh training
+
+Fresh training requires an NVIDIA GPU, a compatible CUDA-enabled PyTorch installation and the additional data/audit inputs described in [Training reproduction](#training-reproduction). Use the [official PyTorch installation guide](https://pytorch.org/get-started/locally/) to install a CUDA build compatible with your system and the pinned PyTorch 2.11.0 version, in place of the CPU installation command above. The recorded training environment used PyTorch 2.11.0+cu128 on an RTX 4070 Ti SUPER.
+
+### Linux and macOS
+
+Create the environment with `python3.12 -m venv .venv` and activate it with `source .venv/bin/activate`. Install `requirements.txt` with `python -m pip install -r requirements.txt`, then run the same verification and prediction commands with your own image path. CPU inference is supported; the training scripts require CUDA.
+
+<p align="center"><img src="images/anime-bocchi.gif" alt="Project GIF" width="400"></p>

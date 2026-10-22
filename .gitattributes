@@ -6,3 +6,4 @@
 *.pt -text
 *.zip -text
 *.png -text
+*.gif -text
