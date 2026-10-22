@@ -1,0 +1,19 @@
+{
+  "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_v1\\best.pt",
+  "sha256": "d71332ba576af7df3d0b74d01132a733be5ad344e1fb9a43a2ee216ea1cef9ea",
+  "validation_selection": {
+    "name": "mixed_attention_v1",
+    "best_validation_score": 0.8344968302468543,
+    "best_epoch": 26,
+    "epochs_run": 30,
+    "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_v1\\best.pt",
+    "recipe": {
+      "strong": true,
+      "attention": true,
+      "mixup": 0.1,
+      "lr": 0.0007
+    }
+  },
+  "threshold": 0.5,
+  "test_rule": "All tests evaluated after validation selection; no further tuning in this experiment"
+}

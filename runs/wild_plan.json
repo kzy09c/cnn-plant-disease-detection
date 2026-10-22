@@ -1,0 +1,10 @@
+{
+  "initial_checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_extra_v1\\best.pt",
+  "initialization": "Only our own previously trained custom CNN",
+  "dataset": "Seven sources; filtered PlantWild added after prior exploratory results",
+  "epochs": 25,
+  "steps": 64,
+  "batch_size": 112,
+  "lr_multiplier": 0.3,
+  "selection": "Compare C and D on the same seven development-validation cohorts; fixed .5 decisions; no PlantWild test prediction before selection"
+}

@@ -1,0 +1,38 @@
+accuracy,category,correct,n,source
+0.6949152542372882,Healthy,41,59,Bangladesh
+0.9625,Unhealthy,77,80,Bangladesh
+0.5,Healthy,4,8,Internet16
+0.875,Unhealthy,7,8,Internet16
+1.0,Tomato___Bacterial_spot,8,8,PlantDoc
+1.0,Tomato___Early_blight,9,9,PlantDoc
+0.9,Tomato___Late_blight,9,10,PlantDoc
+0.8333333333333334,Tomato___Leaf_Mold,5,6,PlantDoc
+1.0,Tomato___Septoria_leaf_spot,11,11,PlantDoc
+0.8333333333333334,Tomato___Tomato_Yellow_Leaf_Curl_Virus,5,6,PlantDoc
+1.0,Tomato___Tomato_mosaic_virus,10,10,PlantDoc
+0.5555555555555556,Tomato___healthy,5,9,PlantDoc
+1.0,Tomato___Bacterial_spot,427,427,PlantVillage
+0.99,Tomato___Early_blight,198,200,PlantVillage
+0.9869109947643979,Tomato___Late_blight,377,382,PlantVillage
+1.0,Tomato___Leaf_Mold,188,188,PlantVillage
+0.9971751412429378,Tomato___Septoria_leaf_spot,353,354,PlantVillage
+0.8154761904761905,Tomato___Spider_mites Two-spotted_spider_mite,274,336,PlantVillage
+0.8612099644128114,Tomato___Target_Spot,242,281,PlantVillage
+0.9888059701492538,Tomato___Tomato_Yellow_Leaf_Curl_Virus,1060,1072,PlantVillage
+0.6081081081081081,Tomato___Tomato_mosaic_virus,45,74,PlantVillage
+1.0,Tomato___healthy,318,318,PlantVillage
+0.9832402234636871,0-Healthy,528,537,TLID
+0.656319290465632,1-Miner,296,451,TLID
+0.9728601252609603,2-BacterialSpot,466,479,TLID
+0.7414187643020596,3-PowderyMildew,324,437,TLID
+0.9872881355932204,4-PowderyMildew_Miner,466,472,TLID
+0.988,5-BacterialSpot_Miner,494,500,TLID
+0.4482758620689655,6-WhiteFly,78,174,TLID
+0.9879032258064516,Early_blight,490,496,TomatoVillage
+0.2361111111111111,Healthy,51,216,TomatoVillage
+0.9922566371681416,Late_blight,897,904,TomatoVillage
+0.9765625,Leaf Miner,1000,1024,TomatoVillage
+0.9978632478632479,Magnesium Deficiency,934,936,TomatoVillage
+1.0,Nitrogen Deficiency,360,360,TomatoVillage
+1.0,Pottassium Deficiency,72,72,TomatoVillage
+1.0,Spotted Wilt Virus,517,517,TomatoVillage

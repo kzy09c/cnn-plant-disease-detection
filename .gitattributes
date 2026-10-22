@@ -1,0 +1,8 @@
+* text=auto eol=lf
+
+# Preserve historical audit bytes and checkpoint identities exactly.
+/runs/** -text
+/evaluation_*/** -text
+*.pt -text
+*.zip -text
+*.png -text

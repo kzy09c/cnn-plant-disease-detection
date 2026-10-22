@@ -1,0 +1,10 @@
+{
+  "status": "training, frozen evaluation, inference bundle and verification complete",
+  "broad_internet_accuracy": "Not established; conditional benchmark and weak-reference web checks only",
+  "selected_run": "mixed_attention_wild_v1",
+  "model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "bundle_sha256": "3eb9654cbbb9a7129efa7f23e0c882ff1918cee554e7d06381640ba8559e1781",
+  "verified_evaluation_cohorts": 32,
+  "unit_tests_passed": 4,
+  "cpu_cuda_smoke_passed": true
+}

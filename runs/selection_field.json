@@ -1,0 +1,31 @@
+{
+  "runs": [
+    {
+      "name": "mixed_attention_field_v1",
+      "best_validation_score": 0.866931094678234,
+      "best_epoch": 37,
+      "epochs_run": 40,
+      "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_field_v1\\best.pt",
+      "recipe": {
+        "strong": true,
+        "attention": true,
+        "mixup": 0.1,
+        "lr": 0.0007
+      }
+    }
+  ],
+  "selected": {
+    "name": "mixed_attention_field_v1",
+    "best_validation_score": 0.866931094678234,
+    "best_epoch": 37,
+    "epochs_run": 40,
+    "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_field_v1\\best.pt",
+    "recipe": {
+      "strong": true,
+      "attention": true,
+      "mixup": 0.1,
+      "lr": 0.0007
+    }
+  },
+  "test_evaluation_done": false
+}

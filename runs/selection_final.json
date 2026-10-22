@@ -1,0 +1,380 @@
+{
+  "candidates": [
+    {
+      "name": "mixed_attention_field_v1",
+      "best_validation_score": 0.866931094678234,
+      "best_epoch": 37,
+      "epochs_run": 40,
+      "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_field_v1\\best.pt",
+      "recipe": {
+        "strong": true,
+        "attention": true,
+        "mixup": 0.1,
+        "lr": 0.0007
+      },
+      "common_validation_score": 0.7665493309548199,
+      "common_validation": {
+        "Bangladesh": {
+          "n": 161,
+          "accuracy": 0.9130434782608695,
+          "balanced_accuracy": 0.9148351648351649,
+          "macro_f1": 0.9120630461922596,
+          "healthy_recall": 0.9285714285714286,
+          "unhealthy_recall": 0.9010989010989011,
+          "confusion_matrix": [
+            [
+              65,
+              5
+            ],
+            [
+              9,
+              82
+            ]
+          ]
+        },
+        "PlantDoc": {
+          "n": 132,
+          "accuracy": 0.8636363636363636,
+          "balanced_accuracy": 0.8016528925619835,
+          "macro_f1": 0.6961636828644502,
+          "healthy_recall": 0.7272727272727273,
+          "unhealthy_recall": 0.8760330578512396,
+          "confusion_matrix": [
+            [
+              8,
+              3
+            ],
+            [
+              15,
+              106
+            ]
+          ]
+        },
+        "PlantVillage": {
+          "n": 2906,
+          "accuracy": 0.9363386097728836,
+          "balanced_accuracy": 0.9651075066012825,
+          "macro_f1": 0.848829476578987,
+          "healthy_recall": 1.0,
+          "unhealthy_recall": 0.930215013202565,
+          "confusion_matrix": [
+            [
+              255,
+              0
+            ],
+            [
+              185,
+              2466
+            ]
+          ]
+        },
+        "TLID": {
+          "n": 2440,
+          "accuracy": 0.9135245901639344,
+          "balanced_accuracy": 0.9347159551081801,
+          "macro_f1": 0.8713540335298106,
+          "healthy_recall": 0.9674418604651163,
+          "unhealthy_recall": 0.9019900497512437,
+          "confusion_matrix": [
+            [
+              416,
+              14
+            ],
+            [
+              197,
+              1813
+            ]
+          ]
+        },
+        "TomatoDisease_ROI": {
+          "n": 517,
+          "accuracy": 0.781431334622824,
+          "balanced_accuracy": 0.6226487658205719,
+          "macro_f1": 0.5925584963559647,
+          "healthy_recall": 0.4126984126984127,
+          "unhealthy_recall": 0.8325991189427313,
+          "confusion_matrix": [
+            [
+              26,
+              37
+            ],
+            [
+              76,
+              378
+            ]
+          ]
+        },
+        "TomatoVillage": {
+          "n": 1382,
+          "accuracy": 0.9630969609261939,
+          "balanced_accuracy": 0.935937961338729,
+          "macro_f1": 0.7926481620405101,
+          "healthy_recall": 0.9069767441860465,
+          "unhealthy_recall": 0.9648991784914115,
+          "confusion_matrix": [
+            [
+              39,
+              4
+            ],
+            [
+              47,
+              1292
+            ]
+          ]
+        }
+      },
+      "checkpoint_sha256": "9cb6c9949ebf319771f7c73606d13b868d1482b6da1cc3c6e6d2cf39a47105c2"
+    },
+    {
+      "name": "mixed_attention_extra_v1",
+      "best_validation_score": 0.8498668805383226,
+      "best_epoch": 7,
+      "epochs_run": 20,
+      "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_extra_v1\\best.pt",
+      "recipe": {
+        "strong": true,
+        "attention": true,
+        "mixup": 0.1,
+        "lr": 0.0007
+      },
+      "common_validation_score": 0.8498668805383226,
+      "common_validation": {
+        "Bangladesh": {
+          "n": 161,
+          "accuracy": 0.906832298136646,
+          "balanced_accuracy": 0.901098901098901,
+          "macro_f1": 0.9043374925727867,
+          "healthy_recall": 0.8571428571428571,
+          "unhealthy_recall": 0.945054945054945,
+          "confusion_matrix": [
+            [
+              60,
+              10
+            ],
+            [
+              5,
+              86
+            ]
+          ]
+        },
+        "PlantDoc": {
+          "n": 132,
+          "accuracy": 0.9015151515151515,
+          "balanced_accuracy": 0.78099173553719,
+          "macro_f1": 0.7318330989217066,
+          "healthy_recall": 0.6363636363636364,
+          "unhealthy_recall": 0.9256198347107438,
+          "confusion_matrix": [
+            [
+              7,
+              4
+            ],
+            [
+              9,
+              112
+            ]
+          ]
+        },
+        "PlantVillage": {
+          "n": 2906,
+          "accuracy": 0.9848589125946318,
+          "balanced_accuracy": 0.991701244813278,
+          "macro_f1": 0.9561047082458498,
+          "healthy_recall": 1.0,
+          "unhealthy_recall": 0.983402489626556,
+          "confusion_matrix": [
+            [
+              255,
+              0
+            ],
+            [
+              44,
+              2607
+            ]
+          ]
+        },
+        "TLID": {
+          "n": 2440,
+          "accuracy": 0.8754098360655738,
+          "balanced_accuracy": 0.9198079370588916,
+          "macro_f1": 0.8274898111634856,
+          "healthy_recall": 0.9883720930232558,
+          "unhealthy_recall": 0.8512437810945274,
+          "confusion_matrix": [
+            [
+              425,
+              5
+            ],
+            [
+              299,
+              1711
+            ]
+          ]
+        },
+        "TomatoDisease_ROI": {
+          "n": 517,
+          "accuracy": 0.8491295938104448,
+          "balanced_accuracy": 0.8525802391441157,
+          "macro_f1": 0.7443320146074255,
+          "healthy_recall": 0.8571428571428571,
+          "unhealthy_recall": 0.8480176211453745,
+          "confusion_matrix": [
+            [
+              54,
+              9
+            ],
+            [
+              69,
+              385
+            ]
+          ]
+        },
+        "TomatoVillage": {
+          "n": 1382,
+          "accuracy": 0.926917510853835,
+          "balanced_accuracy": 0.9285218055820901,
+          "macro_f1": 0.7014435653433093,
+          "healthy_recall": 0.9302325581395349,
+          "unhealthy_recall": 0.9268110530246453,
+          "confusion_matrix": [
+            [
+              40,
+              3
+            ],
+            [
+              98,
+              1241
+            ]
+          ]
+        }
+      },
+      "checkpoint_sha256": "7dc09e109e889ebe8430488f6d23c4d929a6042348a7bfc173183557a6ea343f"
+    }
+  ],
+  "selected": {
+    "name": "mixed_attention_extra_v1",
+    "best_validation_score": 0.8498668805383226,
+    "best_epoch": 7,
+    "epochs_run": 20,
+    "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_extra_v1\\best.pt",
+    "recipe": {
+      "strong": true,
+      "attention": true,
+      "mixup": 0.1,
+      "lr": 0.0007
+    },
+    "common_validation_score": 0.8498668805383226,
+    "common_validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.906832298136646,
+        "balanced_accuracy": 0.901098901098901,
+        "macro_f1": 0.9043374925727867,
+        "healthy_recall": 0.8571428571428571,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            60,
+            10
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.9015151515151515,
+        "balanced_accuracy": 0.78099173553719,
+        "macro_f1": 0.7318330989217066,
+        "healthy_recall": 0.6363636363636364,
+        "unhealthy_recall": 0.9256198347107438,
+        "confusion_matrix": [
+          [
+            7,
+            4
+          ],
+          [
+            9,
+            112
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9848589125946318,
+        "balanced_accuracy": 0.991701244813278,
+        "macro_f1": 0.9561047082458498,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.983402489626556,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            44,
+            2607
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8754098360655738,
+        "balanced_accuracy": 0.9198079370588916,
+        "macro_f1": 0.8274898111634856,
+        "healthy_recall": 0.9883720930232558,
+        "unhealthy_recall": 0.8512437810945274,
+        "confusion_matrix": [
+          [
+            425,
+            5
+          ],
+          [
+            299,
+            1711
+          ]
+        ]
+      },
+      "TomatoDisease_ROI": {
+        "n": 517,
+        "accuracy": 0.8491295938104448,
+        "balanced_accuracy": 0.8525802391441157,
+        "macro_f1": 0.7443320146074255,
+        "healthy_recall": 0.8571428571428571,
+        "unhealthy_recall": 0.8480176211453745,
+        "confusion_matrix": [
+          [
+            54,
+            9
+          ],
+          [
+            69,
+            385
+          ]
+        ]
+      },
+      "TomatoVillage": {
+        "n": 1382,
+        "accuracy": 0.926917510853835,
+        "balanced_accuracy": 0.9285218055820901,
+        "macro_f1": 0.7014435653433093,
+        "healthy_recall": 0.9302325581395349,
+        "unhealthy_recall": 0.9268110530246453,
+        "confusion_matrix": [
+          [
+            40,
+            3
+          ],
+          [
+            98,
+            1241
+          ]
+        ]
+      }
+    },
+    "checkpoint_sha256": "7dc09e109e889ebe8430488f6d23c4d929a6042348a7bfc173183557a6ea343f"
+  },
+  "basis": "Same six development-validation cohorts, fixed threshold .5, no test predictions used"
+}

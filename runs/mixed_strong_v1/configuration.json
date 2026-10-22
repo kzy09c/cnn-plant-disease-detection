@@ -1,0 +1,31 @@
+{
+  "recipe": {
+    "strong": true,
+    "attention": false,
+    "mixup": 0.15,
+    "lr": 0.001
+  },
+  "seed": 20261022,
+  "epochs": 30,
+  "steps_per_epoch": 64,
+  "batch_size": 96,
+  "image_size": 160,
+  "parameters": 939874,
+  "initialization": "random; no pretrained weights; no ResNet",
+  "sampler": "Equal source and health class draws, replacement within each bucket",
+  "manifest_sha256": "dd928467bfffa979285863a940cddec958140b510937926b1b0b6843a9dee023",
+  "selection": "0.6 * mean source balanced accuracy + 0.4 * minimum source balanced accuracy; validation only",
+  "torch": "2.11.0+cu128",
+  "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+  "code_sha256": {
+    "download_tomatovillage.py": "600ab02ec05a5cf50ac77a8f4cb64ffd399cd8472b9d8b0179b5a4a51ab18ade",
+    "evaluate.py": "8c009082ca09244b7fc59c1b92d866ff1b65020f226c097eae93330cae326981",
+    "inspect_sources.py": "97f87c5c1a3a6c81a83c1a57e27cdf74f04e23c6277c4eadbb89b181c44f33b6",
+    "model.py": "7fdb7d868e81d2d90f47949ff08811a7a5ef78ed8ed7e372a75a971269272ee6",
+    "predict.py": "62a1001dfc570eb19304de8930b33ca4dcb861b3061924431087a2862765ea28",
+    "prepare_data.py": "1d5c8658b3e998294501c563626f62f1048072c14606bbe48105cd35589cdc1e",
+    "prepare_external.py": "cba51e4e1f2a8ce69d2ebc3742e9c4ec8c9b0ff019efbf3367b7e5b3adb3c040",
+    "prepare_field.py": "823034f4cc12c1c53ca6d18dd65d8383f82b6f8d883914cf256bd038ea9eead1",
+    "train.py": "27fe83836c377f83bac6aebf7a79e0a3327c02eb2f4f62c7588201a85528bdba"
+  }
+}

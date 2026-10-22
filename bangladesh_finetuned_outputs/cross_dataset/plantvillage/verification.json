@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "checkpoint_unchanged": true,
-  "CSV_metrics_verified": true,
-  "population": "Original reserved PlantVillage test split",
-  "test_inference_during_verification": false
-}

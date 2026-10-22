@@ -1,0 +1,13 @@
+{
+  "name": "mixed_mild_v1",
+  "best_validation_score": 0.8245832845208603,
+  "best_epoch": 22,
+  "epochs_run": 30,
+  "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_mild_v1\\best.pt",
+  "recipe": {
+    "strong": false,
+    "attention": false,
+    "mixup": 0.0,
+    "lr": 0.001
+  }
+}
