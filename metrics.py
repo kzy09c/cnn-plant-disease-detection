@@ -1,6 +1,7 @@
 """Binary evaluation, group bootstrap, and conservative image-similarity helpers."""
 import numpy as np
 import torch
+from PIL import Image
 from scipy.fft import dctn
 from sklearn.metrics import accuracy_score, average_precision_score, classification_report, confusion_matrix, f1_score, log_loss, precision_score, recall_score, roc_auc_score
 from model import CLASSES, prepare_batch
