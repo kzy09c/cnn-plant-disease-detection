@@ -139,7 +139,7 @@ def dataset_figures(key,title,out,filename):
     result=load(out/"test_metrics.json");cv=load(out/"cross_validation.json")
     rows=read_csv(out/"test_predictions.csv")
     matrix_plot(key,result);matrix_plot(key,result,True)
-    if key=="bangladesh":matrix_plot(key,load(out/"released_holdout_metrics.json"),suffix="_full_holdout")
+    if key.startswith("bangladesh"):matrix_plot(key,load(out/"released_holdout_metrics.json"),suffix="_full_holdout")
     fig,axes=plt.subplots(1,3,figsize=(14,4.3),constrained_layout=True)
     for mode in cv:
         histories=[load(out/f"{mode}_fold{f}_history.json") for f in range(1,6)]
@@ -244,6 +244,7 @@ def reports():
               "Healthy recall is the fraction of healthy leaves recognized as healthy (also called specificity when Unhealthy is the positive class). Unhealthy recall is sensitivity. Macro F1 gives both classes equal weight; weighted F1 and overall accuracy can obscure a minority-class failure.", "",
               "95% intervals use 2,000 bootstrap resamples of the recorded image/similarity groups. These groups have incomplete plant/photo-session metadata. The intervals do not capture all label, source-grouping, or deployment uncertainty; a degenerate interval from no observed class errors does not prove perfect future recall.", "",
               "Both models use the same 939,874-parameter custom CNN at 128×128 RGB, [-1,1] normalization, and fixed argmax decisions. PlantVillage uses class-weighted CE and a fixed scratch recipe with five CV estimates. Bangladesh compares scratch against PlantVillage feature adaptation using mean final-epoch CV balanced accuracy, then refits the selected scratch recipe. Each CV fit uses 10 epochs; final fits use 20. Bangladesh uses exactly 32/32 class draws per training batch, without additional class weights. Full training configurations and artifact import provenance are in each experiment.json."]
+    lines += ["", "## Additional sequential-training experiment", "", "See [FINETUNING_RESULTS.md](FINETUNING_RESULTS.md) for the full PlantVillage binary CNN fine-tuned on Bangladesh, its comparison against scratch, and the reused-holdout/unequal-budget limitations. The original two experiments above retain their recorded evidence."]
     (ROOT/"RESULTS.md").write_text("\n".join(lines)+"\n",encoding="utf-8")
     captions=["# Reusable figures and suggested captions", "", "PNG files are rendered at 200 dpi; matching SVG files retain editable text. JPG galleries use the dataset's source images; retain dataset attribution when reusing them. All curves/counts use actual saved results, without new training or test inference.", "",
               "| Figure | Suggested caption / scope |", "|---|---|",
@@ -263,6 +264,7 @@ def reports():
               "| *_errors.jpg | First up to six recorded primary-test errors, illustrating failures rather than typical performance. |",
               "| bangladesh_full_holdout_confusion_counts | Full 160-image publisher holdout against filename labels; 21 labels conflict with annotations. |", "",
               "Reproduce figures with python make_report.py. Most figures require only the tracked results and checkpoints. Error galleries can be regenerated when source images are downloaded; existing galleries are preserved otherwise."]
+    captions += ["", "## PlantVillage to Bangladesh fine-tuning figures", "", "Files prefixed bangladesh_finetuned_ belong to the additional full-model fine-tuning experiment. The comparison chart uses the same Bangladesh primary holdout for both models. The workflow figure shows sequential pretraining/fine-tuning; other suffixes follow the captions above. These are exploratory reused-holdout results, with a different epoch budget from archived scratch. See [FINETUNING_RESULTS.md](../FINETUNING_RESULTS.md). Regenerate these figures separately with python report_finetune.py."]
     (FIG/"README.md").write_text("\n".join(captions)+"\n",encoding="utf-8")
 
 

@@ -10,7 +10,7 @@ from nbclient import NotebookClient
 ROOT = Path(__file__).resolve().parent
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument("notebook", nargs="?", default="Tomato_CNN.ipynb",
-                    help="Notebook filename: Tomato_CNN.ipynb or Bangladesh_CNN.ipynb")
+                    help="Notebook filename: Tomato_CNN.ipynb, Bangladesh_CNN.ipynb or PlantVillage_Bangladesh_Finetuning.ipynb")
 args = parser.parse_args()
 path = ROOT / args.notebook
 notebook = nbformat.read(path, as_version=4)

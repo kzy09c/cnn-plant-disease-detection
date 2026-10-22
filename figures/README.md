@@ -21,3 +21,7 @@ PNG files are rendered at 200 dpi; matching SVG files retain editable text. JPG 
 | bangladesh_full_holdout_confusion_counts | Full 160-image publisher holdout against filename labels; 21 labels conflict with annotations. |
 
 Reproduce figures with python make_report.py. Most figures require only the tracked results and checkpoints. Error galleries can be regenerated when source images are downloaded; existing galleries are preserved otherwise.
+
+## PlantVillage to Bangladesh fine-tuning figures
+
+Files prefixed bangladesh_finetuned_ belong to the additional full-model fine-tuning experiment. The comparison chart uses the same Bangladesh primary holdout for both models. The workflow figure shows sequential pretraining/fine-tuning; other suffixes follow the captions above. These are exploratory reused-holdout results, with a different epoch budget from archived scratch. See [FINETUNING_RESULTS.md](../FINETUNING_RESULTS.md). Regenerate these figures separately with python report_finetune.py.

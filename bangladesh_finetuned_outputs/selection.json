@@ -1,0 +1,6 @@
+{
+  "selected_initialization": "full_finetune",
+  "selected_utc": "2026-10-22T07:31:32.889680+00:00",
+  "criterion": "Highest mean final-epoch balanced accuracy over five grouped Bangladesh development folds; macro F1 breaks a tie",
+  "test_predictions_available": false
+}
