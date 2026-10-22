@@ -1,7 +1,0 @@
-{
-  "passed": true,
-  "checkpoint_unchanged": true,
-  "CSV_metrics_verified": true,
-  "population": "Fixed, pre-labelled internet convenience sample",
-  "test_inference_during_verification": false
-}

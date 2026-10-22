@@ -1,117 +1,81 @@
-# Measured binary tomato CNN results
+# Measured results — custom tomato-leaf CNN
 
-All scores below come from saved predictions of the two completed models. Unhealthy includes the source disease/pest/damage categories. These classifiers do not identify a specific disease.
+All learned weights originated from random initialization in our custom CNN. Later stages continue only our own checkpoints with joint replay. No ResNet or externally pretrained model was used. The delivered model is D: seven-source continuation, selected using identical seven-source validation cohorts before its final test evaluation.
 
-| Dataset / cohort | Images | Accuracy | Balanced accuracy | Macro F1 | Healthy recall | Unhealthy recall |
+## Delivered model
+
+Checkpoint: `best_model.pt` (3.67 MiB). Source run: `mixed_attention_wild_v1`. Decision threshold: 0.5. Labels: Healthy / Unhealthy.
+
+| Evaluation | Images | Accuracy | Balanced accuracy | Macro F1 | Healthy recall | Unhealthy recall |
 |---|---:|---:|---:|---:|---:|---:|
-| plantvillage / primary | 3,632 | 99.86% | 99.92% | 99.57% | 100.00% | 99.85% |
-| bangladesh / primary | 139 | 94.96% | 94.07% | 94.75% | 88.14% | 100.00% |
-| bangladesh / full_holdout_uncertain_labels | 160 | 83.75% | 83.75% | 83.31% | 67.50% | 100.00% |
+| PlantVillage | 3,632 | 94.47% | 96.97% | 86.43% | 100.00% | 93.93% |
+| Bangladesh | 139 | 87.77% | 86.04% | 86.99% | 74.58% | 97.50% |
+| TLID | 3,050 | 92.59% | 94.48% | 88.78% | 97.39% | 91.56% |
+| PlantDoc | 69 | 86.96% | 78.33% | 74.73% | 66.67% | 90.00% |
+| TomatoVillage | 1,764 | 95.98% | 97.96% | 68.09% | 100.00% | 95.92% |
+| PlantWild | 433 | 90.99% | 88.01% | 74.02% | 84.62% | 91.40% |
+| Internet16 | 16 | 81.25% | 81.25% | 81.18% | 75.00% | 87.50% |
 
-These cohorts differ and must not be treated as a controlled ranking of real-world performance. PlantVillage uses controlled images and a previously inspected benchmark split. Bangladesh's primary score applies to 139 predefined images whose supplied filename and annotation labels agree; the full 160-image holdout includes 21 contradictory labels and is only a descriptive check against uncertain filename labels. Neither model has established performance in new gardens.
+Additional checks use different evaluation units and are not included in the five-source benchmark target.
 
-## Architecture and study design
+| Additional check | Images/regions | Accuracy | Balanced accuracy | Macro F1 |
+|---|---:|---:|---:|---:|
+| TomatoDisease_ROI | 488 | 93.85% | 93.62% | 85.10% |
+| GTLD_examples | 7 | 85.71% | 91.67% | 78.79% |
 
-![CNN architecture](figures/cnn_architecture.png)
+TomatoDisease_ROI uses supplied annotation crops with context, not automatic localization in whole photographs. Its binary Healthy mapping was recovered by uniquely matching the releasing authors' annotation count and visually checking training examples. GTLD contains just seven published examples with one Healthy photo. Neither check establishes internet-wide accuracy.
 
-![Experiment workflow](figures/experiment_workflow.png)
+The predefined five-source target of 90% balanced accuracy was met on 3/5 sources. Below target: Bangladesh, PlantDoc. Later PlantWild and annotated-region checks are reported separately.
 
-![Image counts](figures/dataset_counts.png)
+Web-photo agreement: 13/16. This is an old, small convenience sample with uncertain health labels. It does **not** estimate accuracy across random internet images. No test photos were added to training and no parameters were selected from these predictions.
 
-![Bangladesh source-label audit](figures/bangladesh_label_audit.png)
+![Matched source comparison](figures/comparison.png)
 
-## Reusable report material
+## New curated internet-scene benchmark
 
-Every numerical chart is available as both PNG and editable SVG in figures/. RESULTS.csv contains fractional scores, not percentages. Each result folder also contains class_metrics.csv, cv_summary.csv, confidence_intervals.csv, roc_points.csv, precision_recall_points.csv, and image-level prediction CSVs. Use figures/README.md for suggested captions and interpretation.
+PlantWild holdout: 433 photographs, 26 apparently Healthy and 407 source-labelled Unhealthy. Accuracy 90.99%, balanced accuracy 88.01%, macro F1 74.02%. Always predicting Unhealthy would score 94.00% accuracy but 50% balanced accuracy.
 
-## PlantVillage
+Eligibility and reference screening were frozen before any PlantWild predictions. Photos from the same source page and detected duplicate families were grouped. Healthy references were visually screened; disease references use published source categories. This is a conditional curated internet-image benchmark, not a probability sample of the internet, and labels are not independent biological diagnoses. [PlantWild source](https://tqwei05.github.io/PlantWild/).
 
-The primary test recognized **318 / 318 Healthy** and **3309 / 3314 Unhealthy** leaves.
 
-| Metric | Value |
+## Source transfer and matched comparison
+
+| Evaluation | A: four sources BA | B: five sources BA | C: six sources BA | Delivered BA |
+|---|---:|---:|---:|---:|
+| PlantVillage | 97.74% | 96.92% | 99.10% | 96.97% |
+| Bangladesh | 82.87% | 91.97% | 82.43% | 86.04% |
+| TLID | 91.42% | 94.97% | 93.82% | 94.48% |
+| PlantDoc | 75.28% | 81.67% | 82.50% | 78.33% |
+| TomatoVillage | 56.47% | 89.39% | 97.30% | 97.96% |
+| PlantWild | — | — | — | 88.01% |
+| Internet16 | 68.75% | 75.00% | 75.00% | 81.25% |
+
+The frozen experiment-A model was also tested on all 4,525 Tomato-Village images as an entirely unseen source: accuracy 95.49%, balanced accuracy 61.35%, macro F1 65.50%. Experiment B trained on a grouped portion of this source; its valid holdout is 1,764 images, not the entire source.
+
+Adding field data changes both source variety and effective sampling; this experiment does not isolate one cause of any improvement. B/C were compared on the same six-source validation cohorts; C/D were compared on the same seven-source validation cohorts before the new PlantWild holdout was examined. The delivered model was selected from validation, not whichever checkpoint happened to score better on web photos.
+
+![Confusion matrices](figures/confusion_matrices.png)
+
+## Uncertainty
+
+| Dataset | Group-bootstrap 95% interval: balanced accuracy |
 |---|---:|
-| Accuracy | 99.86% |
-| Balanced accuracy | 99.92% |
-| Macro F1 | 99.57% |
-| Weighted F1 | 99.86% |
-| Unhealthy precision | 100.00% |
-| Unhealthy recall | 99.85% |
-| Healthy recall | 100.00% |
-| Unhealthy F1 | 99.92% |
-| Healthy precision | 98.45% |
-| Healthy F1 | 99.22% |
-| ROC AUC | 0.9999 |
-| Average precision | 1.0000 |
+| PlantVillage | 96.4%–97.5% |
+| Bangladesh | 79.9%–91.5% |
+| TLID | 93.6%–95.3% |
+| PlantDoc | 61.1%–95.2% |
+| TomatoVillage | 96.9%–99.0% |
+| PlantWild | 79.8%–94.2% |
+| Internet16 | 58.9%–100.0% |
 
-![Confusion counts](figures/plantvillage_confusion_counts.png)
+Intervals resample recorded groups. They do not account for missing garden/session IDs or incorrect labels. PlantDoc has only nine Healthy test images after the overlap audit; Tomato-Village has 22. Legacy benchmark tests have been inspected in earlier work, so comparisons are exploratory. High overall accuracy can hide poor Healthy recall.
 
-![Row-normalized confusion matrix](figures/plantvillage_confusion_normalized.png)
+Individual web-photo predictions and their source references are recorded in `evaluation_final/predictions.csv`. Original photographs and local preview galleries are excluded from this repository.
 
-![Grouped validation learning curves](figures/plantvillage_cv_learning_curves.png)
+## Training and artifacts
 
-![Final-fit training curves](figures/plantvillage_final_training_curves.png)
+![Training and validation](figures/training_curves.png)
 
-![ROC and precision–recall](figures/plantvillage_roc_precision_recall.png)
+`evaluation_a/`, `evaluation_b/`, `evaluation_c/` and `evaluation_final/` contain frozen checkpoint identities, every prediction, per-category results and full metrics. `runs/` contains configurations, validation histories, imported-source snapshots and actual training draw counts. `data/` contains audited manifests, source metadata and local image caches. See `EXPERIMENT_PROTOCOL.md` for source attribution, splitting, selection and limitations.
 
-![Per-class precision, recall, F1](figures/plantvillage_class_metrics.png)
-
-![Group-bootstrap uncertainty](figures/plantvillage_confidence_intervals.png)
-
-![Actual learned first-layer filters](figures/plantvillage_first_layer_filters.png)
-
-![Fixed random test examples](figures/plantvillage_test_examples.jpg)
-
-![Recorded test errors](figures/plantvillage_errors.jpg)
-
-## Bangladesh
-
-The primary test recognized **52 / 59 Healthy** and **80 / 80 Unhealthy** leaves.
-
-| Metric | Value |
-|---|---:|
-| Accuracy | 94.96% |
-| Balanced accuracy | 94.07% |
-| Macro F1 | 94.75% |
-| Weighted F1 | 94.91% |
-| Unhealthy precision | 91.95% |
-| Unhealthy recall | 100.00% |
-| Healthy recall | 88.14% |
-| Unhealthy F1 | 95.81% |
-| Healthy precision | 100.00% |
-| Healthy F1 | 93.69% |
-| ROC AUC | 1.0000 |
-| Average precision | 1.0000 |
-
-![Confusion counts](figures/bangladesh_confusion_counts.png)
-
-![Row-normalized confusion matrix](figures/bangladesh_confusion_normalized.png)
-
-![Grouped validation learning curves](figures/bangladesh_cv_learning_curves.png)
-
-![Final-fit training curves](figures/bangladesh_final_training_curves.png)
-
-![ROC and precision–recall](figures/bangladesh_roc_precision_recall.png)
-
-![Per-class precision, recall, F1](figures/bangladesh_class_metrics.png)
-
-![Group-bootstrap uncertainty](figures/bangladesh_confidence_intervals.png)
-
-![Actual learned first-layer filters](figures/bangladesh_first_layer_filters.png)
-
-![Fixed random test examples](figures/bangladesh_test_examples.jpg)
-
-![Recorded test errors](figures/bangladesh_errors.jpg)
-
-![Full holdout: uncertain labels](figures/bangladesh_full_holdout_confusion_counts.png)
-
-## Interpretation and limits
-
-Healthy recall is the fraction of healthy leaves recognized as healthy (also called specificity when Unhealthy is the positive class). Unhealthy recall is sensitivity. Macro F1 gives both classes equal weight; weighted F1 and overall accuracy can obscure a minority-class failure.
-
-95% intervals use 2,000 bootstrap resamples of the recorded image/similarity groups. These groups have incomplete plant/photo-session metadata. The intervals do not capture all label, source-grouping, or deployment uncertainty; a degenerate interval from no observed class errors does not prove perfect future recall.
-
-Both models use the same 939,874-parameter custom CNN at 128×128 RGB, [-1,1] normalization, and fixed argmax decisions. PlantVillage uses class-weighted CE and a fixed scratch recipe with five CV estimates. Bangladesh compares scratch against PlantVillage feature adaptation using mean final-epoch CV balanced accuracy, then refits the selected scratch recipe. Each CV fit uses 10 epochs; final fits use 20. Bangladesh uses exactly 32/32 class draws per training batch, without additional class weights. Full training configurations and artifact import provenance are in each experiment.json.
-
-## Additional sequential-training experiment
-
-See [FINETUNING_RESULTS.md](FINETUNING_RESULTS.md) for the full PlantVillage binary CNN fine-tuned on Bangladesh, its comparison against scratch, and the reused-holdout/unequal-budget limitations. The original two experiments above retain their recorded evidence.
+The model expects a clear photograph of tomato foliage. It has no species detector, leaf locator, reliable out-of-distribution rejection or independently verified diagnostic ground truth. If the benchmark target or web test remains weak, the objective of dependable arbitrary internet performance remains unfinished; these results must not be called solved.

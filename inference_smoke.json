@@ -1,0 +1,19 @@
+{
+  "checks_passed": true,
+  "examples": [
+    {
+      "reference": "Healthy",
+      "cpu_prediction": "Healthy",
+      "cuda_prediction": "Healthy",
+      "max_probability_difference": 0.00038714706897735596,
+      "source_member": "plantwild/images/tomato leaf/138.jpg"
+    },
+    {
+      "reference": "Unhealthy",
+      "cpu_prediction": "Unhealthy",
+      "cuda_prediction": "Unhealthy",
+      "max_probability_difference": 0.00045567750930786133,
+      "source_member": "plantwild/images/tomato bacterial leaf spot/10.jpg"
+    }
+  ]
+}

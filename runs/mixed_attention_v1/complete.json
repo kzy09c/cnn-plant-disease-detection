@@ -1,0 +1,13 @@
+{
+  "name": "mixed_attention_v1",
+  "best_validation_score": 0.8344968302468543,
+  "best_epoch": 26,
+  "epochs_run": 30,
+  "checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_v1\\best.pt",
+  "recipe": {
+    "strong": true,
+    "attention": true,
+    "mixup": 0.1,
+    "lr": 0.0007
+  }
+}

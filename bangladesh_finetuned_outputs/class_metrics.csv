@@ -1,3 +1,0 @@
-dataset,class,support,precision,recall,f1-score
-bangladesh_finetuned,Healthy,59,0.9772727272727273,0.7288135593220338,0.8349514563106796
-bangladesh_finetuned,Unhealthy,80,0.8315789473684211,0.9875,0.9028571428571428

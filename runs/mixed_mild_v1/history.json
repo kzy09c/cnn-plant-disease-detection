@@ -1,0 +1,2432 @@
+[
+  {
+    "epoch": 1,
+    "training_loss": 0.5299866199493408,
+    "lr": 0.0003333333333333333,
+    "selection_score": 0.6836963998181796,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.7701863354037267,
+        "balanced_accuracy": 0.7752747252747253,
+        "macro_f1": 0.7692963092056853,
+        "healthy_recall": 0.8142857142857143,
+        "unhealthy_recall": 0.7362637362637363,
+        "confusion_matrix": [
+          [
+            57,
+            13
+          ],
+          [
+            24,
+            67
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.6060606060606061,
+        "balanced_accuracy": 0.5785123966942148,
+        "macro_f1": 0.46375,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.6115702479338843,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            47,
+            74
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.8272539573296628,
+        "balanced_accuracy": 0.8875969852293992,
+        "macro_f1": 0.6949011176549325,
+        "healthy_recall": 0.9607843137254902,
+        "unhealthy_recall": 0.8144096567333082,
+        "confusion_matrix": [
+          [
+            245,
+            10
+          ],
+          [
+            492,
+            2159
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8127049180327869,
+        "balanced_accuracy": 0.7738921670716187,
+        "macro_f1": 0.7266584939742939,
+        "healthy_recall": 0.713953488372093,
+        "unhealthy_recall": 0.8338308457711443,
+        "confusion_matrix": [
+          [
+            307,
+            123
+          ],
+          [
+            334,
+            1676
+          ]
+        ]
+      }
+    },
+    "seconds": 30.67
+  },
+  {
+    "epoch": 2,
+    "training_loss": 0.41269412636756897,
+    "lr": 0.0006649319335332865,
+    "selection_score": 0.7555162975534649,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8198757763975155,
+        "balanced_accuracy": 0.8258241758241758,
+        "macro_f1": 0.8191781882963479,
+        "healthy_recall": 0.8714285714285714,
+        "unhealthy_recall": 0.7802197802197802,
+        "confusion_matrix": [
+          [
+            61,
+            9
+          ],
+          [
+            20,
+            71
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.6212121212121212,
+        "balanced_accuracy": 0.6694214876033058,
+        "macro_f1": 0.494949494949495,
+        "healthy_recall": 0.7272727272727273,
+        "unhealthy_recall": 0.6115702479338843,
+        "confusion_matrix": [
+          [
+            8,
+            3
+          ],
+          [
+            47,
+            74
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.908121128699243,
+        "balanced_accuracy": 0.9141981198363918,
+        "macro_f1": 0.7925548255141668,
+        "healthy_recall": 0.9215686274509803,
+        "unhealthy_recall": 0.9068276122218031,
+        "confusion_matrix": [
+          [
+            235,
+            20
+          ],
+          [
+            247,
+            2404
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8032786885245902,
+        "balanced_accuracy": 0.8422075668170774,
+        "macro_f1": 0.7426920318893153,
+        "healthy_recall": 0.9023255813953488,
+        "unhealthy_recall": 0.7820895522388059,
+        "confusion_matrix": [
+          [
+            388,
+            42
+          ],
+          [
+            438,
+            1572
+          ]
+        ]
+      }
+    },
+    "seconds": 15.31
+  },
+  {
+    "epoch": 3,
+    "training_loss": 0.39214685559272766,
+    "lr": 0.0009896201103485576,
+    "selection_score": 0.7036587481321214,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8012422360248447,
+        "balanced_accuracy": 0.7961538461538462,
+        "macro_f1": 0.7971014492753623,
+        "healthy_recall": 0.7571428571428571,
+        "unhealthy_recall": 0.8351648351648352,
+        "confusion_matrix": [
+          [
+            53,
+            17
+          ],
+          [
+            15,
+            76
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7575757575757576,
+        "balanced_accuracy": 0.743801652892562,
+        "macro_f1": 0.5925925925925926,
+        "healthy_recall": 0.7272727272727273,
+        "unhealthy_recall": 0.7603305785123967,
+        "confusion_matrix": [
+          [
+            8,
+            3
+          ],
+          [
+            29,
+            92
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9731589814177564,
+        "balanced_accuracy": 0.9799720416269111,
+        "macro_f1": 0.9255327117541543,
+        "healthy_recall": 0.9882352941176471,
+        "unhealthy_recall": 0.971708789136175,
+        "confusion_matrix": [
+          [
+            252,
+            3
+          ],
+          [
+            75,
+            2576
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8430327868852459,
+        "balanced_accuracy": 0.5921265764202245,
+        "macro_f1": 0.6131055265730163,
+        "healthy_recall": 0.20465116279069767,
+        "unhealthy_recall": 0.9796019900497512,
+        "confusion_matrix": [
+          [
+            88,
+            342
+          ],
+          [
+            41,
+            1969
+          ]
+        ]
+      }
+    },
+    "seconds": 14.23
+  },
+  {
+    "epoch": 4,
+    "training_loss": 0.33432769775390625,
+    "lr": 0.000976751845240198,
+    "selection_score": 0.7520173156344496,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8819875776397516,
+        "balanced_accuracy": 0.8741758241758242,
+        "macro_f1": 0.8783068783068783,
+        "healthy_recall": 0.8142857142857143,
+        "unhealthy_recall": 0.9340659340659341,
+        "confusion_matrix": [
+          [
+            57,
+            13
+          ],
+          [
+            6,
+            85
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7575757575757576,
+        "balanced_accuracy": 0.6611570247933884,
+        "macro_f1": 0.5636363636363636,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.7768595041322314,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            27,
+            94
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9325533379215416,
+        "balanced_accuracy": 0.959488465322002,
+        "macro_f1": 0.8412207782070795,
+        "healthy_recall": 0.9921568627450981,
+        "unhealthy_recall": 0.926820067898906,
+        "confusion_matrix": [
+          [
+            253,
+            2
+          ],
+          [
+            194,
+            2457
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8668032786885246,
+        "balanced_accuracy": 0.75554205715608,
+        "macro_f1": 0.7634128928337974,
+        "healthy_recall": 0.5837209302325581,
+        "unhealthy_recall": 0.9273631840796019,
+        "confusion_matrix": [
+          [
+            251,
+            179
+          ],
+          [
+            146,
+            1864
+          ]
+        ]
+      }
+    },
+    "seconds": 15.21
+  },
+  {
+    "epoch": 5,
+    "training_loss": 0.30355405807495117,
+    "lr": 0.0009589340923802355,
+    "selection_score": 0.7395139323370483,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8757763975155279,
+        "balanced_accuracy": 0.8653846153846154,
+        "macro_f1": 0.8709935897435898,
+        "healthy_recall": 0.7857142857142857,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            55,
+            15
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7878787878787878,
+        "balanced_accuracy": 0.6363636363636364,
+        "macro_f1": 0.5696320447135538,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8181818181818182,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            22,
+            99
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9631796283551273,
+        "balanced_accuracy": 0.9691858788026715,
+        "macro_f1": 0.9012956176285261,
+        "healthy_recall": 0.9764705882352941,
+        "unhealthy_recall": 0.961901169370049,
+        "confusion_matrix": [
+          [
+            249,
+            6
+          ],
+          [
+            101,
+            2550
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8672131147540983,
+        "balanced_accuracy": 0.7621890547263681,
+        "macro_f1": 0.767043847241867,
+        "healthy_recall": 0.6,
+        "unhealthy_recall": 0.9243781094527364,
+        "confusion_matrix": [
+          [
+            258,
+            172
+          ],
+          [
+            152,
+            1858
+          ]
+        ]
+      }
+    },
+    "seconds": 15.27
+  },
+  {
+    "epoch": 6,
+    "training_loss": 0.2728794813156128,
+    "lr": 0.0009363620667976085,
+    "selection_score": 0.7488043156626624,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.84472049689441,
+        "balanced_accuracy": 0.8296703296703296,
+        "macro_f1": 0.8365482233502538,
+        "healthy_recall": 0.7142857142857143,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            50,
+            20
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8560606060606061,
+        "balanced_accuracy": 0.6322314049586777,
+        "macro_f1": 0.6080637599624941,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.9008264462809917,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            12,
+            109
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9907088781830695,
+        "balanced_accuracy": 0.9878188770793115,
+        "macro_f1": 0.9719247849595682,
+        "healthy_recall": 0.984313725490196,
+        "unhealthy_recall": 0.9913240286684271,
+        "confusion_matrix": [
+          [
+            251,
+            4
+          ],
+          [
+            23,
+            2628
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.7844262295081967,
+        "balanced_accuracy": 0.8563577461529561,
+        "macro_f1": 0.7316593614385989,
+        "healthy_recall": 0.9674418604651163,
+        "unhealthy_recall": 0.745273631840796,
+        "confusion_matrix": [
+          [
+            416,
+            14
+          ],
+          [
+            512,
+            1498
+          ]
+        ]
+      }
+    },
+    "seconds": 14.33
+  },
+  {
+    "epoch": 7,
+    "training_loss": 0.27365708351135254,
+    "lr": 0.0009092830723281,
+    "selection_score": 0.7799366215194556,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8944099378881988,
+        "balanced_accuracy": 0.8917582417582417,
+        "macro_f1": 0.8924008334316154,
+        "healthy_recall": 0.8714285714285714,
+        "unhealthy_recall": 0.9120879120879121,
+        "confusion_matrix": [
+          [
+            61,
+            9
+          ],
+          [
+            8,
+            83
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7803030303030303,
+        "balanced_accuracy": 0.6735537190082644,
+        "macro_f1": 0.5813190418899704,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.8016528925619835,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            24,
+            97
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9525120440467997,
+        "balanced_accuracy": 0.973972086005281,
+        "macro_f1": 0.8801567834294404,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.947944172010562,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            138,
+            2513
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8635245901639345,
+        "balanced_accuracy": 0.8641501793358788,
+        "macro_f1": 0.8016226743730392,
+        "healthy_recall": 0.8651162790697674,
+        "unhealthy_recall": 0.8631840796019901,
+        "confusion_matrix": [
+          [
+            372,
+            58
+          ],
+          [
+            275,
+            1735
+          ]
+        ]
+      }
+    },
+    "seconds": 14.32
+  },
+  {
+    "epoch": 8,
+    "training_loss": 0.2467503398656845,
+    "lr": 0.0008779937921017623,
+    "selection_score": 0.7986720115771375,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8819875776397516,
+        "balanced_accuracy": 0.893956043956044,
+        "macro_f1": 0.8819146882841151,
+        "healthy_recall": 0.9857142857142858,
+        "unhealthy_recall": 0.8021978021978022,
+        "confusion_matrix": [
+          [
+            69,
+            1
+          ],
+          [
+            18,
+            73
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.6136363636363636,
+        "balanced_accuracy": 0.7066115702479339,
+        "macro_f1": 0.4996655518394649,
+        "healthy_recall": 0.8181818181818182,
+        "unhealthy_recall": 0.5950413223140496,
+        "confusion_matrix": [
+          [
+            9,
+            2
+          ],
+          [
+            49,
+            72
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9308327598072953,
+        "balanced_accuracy": 0.9620897774424746,
+        "macro_f1": 0.8389477698176167,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.9241795548849491,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            201,
+            2450
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.865983606557377,
+        "balanced_accuracy": 0.8775251648733079,
+        "macro_f1": 0.8077374889486647,
+        "healthy_recall": 0.8953488372093024,
+        "unhealthy_recall": 0.8597014925373134,
+        "confusion_matrix": [
+          [
+            385,
+            45
+          ],
+          [
+            282,
+            1728
+          ]
+        ]
+      }
+    },
+    "seconds": 14.15
+  },
+  {
+    "epoch": 9,
+    "training_loss": 0.22744113206863403,
+    "lr": 0.0008428370380204576,
+    "selection_score": 0.8157288535190435,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.937888198757764,
+        "balanced_accuracy": 0.9384615384615385,
+        "macro_f1": 0.9370109546165883,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.9340659340659341,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            6,
+            85
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7878787878787878,
+        "balanced_accuracy": 0.71900826446281,
+        "macro_f1": 0.6036036036036035,
+        "healthy_recall": 0.6363636363636364,
+        "unhealthy_recall": 0.8016528925619835,
+        "confusion_matrix": [
+          [
+            7,
+            4
+          ],
+          [
+            24,
+            97
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9569855471438403,
+        "balanced_accuracy": 0.9764239909468125,
+        "macro_f1": 0.8895021742139293,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.9528479818936251,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            125,
+            2526
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8438524590163935,
+        "balanced_accuracy": 0.8869431910216361,
+        "macro_f1": 0.789601806413474,
+        "healthy_recall": 0.9534883720930233,
+        "unhealthy_recall": 0.8203980099502488,
+        "confusion_matrix": [
+          [
+            410,
+            20
+          ],
+          [
+            361,
+            1649
+          ]
+        ]
+      }
+    },
+    "seconds": 13.89
+  },
+  {
+    "epoch": 10,
+    "training_loss": 0.2209482342004776,
+    "lr": 0.0008041979948389248,
+    "selection_score": 0.7725684094582967,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9316770186335404,
+        "balanced_accuracy": 0.9379120879120879,
+        "macro_f1": 0.9312953408076967,
+        "healthy_recall": 0.9857142857142858,
+        "unhealthy_recall": 0.8901098901098901,
+        "confusion_matrix": [
+          [
+            69,
+            1
+          ],
+          [
+            10,
+            81
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.7954545454545454,
+        "balanced_accuracy": 0.640495867768595,
+        "macro_f1": 0.5756637694963687,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8264462809917356,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            21,
+            100
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.975223675154852,
+        "balanced_accuracy": 0.984648042544064,
+        "macro_f1": 0.9310503005378045,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.973217653715579,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            71,
+            2580
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8209016393442623,
+        "balanced_accuracy": 0.8794110841143121,
+        "macro_f1": 0.7675450328632479,
+        "healthy_recall": 0.9697674418604652,
+        "unhealthy_recall": 0.7890547263681592,
+        "confusion_matrix": [
+          [
+            417,
+            13
+          ],
+          [
+            424,
+            1586
+          ]
+        ]
+      }
+    },
+    "seconds": 14.76
+  },
+  {
+    "epoch": 11,
+    "training_loss": 0.21671193838119507,
+    "lr": 0.0007624999999999999,
+    "selection_score": 0.7856261611256413,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.8944099378881988,
+        "balanced_accuracy": 0.8851648351648351,
+        "macro_f1": 0.8906118860157468,
+        "healthy_recall": 0.8142857142857143,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            57,
+            13
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8484848484848485,
+        "balanced_accuracy": 0.6694214876033058,
+        "macro_f1": 0.6239316239316239,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8842975206611571,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            14,
+            107
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9931176875430144,
+        "balanced_accuracy": 0.99268348606889,
+        "macro_f1": 0.9790968035229007,
+        "healthy_recall": 0.9921568627450981,
+        "unhealthy_recall": 0.9932101093926821,
+        "confusion_matrix": [
+          [
+            253,
+            2
+          ],
+          [
+            18,
+            2633
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8647540983606558,
+        "balanced_accuracy": 0.9051139650584288,
+        "macro_f1": 0.8136247441159397,
+        "healthy_recall": 0.9674418604651163,
+        "unhealthy_recall": 0.8427860696517413,
+        "confusion_matrix": [
+          [
+            416,
+            14
+          ],
+          [
+            316,
+            1694
+          ]
+        ]
+      }
+    },
+    "seconds": 15.3
+  },
+  {
+    "epoch": 12,
+    "training_loss": 0.20056474208831787,
+    "lr": 0.0007181999054610052,
+    "selection_score": 0.7829595462903471,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9192546583850931,
+        "balanced_accuracy": 0.9153846153846154,
+        "macro_f1": 0.9174196093904123,
+        "healthy_recall": 0.8857142857142857,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            62,
+            8
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.6611570247933884,
+        "macro_f1": 0.6088362068965517,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8677685950413223,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            16,
+            105
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9569855471438403,
+        "balanced_accuracy": 0.9764239909468125,
+        "macro_f1": 0.8895021742139293,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.9528479818936251,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            125,
+            2526
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8819672131147541,
+        "balanced_accuracy": 0.9036792780284624,
+        "macro_f1": 0.8303380780340541,
+        "healthy_recall": 0.9372093023255814,
+        "unhealthy_recall": 0.8701492537313433,
+        "confusion_matrix": [
+          [
+            403,
+            27
+          ],
+          [
+            261,
+            1749
+          ]
+        ]
+      }
+    },
+    "seconds": 14.29
+  },
+  {
+    "epoch": 13,
+    "training_loss": 0.1800633668899536,
+    "lr": 0.0006717830723281001,
+    "selection_score": 0.7905376148283498,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9316770186335404,
+        "balanced_accuracy": 0.9313186813186813,
+        "macro_f1": 0.9306061674699267,
+        "healthy_recall": 0.9285714285714286,
+        "unhealthy_recall": 0.9340659340659341,
+        "confusion_matrix": [
+          [
+            65,
+            5
+          ],
+          [
+            6,
+            85
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8409090909090909,
+        "balanced_accuracy": 0.6652892561983471,
+        "macro_f1": 0.6162259448982417,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8760330578512396,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            15,
+            106
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9955264969029594,
+        "balanced_accuracy": 0.9975480950584685,
+        "macro_f1": 0.9863427359428114,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.995096190116937,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            13,
+            2638
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8385245901639344,
+        "balanced_accuracy": 0.9019900497512439,
+        "macro_f1": 0.7885728712796382,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.8039800995024876,
+        "confusion_matrix": [
+          [
+            430,
+            0
+          ],
+          [
+            394,
+            1616
+          ]
+        ]
+      }
+    },
+    "seconds": 14.12
+  },
+  {
+    "epoch": 14,
+    "training_loss": 0.17802377045154572,
+    "lr": 0.0006237580531384356,
+    "selection_score": 0.7922362141783634,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9565217391304348,
+        "balanced_accuracy": 0.9582417582417582,
+        "macro_f1": 0.9559714028987771,
+        "healthy_recall": 0.9714285714285714,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            68,
+            2
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.75,
+        "balanced_accuracy": 0.6570247933884297,
+        "macro_f1": 0.5579908675799087,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.768595041322314,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            28,
+            93
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9862353750860289,
+        "balanced_accuracy": 0.99245567710298,
+        "macro_f1": 0.9598355274524031,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.98491135420596,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            40,
+            2611
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8877049180327868,
+        "balanced_accuracy": 0.9217864167534421,
+        "macro_f1": 0.8404397501107395,
+        "healthy_recall": 0.9744186046511628,
+        "unhealthy_recall": 0.8691542288557214,
+        "confusion_matrix": [
+          [
+            419,
+            11
+          ],
+          [
+            263,
+            1747
+          ]
+        ]
+      }
+    },
+    "seconds": 13.86
+  },
+  {
+    "epoch": 15,
+    "training_loss": 0.1680578589439392,
+    "lr": 0.0005746510200521354,
+    "selection_score": 0.7825267657971782,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9440993788819876,
+        "balanced_accuracy": 0.9439560439560439,
+        "macro_f1": 0.9432232279299401,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8106060606060606,
+        "balanced_accuracy": 0.6487603305785123,
+        "macro_f1": 0.5882719900187149,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8429752066115702,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            19,
+            102
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.983826565726084,
+        "balanced_accuracy": 0.9893632443547016,
+        "macro_f1": 0.9531874274883596,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.982648057336854,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            46,
+            2605
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8987704918032787,
+        "balanced_accuracy": 0.9047379382158973,
+        "macro_f1": 0.8483423675832943,
+        "healthy_recall": 0.913953488372093,
+        "unhealthy_recall": 0.8955223880597015,
+        "confusion_matrix": [
+          [
+            393,
+            37
+          ],
+          [
+            210,
+            1800
+          ]
+        ]
+      }
+    },
+    "seconds": 13.98
+  },
+  {
+    "epoch": 16,
+    "training_loss": 0.17184507846832275,
+    "lr": 0.0005250000000000002,
+    "selection_score": 0.7993500792288544,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9565217391304348,
+        "balanced_accuracy": 0.9582417582417582,
+        "macro_f1": 0.9559714028987771,
+        "healthy_recall": 0.9714285714285714,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            68,
+            2
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8484848484848485,
+        "balanced_accuracy": 0.6694214876033058,
+        "macro_f1": 0.6239316239316239,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8842975206611571,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            14,
+            107
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9965588437715073,
+        "balanced_accuracy": 0.996341743034445,
+        "macro_f1": 0.9894030249149253,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.996605054696341,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            9,
+            2642
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8905737704918033,
+        "balanced_accuracy": 0.9198715723707047,
+        "macro_f1": 0.8430150139122125,
+        "healthy_recall": 0.9651162790697675,
+        "unhealthy_recall": 0.8746268656716418,
+        "confusion_matrix": [
+          [
+            415,
+            15
+          ],
+          [
+            252,
+            1758
+          ]
+        ]
+      }
+    },
+    "seconds": 14.09
+  },
+  {
+    "epoch": 17,
+    "training_loss": 0.14787063002586365,
+    "lr": 0.0004753489799478646,
+    "selection_score": 0.7978636810018398,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9130434782608695,
+        "balanced_accuracy": 0.9164835164835164,
+        "macro_f1": 0.9122820672478207,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.8901098901098901,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            10,
+            81
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8636363636363636,
+        "balanced_accuracy": 0.6776859504132231,
+        "macro_f1": 0.6404358353510896,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.9008264462809917,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            12,
+            109
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9917412250516173,
+        "balanced_accuracy": 0.991929053779188,
+        "macro_f1": 0.9750866238488851,
+        "healthy_recall": 0.9921568627450981,
+        "unhealthy_recall": 0.991701244813278,
+        "confusion_matrix": [
+          [
+            253,
+            2
+          ],
+          [
+            22,
+            2629
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9094262295081967,
+        "balanced_accuracy": 0.9258301515677427,
+        "macro_f1": 0.864879188353009,
+        "healthy_recall": 0.9511627906976744,
+        "unhealthy_recall": 0.900497512437811,
+        "confusion_matrix": [
+          [
+            409,
+            21
+          ],
+          [
+            200,
+            1810
+          ]
+        ]
+      }
+    },
+    "seconds": 14.84
+  },
+  {
+    "epoch": 18,
+    "training_loss": 0.15391984581947327,
+    "lr": 0.00042624194686156425,
+    "selection_score": 0.7805887796272302,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.937888198757764,
+        "balanced_accuracy": 0.9351648351648352,
+        "macro_f1": 0.9365942028985508,
+        "healthy_recall": 0.9142857142857143,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            64,
+            6
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8712121212121212,
+        "balanced_accuracy": 0.640495867768595,
+        "macro_f1": 0.6244351464435146,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.9173553719008265,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            10,
+            111
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9955264969029594,
+        "balanced_accuracy": 0.9957759188171685,
+        "macro_f1": 0.9862954910939556,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.995473406261788,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            12,
+            2639
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9102459016393443,
+        "balanced_accuracy": 0.9244995950480157,
+        "macro_f1": 0.865534325913933,
+        "healthy_recall": 0.9465116279069767,
+        "unhealthy_recall": 0.9024875621890547,
+        "confusion_matrix": [
+          [
+            407,
+            23
+          ],
+          [
+            196,
+            1814
+          ]
+        ]
+      }
+    },
+    "seconds": 14.18
+  },
+  {
+    "epoch": 19,
+    "training_loss": 0.14318448305130005,
+    "lr": 0.0003782169276719,
+    "selection_score": 0.8214985579648826,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.937888198757764,
+        "balanced_accuracy": 0.9434065934065934,
+        "macro_f1": 0.9374805840323082,
+        "healthy_recall": 0.9857142857142858,
+        "unhealthy_recall": 0.9010989010989011,
+        "confusion_matrix": [
+          [
+            69,
+            1
+          ],
+          [
+            9,
+            82
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8484848484848485,
+        "balanced_accuracy": 0.7107438016528925,
+        "macro_f1": 0.6443965517241379,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.8760330578512396,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            15,
+            106
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9800412938747419,
+        "balanced_accuracy": 0.989060731799321,
+        "macro_f1": 0.9434135322998249,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.978121463598642,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            58,
+            2593
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9086065573770492,
+        "balanced_accuracy": 0.938129121832697,
+        "macro_f1": 0.866439500250248,
+        "healthy_recall": 0.9837209302325581,
+        "unhealthy_recall": 0.8925373134328358,
+        "confusion_matrix": [
+          [
+            423,
+            7
+          ],
+          [
+            216,
+            1794
+          ]
+        ]
+      }
+    },
+    "seconds": 14.1
+  },
+  {
+    "epoch": 20,
+    "training_loss": 0.14049218595027924,
+    "lr": 0.0003318000945389949,
+    "selection_score": 0.8001567677203767,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.937888198757764,
+        "balanced_accuracy": 0.9368131868131868,
+        "macro_f1": 0.9368131868131868,
+        "healthy_recall": 0.9285714285714286,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            65,
+            5
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8560606060606061,
+        "balanced_accuracy": 0.6735537190082644,
+        "macro_f1": 0.6319882611885547,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.8925619834710744,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            13,
+            108
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9893324156916724,
+        "balanced_accuracy": 0.9941531497548095,
+        "macro_f1": 0.9684087345714405,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.988306299509619,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            31,
+            2620
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9163934426229509,
+        "balanced_accuracy": 0.9337151452042114,
+        "macro_f1": 0.8744773672929013,
+        "healthy_recall": 0.9604651162790697,
+        "unhealthy_recall": 0.9069651741293532,
+        "confusion_matrix": [
+          [
+            413,
+            17
+          ],
+          [
+            187,
+            1823
+          ]
+        ]
+      }
+    },
+    "seconds": 14.2
+  },
+  {
+    "epoch": 21,
+    "training_loss": 0.14131052792072296,
+    "lr": 0.0002875000000000001,
+    "selection_score": 0.7741230965360257,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9565217391304348,
+        "balanced_accuracy": 0.9582417582417582,
+        "macro_f1": 0.9559714028987771,
+        "healthy_recall": 0.9714285714285714,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            68,
+            2
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8333333333333334,
+        "balanced_accuracy": 0.6198347107438016,
+        "macro_f1": 0.5863247863247864,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.8760330578512396,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            15,
+            106
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.993805918788713,
+        "balanced_accuracy": 0.996605054696341,
+        "macro_f1": 0.9812512903447801,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.9932101093926821,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            18,
+            2633
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8930327868852459,
+        "balanced_accuracy": 0.9332465579081337,
+        "macro_f1": 0.8484894264490679,
+        "healthy_recall": 0.9953488372093023,
+        "unhealthy_recall": 0.8711442786069652,
+        "confusion_matrix": [
+          [
+            428,
+            2
+          ],
+          [
+            259,
+            1751
+          ]
+        ]
+      }
+    },
+    "seconds": 14.21
+  },
+  {
+    "epoch": 22,
+    "training_loss": 0.13328468799591064,
+    "lr": 0.00024580200516107533,
+    "selection_score": 0.8245832845208603,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9565217391304348,
+        "balanced_accuracy": 0.9582417582417582,
+        "macro_f1": 0.9559714028987771,
+        "healthy_recall": 0.9714285714285714,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            68,
+            2
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8560606060606061,
+        "balanced_accuracy": 0.7148760330578512,
+        "macro_f1": 0.652775854907933,
+        "healthy_recall": 0.5454545454545454,
+        "unhealthy_recall": 0.8842975206611571,
+        "confusion_matrix": [
+          [
+            6,
+            5
+          ],
+          [
+            14,
+            107
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9728148657949071,
+        "balanced_accuracy": 0.9850999622783856,
+        "macro_f1": 0.9253744782366878,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.9701999245567711,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            79,
+            2572
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.8905737704918033,
+        "balanced_accuracy": 0.9326680550734698,
+        "macro_f1": 0.845780736795384,
+        "healthy_recall": 0.9976744186046511,
+        "unhealthy_recall": 0.8676616915422886,
+        "confusion_matrix": [
+          [
+            429,
+            1
+          ],
+          [
+            266,
+            1744
+          ]
+        ]
+      }
+    },
+    "seconds": 14.19
+  },
+  {
+    "epoch": 23,
+    "training_loss": 0.1349043846130371,
+    "lr": 0.00020716296197954249,
+    "selection_score": 0.7738906381196416,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9316770186335404,
+        "balanced_accuracy": 0.9296703296703297,
+        "macro_f1": 0.9303770098675159,
+        "healthy_recall": 0.9142857142857143,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            64,
+            6
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8409090909090909,
+        "balanced_accuracy": 0.6239669421487604,
+        "macro_f1": 0.5932501834189288,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.8842975206611571,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            14,
+            107
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.996214728148658,
+        "balanced_accuracy": 0.9961531349620195,
+        "macro_f1": 0.9883635892389957,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.99622783855149,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            10,
+            2641
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9389344262295082,
+        "balanced_accuracy": 0.9455686682864746,
+        "macro_f1": 0.9042163914956085,
+        "healthy_recall": 0.9558139534883721,
+        "unhealthy_recall": 0.9353233830845771,
+        "confusion_matrix": [
+          [
+            411,
+            19
+          ],
+          [
+            130,
+            1880
+          ]
+        ]
+      }
+    },
+    "seconds": 14.16
+  },
+  {
+    "epoch": 24,
+    "training_loss": 0.12887713313102722,
+    "lr": 0.0001720062078982378,
+    "selection_score": 0.7837884315179005,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9503105590062112,
+        "balanced_accuracy": 0.9494505494505494,
+        "macro_f1": 0.9494505494505494,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8636363636363636,
+        "balanced_accuracy": 0.6363636363636364,
+        "macro_f1": 0.6160310277957337,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            11,
+            110
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9958706125258087,
+        "balanced_accuracy": 0.997736703130894,
+        "macro_f1": 0.9873715316254916,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.995473406261788,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            12,
+            2639
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9405737704918032,
+        "balanced_accuracy": 0.9447356242045586,
+        "macro_f1": 0.9062053710017653,
+        "healthy_recall": 0.9511627906976744,
+        "unhealthy_recall": 0.9383084577114428,
+        "confusion_matrix": [
+          [
+            409,
+            21
+          ],
+          [
+            124,
+            1886
+          ]
+        ]
+      }
+    },
+    "seconds": 13.95
+  },
+  {
+    "epoch": 25,
+    "training_loss": 0.12997525930404663,
+    "lr": 0.00014071692767190003,
+    "selection_score": 0.7795697005936939,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9254658385093167,
+        "balanced_accuracy": 0.9208791208791209,
+        "macro_f1": 0.9236242884250474,
+        "healthy_recall": 0.8857142857142857,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            62,
+            8
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8636363636363636,
+        "balanced_accuracy": 0.6363636363636364,
+        "macro_f1": 0.6160310277957337,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            11,
+            110
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9948382656572609,
+        "balanced_accuracy": 0.9971708789136176,
+        "macro_f1": 0.9842957118538733,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.994341757827235,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            15,
+            2636
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9286885245901639,
+        "balanced_accuracy": 0.9457480041652204,
+        "macro_f1": 0.8913807659835751,
+        "healthy_recall": 0.9720930232558139,
+        "unhealthy_recall": 0.9194029850746268,
+        "confusion_matrix": [
+          [
+            418,
+            12
+          ],
+          [
+            162,
+            1848
+          ]
+        ]
+      }
+    },
+    "seconds": 13.9
+  },
+  {
+    "epoch": 26,
+    "training_loss": 0.12579378485679626,
+    "lr": 0.00011363793320239162,
+    "selection_score": 0.7802027588658513,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9316770186335404,
+        "balanced_accuracy": 0.9313186813186813,
+        "macro_f1": 0.9306061674699267,
+        "healthy_recall": 0.9285714285714286,
+        "unhealthy_recall": 0.9340659340659341,
+        "confusion_matrix": [
+          [
+            65,
+            5
+          ],
+          [
+            6,
+            85
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8636363636363636,
+        "balanced_accuracy": 0.6363636363636364,
+        "macro_f1": 0.6160310277957337,
+        "healthy_recall": 0.36363636363636365,
+        "unhealthy_recall": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            4,
+            7
+          ],
+          [
+            11,
+            110
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9986235375086029,
+        "balanced_accuracy": 0.995701215227698,
+        "macro_f1": 0.995701215227698,
+        "healthy_recall": 0.9921568627450981,
+        "unhealthy_recall": 0.999245567710298,
+        "confusion_matrix": [
+          [
+            253,
+            2
+          ],
+          [
+            2,
+            2649
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9389344262295082,
+        "balanced_accuracy": 0.9409984958926298,
+        "macro_f1": 0.9034666353704132,
+        "healthy_recall": 0.9441860465116279,
+        "unhealthy_recall": 0.9378109452736318,
+        "confusion_matrix": [
+          [
+            406,
+            24
+          ],
+          [
+            125,
+            1885
+          ]
+        ]
+      }
+    },
+    "seconds": 13.9
+  },
+  {
+    "epoch": 27,
+    "training_loss": 0.1261674165725708,
+    "lr": 9.106590761976455e-05,
+    "selection_score": 0.8057014309064673,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9316770186335404,
+        "balanced_accuracy": 0.932967032967033,
+        "macro_f1": 0.9308122045552214,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.9230769230769231,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            7,
+            84
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8712121212121212,
+        "balanced_accuracy": 0.6818181818181818,
+        "macro_f1": 0.6493202062822316,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            11,
+            110
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9982794218857536,
+        "balanced_accuracy": 0.9972847833965726,
+        "macro_f1": 0.9946549185233743,
+        "healthy_recall": 0.996078431372549,
+        "unhealthy_recall": 0.998491135420596,
+        "confusion_matrix": [
+          [
+            254,
+            1
+          ],
+          [
+            4,
+            2647
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9315573770491803,
+        "balanced_accuracy": 0.9410910563461761,
+        "macro_f1": 0.8941115051482524,
+        "healthy_recall": 0.9558139534883721,
+        "unhealthy_recall": 0.9263681592039801,
+        "confusion_matrix": [
+          [
+            411,
+            19
+          ],
+          [
+            148,
+            1862
+          ]
+        ]
+      }
+    },
+    "seconds": 13.94
+  },
+  {
+    "epoch": 28,
+    "training_loss": 0.12082232534885406,
+    "lr": 7.324815475980207e-05,
+    "selection_score": 0.8114570331248856,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9503105590062112,
+        "balanced_accuracy": 0.9494505494505494,
+        "macro_f1": 0.9494505494505494,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8787878787878788,
+        "balanced_accuracy": 0.6859504132231405,
+        "macro_f1": 0.658694246929541,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.9173553719008265,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            10,
+            111
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9965588437715073,
+        "balanced_accuracy": 0.998113919275745,
+        "macro_f1": 0.9894397930112215,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.99622783855149,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            10,
+            2641
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9262295081967213,
+        "balanced_accuracy": 0.9469975702880944,
+        "macro_f1": 0.8886092283906468,
+        "healthy_recall": 0.9790697674418605,
+        "unhealthy_recall": 0.9149253731343283,
+        "confusion_matrix": [
+          [
+            421,
+            9
+          ],
+          [
+            171,
+            1839
+          ]
+        ]
+      }
+    },
+    "seconds": 13.88
+  },
+  {
+    "epoch": 29,
+    "training_loss": 0.11922460794448853,
+    "lr": 6.0379889651442304e-05,
+    "selection_score": 0.8107492630943023,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9565217391304348,
+        "balanced_accuracy": 0.9582417582417582,
+        "macro_f1": 0.9559714028987771,
+        "healthy_recall": 0.9714285714285714,
+        "unhealthy_recall": 0.945054945054945,
+        "confusion_matrix": [
+          [
+            68,
+            2
+          ],
+          [
+            5,
+            86
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8712121212121212,
+        "balanced_accuracy": 0.6818181818181818,
+        "macro_f1": 0.6493202062822316,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.9090909090909091,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            11,
+            110
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9975911906400551,
+        "balanced_accuracy": 0.9986797434930215,
+        "macro_f1": 0.9925691731369508,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.997359486986043,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            7,
+            2644
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9295081967213115,
+        "balanced_accuracy": 0.9480735855605692,
+        "macro_f1": 0.8927860503329232,
+        "healthy_recall": 0.9767441860465116,
+        "unhealthy_recall": 0.9194029850746268,
+        "confusion_matrix": [
+          [
+            420,
+            10
+          ],
+          [
+            162,
+            1848
+          ]
+        ]
+      }
+    },
+    "seconds": 13.89
+  },
+  {
+    "epoch": 30,
+    "training_loss": 0.12030461430549622,
+    "lr": 5.260209970007014e-05,
+    "selection_score": 0.8145478863731408,
+    "validation": {
+      "Bangladesh": {
+        "n": 161,
+        "accuracy": 0.9503105590062112,
+        "balanced_accuracy": 0.9494505494505494,
+        "macro_f1": 0.9494505494505494,
+        "healthy_recall": 0.9428571428571428,
+        "unhealthy_recall": 0.9560439560439561,
+        "confusion_matrix": [
+          [
+            66,
+            4
+          ],
+          [
+            4,
+            87
+          ]
+        ]
+      },
+      "PlantDoc": {
+        "n": 132,
+        "accuracy": 0.8863636363636364,
+        "balanced_accuracy": 0.6900826446280992,
+        "macro_f1": 0.6686192468619248,
+        "healthy_recall": 0.45454545454545453,
+        "unhealthy_recall": 0.9256198347107438,
+        "confusion_matrix": [
+          [
+            5,
+            6
+          ],
+          [
+            9,
+            112
+          ]
+        ]
+      },
+      "PlantVillage": {
+        "n": 2906,
+        "accuracy": 0.9975911906400551,
+        "balanced_accuracy": 0.9986797434930215,
+        "macro_f1": 0.9925691731369508,
+        "healthy_recall": 1.0,
+        "unhealthy_recall": 0.997359486986043,
+        "confusion_matrix": [
+          [
+            255,
+            0
+          ],
+          [
+            7,
+            2644
+          ]
+        ]
+      },
+      "TLID": {
+        "n": 2440,
+        "accuracy": 0.9372950819672131,
+        "balanced_accuracy": 0.9518859192410043,
+        "macro_f1": 0.9031343806783552,
+        "healthy_recall": 0.9744186046511628,
+        "unhealthy_recall": 0.9293532338308458,
+        "confusion_matrix": [
+          [
+            419,
+            11
+          ],
+          [
+            142,
+            1868
+          ]
+        ]
+      }
+    },
+    "seconds": 13.88
+  }
+]

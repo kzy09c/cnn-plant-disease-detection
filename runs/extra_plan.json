@@ -1,0 +1,10 @@
+{
+  "initial_checkpoint": "C:\\Users\\Nebula PC\\OneDrive\\Desktop\\cs projects\\cnn-tomato-disease-detector\\runs\\mixed_attention_field_v1\\best.pt",
+  "plan": "Continue only this project own CNN on all six training sources with balanced replay; no external pretrained weights",
+  "recipe": "mixed_attention",
+  "epochs": 25,
+  "steps_per_epoch": 64,
+  "batch_size": 96,
+  "lr_multiplier": 0.3,
+  "selection": "Compare B and C on the same six validation cohorts before their test evaluation"
+}

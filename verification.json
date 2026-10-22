@@ -1,0 +1,199 @@
+{
+  "all_checks_passed": true,
+  "cohorts": [
+    {
+      "experiment": "evaluation_a",
+      "cohort": "Bangladesh",
+      "n": 139,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "Internet16",
+      "n": 16,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "PlantDoc",
+      "n": 69,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "PlantVillage",
+      "n": 3632,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "TLID",
+      "n": 3050,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "TomatoVillage_external",
+      "n": 4525,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_a",
+      "cohort": "TomatoVillage_matched_test",
+      "n": 1764,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "Bangladesh",
+      "n": 139,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "Internet16",
+      "n": 16,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "PlantDoc",
+      "n": 69,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "PlantVillage",
+      "n": 3632,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "TLID",
+      "n": 3050,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "TomatoDisease_ROI",
+      "n": 488,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "TomatoVillage",
+      "n": 1764,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_b",
+      "cohort": "GTLD_examples",
+      "n": 7,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "Bangladesh",
+      "n": 139,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "Internet16",
+      "n": 16,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "PlantDoc",
+      "n": 69,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "PlantVillage",
+      "n": 3632,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "TLID",
+      "n": 3050,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "TomatoDisease_ROI",
+      "n": 488,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "TomatoVillage",
+      "n": 1764,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_c",
+      "cohort": "GTLD_examples",
+      "n": 7,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "Bangladesh",
+      "n": 139,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "Internet16",
+      "n": 16,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "PlantDoc",
+      "n": 69,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "PlantVillage",
+      "n": 3632,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "PlantWild",
+      "n": 433,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "TLID",
+      "n": 3050,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "TomatoDisease_ROI",
+      "n": 488,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "TomatoVillage",
+      "n": 1764,
+      "metrics_recomputed": true
+    },
+    {
+      "experiment": "evaluation_final",
+      "cohort": "GTLD_examples",
+      "n": 7,
+      "metrics_recomputed": true
+    }
+  ],
+  "delivered_model_sha256": "e905416007b09d826595af17fa4f5d5b15c103c973790853f707de73a38f1108",
+  "selection_basis": "validation only"
+}

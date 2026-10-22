@@ -1,0 +1,6 @@
+{
+  "legacy_project": "data/legacy/plant_tomato",
+  "legacy_repository": "data/legacy/cnn-plant-disease-detection",
+  "seed": 20261022,
+  "image_size": 160
+}
