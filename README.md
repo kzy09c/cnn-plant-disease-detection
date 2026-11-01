@@ -269,3 +269,151 @@ Fresh training requires an NVIDIA GPU, a compatible CUDA-enabled PyTorch install
 Create the environment with `python3.12 -m venv .venv` and activate it with `source .venv/bin/activate`. Install `requirements.txt` with `python -m pip install -r requirements.txt`, then run the same verification and prediction commands with your own image path. CPU inference is supported; the training scripts require CUDA.
 
 <p align="center"><img src="images/anime-bocchi.gif" alt="Project GIF" width="400"></p>
+
+## Detailed file guide
+
+This guide explains the tracked project files. Repeated experiment outputs share the same meaning across folders; those file names are described once below. Raw datasets, local image caches and private path overrides are not included in the repository.
+
+### Main project files
+
+| File | Purpose |
+| --- | --- |
+| [`.gitattributes`](.gitattributes) | Controls line endings and preserves the exact bytes of historical records, checkpoints and binary assets. |
+| [`.gitignore`](.gitignore) | Excludes local datasets, environments, caches, private path configuration and temporary build/review outputs from Git. |
+| [`DATA_CANDIDATES.md`](DATA_CANDIDATES.md) | Records inspected dataset candidates, their suitability and source-selection notes. |
+| [`EXPERIMENT_PROTOCOL.md`](EXPERIMENT_PROTOCOL.md) | Documents the experiment stages, source references, labels, grouping, model-selection rules and limitations. |
+| [`INFERENCE_README.txt`](INFERENCE_README.txt) | Short setup and prediction instructions included with the portable inference package. |
+| [`MODEL_CARD.md`](MODEL_CARD.md) | Describes the delivered model's intended use, input assumptions, performance and limitations. |
+| [`README.md`](README.md) | Main project overview, usage instructions, results, pipeline explanation and this file guide. |
+| [`RESULTS.csv`](RESULTS.csv) | Machine-readable results table for comparing the recorded experiments and cohorts. |
+| [`RESULTS.md`](RESULTS.md) | Human-readable report of the saved training experiments and evaluation results. |
+| [`audit-requirements.txt`](audit-requirements.txt) | Optional OpenCV dependency for classical geometric duplicate auditing; install alongside the main requirements. |
+| [`audit_matching_geometry.py`](audit_matching_geometry.py) | Uses classical SIFT features and geometric confirmation to detect cropped/resized photo copies before Pakistan-test inference; these features are not CNN inputs. |
+| [`best_model.json`](best_model.json) | Records the selected checkpoint's identity, SHA-256 hash and validation-selection information. |
+| [`best_model.pt`](best_model.pt) | Delivered PyTorch checkpoint containing the selected trained model weights and associated configuration. |
+| [`completion.json`](completion.json) | Saved completion summary identifying the selected run, delivered model/bundle hashes and verification status. |
+| [`download_gtld_examples.py`](download_gtld_examples.py) | Downloads and audits seven published GTLD example photos for a small illustrative sanity check. |
+| [`download_matching.py`](download_matching.py) | Downloads raw Pakistan dataset images, records integrity metadata and freezes the category-matched test protocol. |
+| [`download_plantwild.py`](download_plantwild.py) | Downloads selected official PlantWild tomato images using byte ranges, verifying ZIP CRCs and recording file hashes. |
+| [`download_tomatovillage.py`](download_tomatovillage.py) | Downloads Tomato-Village's multiclass image subset and verifies each file against its Git blob hash. |
+| [`download_zenodo.py`](download_zenodo.py) | Downloads, verifies and extracts the Tomato-Disease release from Zenodo. |
+| [`evaluate.py`](evaluate.py) | Evaluates a frozen validation-selected checkpoint, producing predictions, detailed metrics and group-bootstrap uncertainty. |
+| [`evaluate_matching.py`](evaluate_matching.py) | Evaluates the unchanged delivered CNN on the audited Pakistan cohort and saves its report and verification evidence. |
+| [`inference-requirements.txt`](inference-requirements.txt) | Minimal pinned dependencies for running predictions: PyTorch, NumPy and Pillow. |
+| [`inference_smoke.json`](inference_smoke.json) | Saved results of the example CPU/CUDA prediction compatibility check. |
+| [`inspect_field_sources.py`](inspect_field_sources.py) | Inspects public Mendeley metadata for additional field-image dataset candidates. |
+| [`inspect_matching.py`](inspect_matching.py) | Inspects the frozen Pakistan release and indexes raw-image ZIP members for selective download. |
+| [`inspect_plantwild.py`](inspect_plantwild.py) | Indexes the official PlantWild archive, identifying tomato images and extracting small metadata files. |
+| [`inspect_remote_zip.py`](inspect_remote_zip.py) | Provides a seekable HTTP-range ZIP reader and inspects archive metadata without downloading an entire archive. |
+| [`inspect_sources.py`](inspect_sources.py) | Fetches public metadata for candidate dataset releases and saves it locally for inspection. |
+| [`local_config.example.json`](local_config.example.json) | Example local source-project paths, random seed and image size; copy to local_config.json to override paths. |
+| [`model.py`](model.py) | Defines LeafCNN, its optional ChannelGate attention module and the Healthy/Unhealthy output classes. |
+| [`package_model.py`](package_model.py) | Builds the portable inference bundle and compares CPU/CUDA predictions on example inputs. |
+| [`predict.py`](predict.py) | Loads a checkpoint, preprocesses one input photograph and prints the binary prediction and probabilities as JSON. |
+| [`prepare_data.py`](prepare_data.py) | Combines the initial audited sources, verifies image hashes, caches resized RGB inputs and groups duplicates to protect splits; also supplies shared CSV, JSON and fingerprint utilities. |
+| [`prepare_external.py`](prepare_external.py) | Audits Tomato-Village as a whole-source external test, detecting overlap and excluding overlapping photo families. |
+| [`prepare_field.py`](prepare_field.py) | Combines the initial data with Tomato-Village for stage B, preserving grouped train/validation/test separation. |
+| [`prepare_matching.py`](prepare_matching.py) | Prepares the raw Pakistan images for the frozen external test, auditing duplicates and overlap with earlier data. |
+| [`prepare_plantwild.py`](prepare_plantwild.py) | Applies PlantWild's saved Healthy review decisions, audits source-page/duplicate overlap and prepares seven-source stage-D data. |
+| [`prepare_zenodo.py`](prepare_zenodo.py) | Creates audited Tomato-Disease annotation crops, recovers the binary class mapping and prepares six-source stage-C data. |
+| [`report.py`](report.py) | Builds the results report, CSV summary and comparison/training/confusion-matrix figures from saved experiment records. |
+| [`requirements.txt`](requirements.txt) | Pinned dependencies for training, evaluation, verification and report generation. |
+| [`select_final.py`](select_final.py) | Compares stages B and C on identical six-source validation cohorts and selects a checkpoint before test evaluation. |
+| [`select_wild.py`](select_wild.py) | Compares the previous selected model with stage D on seven-source validation data and freezes the delivered model. |
+| [`tomato_cnn_inference.zip`](tomato_cnn_inference.zip) | Portable prediction bundle containing the model and supporting inference code/documentation. |
+| [`train.py`](train.py) | Shared training engine: recipe comparison, augmentation, balanced sampling, optimization, validation selection and run logging. |
+| [`train_extra.py`](train_extra.py) | Starts stage C: continues this project's selected B checkpoint while jointly sampling all six sources. |
+| [`train_field.py`](train_field.py) | Starts stage B: retrains the selected recipe from random initialization with Tomato-Village included. |
+| [`train_wild.py`](train_wild.py) | Starts stage D: continues this project's previously selected checkpoint while jointly sampling all seven sources. |
+| [`verification.json`](verification.json) | Saved results from recomputing evaluation metrics and checking checkpoint identities. |
+| [`verify_results.py`](verify_results.py) | Recomputes saved metrics from prediction CSVs and verifies delivered checkpoint identities without rerunning training. |
+
+### Saved experiment evaluations
+
+| File | Purpose |
+| --- | --- |
+| [`evaluation_a/`](evaluation_a/) | Stage-A model evaluation records. |
+| [`evaluation_b/`](evaluation_b/) | Stage-B model evaluation records. |
+| [`evaluation_c/`](evaluation_c/) | Stage-C model evaluation records. |
+| [`evaluation_final/`](evaluation_final/) | Delivered model evaluation records. |
+
+Each of the four folders above contains:
+
+| File name | Purpose |
+| --- | --- |
+| [`category_metrics.csv`](evaluation_final/category_metrics.csv) | Binary prediction results broken down by source category. |
+| [`frozen_model.json`](evaluation_final/frozen_model.json) | Frozen checkpoint identity and evaluation provenance. |
+| [`metrics.json`](evaluation_final/metrics.json) | Saved cohort-level performance metrics and uncertainty summaries. |
+| [`predictions.csv`](evaluation_final/predictions.csv) | Individual reference labels and model probabilities used to recompute metrics. |
+
+### Training runs and archived source code
+
+| File | Purpose |
+| --- | --- |
+| [`runs/mixed_mild_v1/`](runs/mixed_mild_v1/) | Stage A: mild augmentation, without channel attention or mixup. |
+| [`runs/mixed_strong_v1/`](runs/mixed_strong_v1/) | Stage A: strong augmentation and mixup, without channel attention. |
+| [`runs/mixed_attention_v1/`](runs/mixed_attention_v1/) | Stage A: strong augmentation, channel attention and mixup. |
+| [`runs/mixed_attention_field_v1/`](runs/mixed_attention_field_v1/) | Stage B: five-source training from random initialization. |
+| [`runs/mixed_attention_extra_v1/`](runs/mixed_attention_extra_v1/) | Stage C: six-source continuation from this project's B checkpoint. |
+| [`runs/mixed_attention_wild_v1/`](runs/mixed_attention_wild_v1/) | Stage D: seven-source continuation; the delivered model's selected run. |
+
+Each run folder contains:
+
+| File name | Purpose |
+| --- | --- |
+| [`best.pt`](runs/mixed_attention_wild_v1/best.pt) | Best validation-selected checkpoint from that run. |
+| [`complete.json`](runs/mixed_attention_wild_v1/complete.json) | Completed-run summary, including selected epoch and validation score. |
+| [`configuration.json`](runs/mixed_attention_wild_v1/configuration.json) | Training recipe, seed, software/hardware details, data/code hashes and initialization information. |
+| [`history.json`](runs/mixed_attention_wild_v1/history.json) | Per-epoch training loss, learning rate and validation results. |
+| [`training_draws.csv`](runs/mixed_attention_wild_v1/training_draws.csv) | Number of times each manifest record was sampled, allowing checks that held-out images were never used for training. |
+
+The stage-B, stage-C and stage-D folders also contain archived Python files under [`runs/mixed_attention_field_v1/source_snapshot/`](runs/mixed_attention_field_v1/source_snapshot/), [`runs/mixed_attention_extra_v1/source_snapshot/`](runs/mixed_attention_extra_v1/source_snapshot/), [`runs/mixed_attention_wild_v1/source_snapshot/`](runs/mixed_attention_wild_v1/source_snapshot/). Each archived file has the role described for its matching main-project filename above, but preserves the code captured at the start of that historical run. Use the root scripts for the current implementation.
+
+### Run plans and selection records
+
+| File | Purpose |
+| --- | --- |
+| [`runs/field_plan.json`](runs/field_plan.json) | Saved stage-B plan: selected recipe, source count, batch size and random initialization. |
+| [`runs/extra_plan.json`](runs/extra_plan.json) | Saved stage-C continuation plan, starting checkpoint and six-source replay settings. |
+| [`runs/wild_plan.json`](runs/wild_plan.json) | Saved stage-D continuation plan, starting checkpoint and seven-source replay settings. |
+| [`runs/progress.json`](runs/progress.json) | Most recently recorded training progress; a status snapshot rather than the full run history. |
+| [`runs/selection.json`](runs/selection.json) | Validation selection across the three initial stage-A recipes. |
+| [`runs/selection_field.json`](runs/selection_field.json) | Stage-B training/validation selection summary. |
+| [`runs/selection_extra.json`](runs/selection_extra.json) | Stage-C training/validation selection summary. |
+| [`runs/selection_final.json`](runs/selection_final.json) | Comparison of stages B and C on common six-source validation cohorts. |
+| [`runs/selection_wild_run.json`](runs/selection_wild_run.json) | Stage-D training/validation selection summary before comparison with the previous model. |
+| [`runs/selection_wild.json`](runs/selection_wild.json) | Final comparison on common seven-source validation cohorts and delivered checkpoint selection. |
+| [`runs/runtime_source_a/README.md`](runs/runtime_source_a/README.md) | Explains the provenance of the exact training module imported for the stage-A runs. |
+| [`runs/runtime_source_a/train.py`](runs/runtime_source_a/train.py) | Preserved training implementation actually imported during stage A, before later CLI additions. |
+
+### Pakistan source and external-test evidence
+
+| File | Purpose |
+| --- | --- |
+| [`dataset_sources/pakistan/README.md`](dataset_sources/pakistan/README.md) | Pakistan release source/download guide, attribution, archive structure and audit caveats. |
+| [`dataset_sources/pakistan/LICENSE.txt`](dataset_sources/pakistan/LICENSE.txt) | Archived licence terms for the Pakistan release. |
+| [`dataset_sources/pakistan/source_metadata.json`](dataset_sources/pakistan/source_metadata.json) | Frozen publisher metadata identifying the Pakistan dataset release and archive. |
+| [`evaluation_unseen_matching/REPORT.md`](evaluation_unseen_matching/REPORT.md) | Written report of the unchanged model's audited Pakistan external test. |
+| [`evaluation_unseen_matching/audit_before_predictions.json`](evaluation_unseen_matching/audit_before_predictions.json) | Eligibility counts, exclusions, audit methods and data/cache hashes frozen before prediction. |
+| [`evaluation_unseen_matching/audit_manifest.csv`](evaluation_unseen_matching/audit_manifest.csv) | All 830 raw-image audit decisions, including retained/excluded status and provenance. |
+| [`evaluation_unseen_matching/category_metrics.csv`](evaluation_unseen_matching/category_metrics.csv) | Correct and incorrect binary decisions broken down by the six publisher categories. |
+| [`evaluation_unseen_matching/frozen_model.json`](evaluation_unseen_matching/frozen_model.json) | Checkpoint identity and frozen test provenance for the external evaluation. |
+| [`evaluation_unseen_matching/geometric_local_matches.json`](evaluation_unseen_matching/geometric_local_matches.json) | Confirmed geometric duplicate matches within the incoming Pakistan images. |
+| [`evaluation_unseen_matching/geometric_prior_matches.json`](evaluation_unseen_matching/geometric_prior_matches.json) | Confirmed geometric matches between Pakistan images and earlier reference data. |
+| [`evaluation_unseen_matching/metrics.json`](evaluation_unseen_matching/metrics.json) | Overall and class-level metrics for the retained external-test cohort. |
+| [`evaluation_unseen_matching/predictions.csv`](evaluation_unseen_matching/predictions.csv) | Individual external-test predictions, reference labels and probabilities. |
+| [`evaluation_unseen_matching/protocol_before_predictions.json`](evaluation_unseen_matching/protocol_before_predictions.json) | Pre-prediction protocol specifying source, categories, model hash, fixed threshold and eligibility rules. |
+| [`evaluation_unseen_matching/reference_overlap_matches.json`](evaluation_unseen_matching/reference_overlap_matches.json) | Recorded hash/structural overlap matches against earlier reference data. |
+| [`evaluation_unseen_matching/verification.json`](evaluation_unseen_matching/verification.json) | Independent metric recomputation and frozen-model/cohort integrity checks for this external test. |
+
+### Figures, images and tests
+
+| File | Purpose |
+| --- | --- |
+| [`figures/comparison.png`](figures/comparison.png) | Chart comparing the saved benchmark results. |
+| [`figures/confusion_matrices.png`](figures/confusion_matrices.png) | Confusion-matrix plots from the saved evaluation records. |
+| [`figures/training_curves.png`](figures/training_curves.png) | Plots of recorded training/validation progress. |
+| [`images/spinn.gif`](images/spinn.gif) | Decorative project animation displayed near the top of the README. |
+| [`images/anime-bocchi.gif`](images/anime-bocchi.gif) | Decorative project animation displayed near the end of the installation guide. |
+| [`tests/test_pipeline.py`](tests/test_pipeline.py) | Unit checks for grouped split separation, source/class availability, CNN output shape and balanced training draws; dataset-dependent checks skip when local manifests are missing. |
+
