@@ -7,6 +7,8 @@ The selected model is included as [`best_model.pt`](best_model.pt). It has 955,1
 
 **First time using the project?** Follow the [installation guide](#installation-guide-windows--vs-code) at the bottom of this README.
 
+**Prefer a guided notebook?** Open the [executed Jupyter walkthrough](pipeline_walkthrough.ipynb) for data loading, preprocessing, CNN features, recorded training curves and checks of saved predictions. Outputs are included for reading on GitHub; the default walkthrough runs on CPU without downloading datasets.
+
 <p align="center"><img src="images/spinn.gif" alt="Project GIF" width="400"></p>
 
 ## Run a prediction
@@ -264,6 +266,17 @@ Replace the image path with one of your own tomato-leaf photographs. `CUDA avail
 
 Fresh training requires an NVIDIA GPU, a compatible CUDA-enabled PyTorch installation and the additional data/audit inputs described in [Training reproduction](#training-reproduction). Use the [official PyTorch installation guide](https://pytorch.org/get-started/locally/) to install a CUDA build compatible with your system and the pinned PyTorch 2.11.0 version, in place of the CPU installation command above. The recorded training environment used PyTorch 2.11.0+cu128 on an RTX 4070 Ti SUPER.
 
+### Optional: run the Jupyter walkthrough
+
+After installing the project dependencies in this project's virtual environment, install notebook support and launch JupyterLab:
+
+```powershell
+python -m pip install jupyterlab ipykernel
+python -m jupyterlab
+```
+
+Open [`pipeline_walkthrough.ipynb`](pipeline_walkthrough.ipynb) from the repository root, select the same Python environment, and choose **Run All Cells**. You can also open it in VS Code with the Jupyter extension. The notebook includes executed outputs, three plots, a synthetic-image preprocessing example, an architecture shape check and recomputed metrics from saved predictions. Its training curves come from the historical run records; full training remains disabled by default and requires CUDA plus the original audited data. Existing Python scripts and checkpoints are unchanged.
+
 ### Linux and macOS
 
 Create the environment with `python3.12 -m venv .venv` and activate it with `source .venv/bin/activate`. Install `requirements.txt` with `python -m pip install -r requirements.txt`, then run the same verification and prediction commands with your own image path. CPU inference is supported; the training scripts require CUDA.
@@ -285,6 +298,7 @@ This guide explains the tracked project files. Repeated experiment outputs share
 | [`INFERENCE_README.txt`](INFERENCE_README.txt) | Short setup and prediction instructions included with the portable inference package. |
 | [`MODEL_CARD.md`](MODEL_CARD.md) | Describes the delivered model's intended use, input assumptions, performance and limitations. |
 | [`README.md`](README.md) | Main project overview, usage instructions, results, pipeline explanation and this file guide. |
+| [`pipeline_walkthrough.ipynb`](pipeline_walkthrough.ipynb) | Executed CPU walkthrough with preprocessing, architecture inspection, historical training plots and verification of saved prediction metrics; optional training is disabled by default. |
 | [`RESULTS.csv`](RESULTS.csv) | Machine-readable results table for comparing the recorded experiments and cohorts. |
 | [`RESULTS.md`](RESULTS.md) | Human-readable report of the saved training experiments and evaluation results. |
 | [`audit-requirements.txt`](audit-requirements.txt) | Optional OpenCV dependency for classical geometric duplicate auditing; install alongside the main requirements. |
