@@ -64,6 +64,69 @@ Leaf mold and Septoria performed strongly in this cohort. Yellow leaf curl was t
 
 Read the [full report](evaluation_unseen_matching/REPORT.md), [individual predictions](evaluation_unseen_matching/predictions.csv), [all 830 audit decisions](evaluation_unseen_matching/audit_manifest.csv) and [dataset source/download guide](dataset_sources/pakistan/README.md). The source photographs are available from the original CC BY 4.0 release; this repository includes metadata, download tools and evaluation evidence. Saved metrics can be checked without downloading the images using `python verify_results.py`.
 
+## Data and modelling pipeline
+
+The preprocessing pipeline combines seven tomato-image sources into a binary task: **Healthy = 0** and **Unhealthy = 1**. Unhealthy includes source-labelled disease, insect damage and nutrient deficiency. Source labels are retained as reference labels; preprocessing does not establish a biological diagnosis.
+
+### 1. Data loading
+
+[`prepare_data.py`](prepare_data.py) reads existing audited manifests for PlantVillage, Bangladesh, whole-leaf TLID and tomato-only PlantDoc. Already excluded records are skipped, existing test images stay reserved, and development fold 1 becomes validation while the remaining development folds become training. The older 16-image internet sample is reserved for testing.
+
+Source paths are configured through [`local_config.example.json`](local_config.example.json), with local overrides in `local_config.json`. Source links, licensing and label decisions are documented in [the experiment protocol](EXPERIMENT_PROTOCOL.md#sources).
+
+### 2. Cleaning and preprocessing
+
+The script verifies image-file SHA-256 hashes against the manifests, corrects EXIF orientation and converts images to RGB. It also records decoded-pixel hashes and perceptual fingerprints for duplicate checks.
+
+#### Duplicate checks and split protection
+
+Exact decoded-pixel duplicates, existing source groups and near duplicates are joined into groups. Near-duplicate candidates use perceptual-hash Hamming distance **≤ 4**, followed by block structural similarity **≥ 0.97**. If a group spans partitions, the entire group moves to the most reserved partition: **test > validation > train**. Groups containing identical decoded pixels with conflicting binary labels are excluded.
+
+This reduces leakage between training and evaluation, but incomplete plant, garden and capture-session metadata means the checks cannot prove full independence. See [the grouping implementation](prepare_data.py) and [the protocol's limitations](EXPERIMENT_PROTOCOL.md#reporting-and-limits).
+
+#### Source-specific preparation
+
+| Source / stage | Preprocessing | Relevant code and documentation |
+| --- | --- | --- |
+| Tomato-Village | Initially audit the full source as an external test, check overlap with earlier data and exclude overlapping photo families. For the later training stage, group related filename families and duplicates, preserving publisher partitions with group promotion. | [External-source preparation](prepare_external.py), [field-data preparation](prepare_field.py), [experiment B protocol](EXPERIMENT_PROTOCOL.md#field-data-experiment-b) |
+| Tomato-Disease annotation regions | Extract supplied bounding boxes with a fixed 10% context margin; skip boxes with an original edge below 32 pixels. Audit parent photos and crops for overlap and keep related regions together. The Healthy class ID is inferred from the authors' annotation counts and visually reviewed, rather than supplied by an official class-map file. | [Region preparation](prepare_zenodo.py), [experiment C protocol](EXPERIMENT_PROTOCOL.md#additional-annotated-source-continuation-c) |
+| PlantWild | Use the tomato subset, apply the saved manual review of candidate Healthy images, group by source-page URLs and duplicate fingerprints, and exclude detected overlap with earlier photos and annotation parents. | [PlantWild preparation](prepare_plantwild.py), [experiment D protocol](EXPERIMENT_PROTOCOL.md#final-natural-scene-continuation-d) |
+
+#### Image preparation and caching
+
+Eligible whole images or annotation crops are resized to **160 × 160** using bilinear interpolation. Preparation stores channel-first **uint8** arrays with shape `N × 3 × 160 × 160` in memory-mapped `images.npy` caches. CSV manifests retain paths, labels, groups, split assignments and exclusion reasons; JSON audits record counts and manifest hashes.
+
+Normalization happens when a batch enters the model: `x / 127.5 - 1` maps pixel values from 0–255 to −1–1. [Prediction preprocessing](predict.py) applies the same EXIF correction, RGB conversion, resize and normalization to a new input image.
+
+### 3. Feature engineering
+
+Feature extraction is learned jointly with the classifier in [`model.py`](model.py). The pipeline feeds RGB image tensors into four convolutional stages with **32, 64, 128 and 192 channels**. Each stage contains two 3 × 3 convolutions, BatchNorm and SiLU activations, followed by max pooling. These learned filters can represent visual patterns such as edges, colour variations and leaf textures; they are not manually assigned disease rules.
+
+The selected model uses [`ChannelGate`](model.py) to learn channel weights, then adaptive 2 × 2 average pooling creates a fixed-size representation. With the default width, the resulting **768 values** feed a 128-unit dense layer and the two-class output. No handcrafted colour histogram, texture descriptor, segmentation mask or external pretrained embedding is supplied as a model feature.
+
+The perceptual hashes used in preprocessing serve only to audit duplicate images and protect data splits; they are not classifier inputs.
+
+### 4. Model training
+
+[`train.py`](train.py) trains the custom CNN using AdamW, cross-entropy loss with label smoothing, a learning-rate warm-up and cosine schedule, mixed precision and gradient clipping. The initial experiments compare mild augmentation, strong augmentation with mixup, and strong augmentation with channel attention and mixup. The initial four-source model and the subsequent five-source model start from random weights. Later stages continue only this project's own checkpoints.
+
+| Stage | Training code | Data and initialization |
+| --- | --- | --- |
+| A | [`train.py`](train.py) | Four sources; compare three recipes from random initialization. |
+| B | [`train_field.py`](train_field.py) | Add Tomato-Village and retrain the selected recipe from random initialization. |
+| C | [`train_extra.py`](train_extra.py) | Add Tomato-Disease regions while jointly replaying all six sources, starting from the selected B checkpoint. |
+| D | [`train_wild.py`](train_wild.py) | Add PlantWild while jointly replaying all seven sources, starting from this project's previously selected checkpoint. |
+
+Checkpoint selection uses validation data: `0.6 × mean source balanced accuracy + 0.4 × minimum source balanced accuracy`. The decision threshold stays at **0.5**; test predictions do not choose the training recipe, epoch or threshold. Run configurations, histories, checkpoint files and per-image training draw counts are recorded under [`runs/`](runs/). See [Architecture and training](#architecture-and-training), [the experiment protocol](EXPERIMENT_PROTOCOL.md) and [saved results](RESULTS.md).
+
+#### Training augmentation and sampling
+
+[`train.py`](train.py) applies random horizontal/vertical flips and brightness/colour changes. Strong recipes also use affine crop/rotation, saturation and contrast changes, occasional grayscale, blur and masking; selected recipes additionally use mixup. Validation, test and prediction inputs use deterministic preprocessing without these random augmentations.
+
+Training samples equally from each **source × health-class** bucket with replacement. This balances training draws rather than creating equal numbers of unique images.
+
+**Reproduction:** A fresh clone does not include the raw datasets, image caches or all historical audit inputs. Configure the source paths using [`local_config.example.json`](local_config.example.json), restore the required audited manifests and PlantWild review decisions, and follow [Training reproduction](#training-reproduction). Prediction with the included model does not require preparing the training datasets.
+
 ## Architecture and training
 
 `model.py` defines four convolutional stages with 32, 64, 128 and 192 channels. Each stage uses two 3 × 3 convolutions, BatchNorm, SiLU and max pooling. The selected recipe adds channel attention, adaptive 2 × 2 pooling and a dense classifier. Images are EXIF-corrected, converted to RGB, resized with bilinear interpolation and normalized with `x / 127.5 - 1`.
